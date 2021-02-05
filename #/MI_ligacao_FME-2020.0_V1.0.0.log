@@ -1,0 +1,118 @@
+2021-02-01 11:35:31|   0.0|  0.0|INFORM|FME 2020.0.0.1 (20200316 - Build 20202 - WIN64)
+2021-02-01 11:35:31|   0.0|  0.0|INFORM|FME_HOME is 'C:\Program Files\FME\'
+2021-02-01 11:35:31|   0.1|  0.0|INFORM|FME Desktop Professional Edition (floating)
+2021-02-01 11:35:31|   0.1|  0.0|INFORM|Permanent License.
+2021-02-01 11:35:31|   0.1|  0.0|INFORM|Machine host name is: DGEO-33
+2021-02-01 11:35:31|   0.1|  0.0|INFORM|START - ProcessID: 13168, peak process memory usage: 36556 kB, current process memory usage: 36556 kB
+2021-02-01 11:35:31|   0.1|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\FME\fme.exe' `C:/Marcos_Batista/www/Controle-Pernambuco/#\wb-xlate-1612190129718_8100' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{b4dc3f35-2a39-42ca-bef9-1512a15ae862}'
+2021-02-01 11:35:31|   0.1|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\joel\AppData\Roaming\Safe Software\FME\'
+2021-02-01 11:35:32|   0.4|  0.3|INFORM|Shared folders for formats are : C:\Program Files\FME\datasources;C:\Users\joel\Documents\FME\Formats
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for transformers are : C:\Users\joel\AppData\Roaming\Safe Software\FME\Packages\20202-win64\transformers;C:\Program Files\FME\transformers
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for coordinate systems are : C:\Users\joel\Documents\FME\CoordinateSystems
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for coordinate system exceptions are : C:\Users\joel\Documents\FME\CoordinateSystemExceptions
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for coordinate system grid overrides are : C:\Users\joel\Documents\FME\CoordinateSystemGridOverrides
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : C:\Users\joel\Documents\FME\CsmapTransformationExceptions
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for transformer categories are : C:\Users\joel\Documents\FME\TransformerCategories
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Writer Keyword is `MULTI_WRITER'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `MULTI_WRITER_DEF'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Writer type is `MULTI_WRITER'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Current working folder is `C:\Marcos_Batista\www\Controle-Pernambuco\#'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Windows\TEMP', set from environment variable `FME_TEMP'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\FME\'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_BASE is 'no'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_MF_DIR is 'C:\Marcos_Batista\www\Controle-Pernambuco\#/'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_MF_NAME is 'MI_ligacao_FME-2020.0_V1.0.0.fmw'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2020.0.0.1'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Status: 571.60 GB of disk space available in the FME temporary folder (C:\Windows\TEMP)
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Status: 15.87 GB of physical memory available
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Status: 63.47 GB of virtual memory available
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 17134)
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Platform: WIN64
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Locale: pt_BR
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Encoding: windows-1252
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Start freeing memory when the process exceeds 47.60 GB
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Stop freeing memory when the process is below 35.70 GB
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Creating writer for format: 
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Creating reader for format: 
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Using MultiWriter with keyword `MULTI_WRITER' to output data (ID_ATTRIBUTE is `multi_writer_id')
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Writer output will be ordered by value of multi_writer_id
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\FME\plugins/LogCount_func.dll'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20200115)
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Loaded module 'InspectorFactory' from file 'C:\Program Files\FME\plugins/InspectorFactory.dll'
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME API version of module 'InspectorFactory' matches current internal version (3.8 20200115)
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME API version of module 'InspectorFactory' matches current internal version (3.8 20200115)
+2021-02-01 11:35:32|   0.4|  0.0|INFORM|Emptying factory pipeline
+2021-02-01 11:35:32|   0.4|  0.0|STATS |Router and Unexpected Input Remover (RoutingFactory): Tested 0 input feature(s), wrote 0 output feature(s): 0 matched merge filters, 0 were routed to output, 0 could not be routed.
+2021-02-01 11:35:32|   0.4|  0.0|STATS |Unexpected Input Remover Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-01 11:35:32|   0.4|  0.0|STATS |public.edicao(POSTGIS_1) Splitter (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-01 11:35:32|   0.6|  0.2|STATS |Restoring 625 feature(s) from FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.ffs'
+2021-02-01 11:35:32|   0.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.ffs'
+2021-02-01 11:35:32|   0.6|  0.0|INFORM|AttributeKeeper_OUTPUT_-1_77_Player (RecorderFactory): Played back 625 feature(s) from file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.ffs'
+2021-02-01 11:35:32|   0.6|  0.0|STATS |Restoring 625 feature(s) from FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
+2021-02-01 11:35:32|   0.6|  0.0|INFORM|AttributeKeeper_2_OUTPUT_0_muAz4GqwTdk=_-1_107_Player (RecorderFactory): Played back 625 feature(s) from file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
+2021-02-01 11:35:32|   0.6|  0.0|STATS |Stored 1250 feature(s) to FME feature store file `C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.ffs'
+2021-02-01 11:35:32|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.fsi'
+2021-02-01 11:35:32|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.fsi'
+2021-02-01 11:35:32|   0.6|  0.0|STATS |Restoring 625 feature(s) from FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
+2021-02-01 11:35:32|   0.6|  0.0|INFORM|FME Configuration: Using FME Reprojection Engine
+2021-02-01 11:35:32|   0.7|  0.1|INFORM|Creating writer for format: PostGIS
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `POSTGIS'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|Loaded module 'POSTGIS' from file 'C:\Program Files\FME\plugins/POSTGIS.dll'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME Configuration: Destination coordinate system set to `EPSG:4674'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|Coordinate System `EPSG:4674' parameters: CS_NAME=`SRG-SA/2000.LL' DESC_NM=`SIRGAS 2000' DT_NAME=`SIRGAS2000' EPSG_QD=`-1' GROUP=`LL' MAP_SCL=`1' MAX_LAT=`32.74' MAX_LNG=`-34' MIN_LAT=`-56.15' MIN_LNG=`-118.5' PROJ=`LL' QUAD=`1' SCL_RED=`1' SOURCE=`EPSG, V6.11.2, 4674 [EPSG. See 3D CRS for original informati]' UNIT=`Degree' ZERO_X=`1e-12' ZERO_Y=`1e-12'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|Writer `POSTGIS_2' of type `POSTGIS' using group definition keyword `POSTGIS_2_DEF'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|Opening POSTGIS writer for dataset 'Controle_PE'...
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|PostGIS client encoding: 'UTF8'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|PostgreSQL 9.5.4, compiled by Visual C++ build 1800, 64-bit
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|2.2 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
+2021-02-01 11:35:32|   0.8|  0.0|WARN  |POSTGIS Writer: Bulk Insert is set to Yes, but a conflicting Feature Operation has been detected. Feature type 'public.edicao' has a Feature Operation of 'Update'. Bulk Insert is now being set to No, which can cause insert operations to be much slower
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|Testing for the existence of table 'public.edicao'...
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|Using existing table 'public.edicao'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|POSTGIS Writer: Creating 'quoted WKB' geometry processor for feature type 'public.edicao'
+2021-02-01 11:35:32|   0.8|  0.0|INFORM|POSTGIS Writer: Creating 'Insert' feature type processor for feature type 'public.edicao'
+2021-02-01 11:35:33|   0.9|  0.1|INFORM|AttributeKeeper_2_OUTPUT_1_eKOY+pR0mH0=_-1_109_Player (RecorderFactory): Played back 625 feature(s) from file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
+2021-02-01 11:35:33|   0.9|  0.0|STATS |Destination Feature Type Routing Correlator (RoutingFactory): Tested 625 input feature(s), wrote 625 output feature(s): 0 matched merge filters, 625 were routed to output, 0 could not be routed.
+2021-02-01 11:35:33|   0.9|  0.0|STATS |Final Output Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-01 11:35:33|   0.9|  0.0|STATS |VisualizerProcessor (CreationFactory): Created 1 features
+2021-02-01 11:35:33|   0.9|  0.0|STATS |VisualizerCleaner (TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
+2021-02-01 11:35:33|   0.9|  0.0|INFORM|Successfully closed POSTGIS database writer
+2021-02-01 11:35:33|   0.9|  0.0|INFORM|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|INFORM|Feature output statistics for `POSTGIS' writer using keyword `POSTGIS_2':
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |                               Features Written
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |public.edicao                                                              625
+2021-02-01 11:35:33|   0.9|  0.0|STATS |==============================================================================
+2021-02-01 11:35:33|   0.9|  0.0|STATS |Total Features Written                                                     625
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |                            Features Read Summary
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |==============================================================================
+2021-02-01 11:35:33|   0.9|  0.0|STATS |Total Features Read                                                          0
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |                           Features Written Summary
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|STATS |public.edicao                                                              625
+2021-02-01 11:35:33|   0.9|  0.0|STATS |==============================================================================
+2021-02-01 11:35:33|   0.9|  0.0|STATS |Total Features Written                                                     625
+2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~                                                                             ~-
+2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~    Feature caches have been recorded at every stage of the translation.     ~-
+2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~                      To inspect the recorded features,                      ~-
+2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~              click the feature cache icons next to the ports.               ~-
+2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~                                                                             ~-
+2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-02-01 11:35:33|   0.9|  0.0|INFORM|Translation was SUCCESSFUL with 8 warning(s) (625 feature(s) output)
+2021-02-01 11:35:33|   0.9|  0.0|INFORM|FME Session Duration: 1.3 seconds. (CPU: 0.4s user, 0.1s system)
+2021-02-01 11:35:33|   0.9|  0.0|INFORM|END - ProcessID: 13168, peak process memory usage: 94908 kB, current process memory usage: 94908 kB
