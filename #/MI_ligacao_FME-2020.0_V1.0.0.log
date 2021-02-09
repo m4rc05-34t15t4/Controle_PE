@@ -1,118 +1,500 @@
-2021-02-01 11:35:31|   0.0|  0.0|INFORM|FME 2020.0.0.1 (20200316 - Build 20202 - WIN64)
-2021-02-01 11:35:31|   0.0|  0.0|INFORM|FME_HOME is 'C:\Program Files\FME\'
-2021-02-01 11:35:31|   0.1|  0.0|INFORM|FME Desktop Professional Edition (floating)
-2021-02-01 11:35:31|   0.1|  0.0|INFORM|Permanent License.
-2021-02-01 11:35:31|   0.1|  0.0|INFORM|Machine host name is: DGEO-33
-2021-02-01 11:35:31|   0.1|  0.0|INFORM|START - ProcessID: 13168, peak process memory usage: 36556 kB, current process memory usage: 36556 kB
-2021-02-01 11:35:31|   0.1|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\FME\fme.exe' `C:/Marcos_Batista/www/Controle-Pernambuco/#\wb-xlate-1612190129718_8100' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{b4dc3f35-2a39-42ca-bef9-1512a15ae862}'
-2021-02-01 11:35:31|   0.1|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\joel\AppData\Roaming\Safe Software\FME\'
-2021-02-01 11:35:32|   0.4|  0.3|INFORM|Shared folders for formats are : C:\Program Files\FME\datasources;C:\Users\joel\Documents\FME\Formats
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for transformers are : C:\Users\joel\AppData\Roaming\Safe Software\FME\Packages\20202-win64\transformers;C:\Program Files\FME\transformers
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for coordinate systems are : C:\Users\joel\Documents\FME\CoordinateSystems
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for coordinate system exceptions are : C:\Users\joel\Documents\FME\CoordinateSystemExceptions
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for coordinate system grid overrides are : C:\Users\joel\Documents\FME\CoordinateSystemGridOverrides
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : C:\Users\joel\Documents\FME\CsmapTransformationExceptions
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Shared folders for transformer categories are : C:\Users\joel\Documents\FME\TransformerCategories
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Writer Keyword is `MULTI_WRITER'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `MULTI_WRITER_DEF'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Writer type is `MULTI_WRITER'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: No destination coordinate system set
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Current working folder is `C:\Marcos_Batista\www\Controle-Pernambuco\#'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Windows\TEMP', set from environment variable `FME_TEMP'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\FME\'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_BASE is 'no'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_MF_DIR is 'C:\Marcos_Batista\www\Controle-Pernambuco\#/'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_MF_NAME is 'MI_ligacao_FME-2020.0_V1.0.0.fmw'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2020.0.0.1'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Status: 571.60 GB of disk space available in the FME temporary folder (C:\Windows\TEMP)
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Status: 15.87 GB of physical memory available
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Status: 63.47 GB of virtual memory available
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 17134)
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Platform: WIN64
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Locale: pt_BR
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|System Encoding: windows-1252
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Start freeing memory when the process exceeds 47.60 GB
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME Configuration: Stop freeing memory when the process is below 35.70 GB
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Creating writer for format: 
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Creating reader for format: 
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Using MultiWriter with keyword `MULTI_WRITER' to output data (ID_ATTRIBUTE is `multi_writer_id')
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Writer output will be ordered by value of multi_writer_id
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\FME\plugins/LogCount_func.dll'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20200115)
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Loaded module 'InspectorFactory' from file 'C:\Program Files\FME\plugins/InspectorFactory.dll'
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME API version of module 'InspectorFactory' matches current internal version (3.8 20200115)
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|FME API version of module 'InspectorFactory' matches current internal version (3.8 20200115)
-2021-02-01 11:35:32|   0.4|  0.0|INFORM|Emptying factory pipeline
-2021-02-01 11:35:32|   0.4|  0.0|STATS |Router and Unexpected Input Remover (RoutingFactory): Tested 0 input feature(s), wrote 0 output feature(s): 0 matched merge filters, 0 were routed to output, 0 could not be routed.
-2021-02-01 11:35:32|   0.4|  0.0|STATS |Unexpected Input Remover Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
-2021-02-01 11:35:32|   0.4|  0.0|STATS |public.edicao(POSTGIS_1) Splitter (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
-2021-02-01 11:35:32|   0.6|  0.2|STATS |Restoring 625 feature(s) from FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.ffs'
-2021-02-01 11:35:32|   0.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.ffs'
-2021-02-01 11:35:32|   0.6|  0.0|INFORM|AttributeKeeper_OUTPUT_-1_77_Player (RecorderFactory): Played back 625 feature(s) from file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.ffs'
-2021-02-01 11:35:32|   0.6|  0.0|STATS |Restoring 625 feature(s) from FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
-2021-02-01 11:35:32|   0.6|  0.0|INFORM|AttributeKeeper_2_OUTPUT_0_muAz4GqwTdk=_-1_107_Player (RecorderFactory): Played back 625 feature(s) from file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
-2021-02-01 11:35:32|   0.6|  0.0|STATS |Stored 1250 feature(s) to FME feature store file `C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.ffs'
-2021-02-01 11:35:32|   0.6|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.fsi'
-2021-02-01 11:35:32|   0.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-inspectors-jteoJY\inspector.fsi'
-2021-02-01 11:35:32|   0.6|  0.0|STATS |Restoring 625 feature(s) from FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
-2021-02-01 11:35:32|   0.6|  0.0|INFORM|FME Configuration: Using FME Reprojection Engine
-2021-02-01 11:35:32|   0.7|  0.1|INFORM|Creating writer for format: PostGIS
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `POSTGIS'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|Loaded module 'POSTGIS' from file 'C:\Program Files\FME\plugins/POSTGIS.dll'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME Configuration: Destination coordinate system set to `EPSG:4674'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|Coordinate System `EPSG:4674' parameters: CS_NAME=`SRG-SA/2000.LL' DESC_NM=`SIRGAS 2000' DT_NAME=`SIRGAS2000' EPSG_QD=`-1' GROUP=`LL' MAP_SCL=`1' MAX_LAT=`32.74' MAX_LNG=`-34' MIN_LAT=`-56.15' MIN_LNG=`-118.5' PROJ=`LL' QUAD=`1' SCL_RED=`1' SOURCE=`EPSG, V6.11.2, 4674 [EPSG. See 3D CRS for original informati]' UNIT=`Degree' ZERO_X=`1e-12' ZERO_Y=`1e-12'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|Writer `POSTGIS_2' of type `POSTGIS' using group definition keyword `POSTGIS_2_DEF'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|Opening POSTGIS writer for dataset 'Controle_PE'...
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|PostGIS client encoding: 'UTF8'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|PostgreSQL 9.5.4, compiled by Visual C++ build 1800, 64-bit
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|2.2 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
-2021-02-01 11:35:32|   0.8|  0.0|WARN  |POSTGIS Writer: Bulk Insert is set to Yes, but a conflicting Feature Operation has been detected. Feature type 'public.edicao' has a Feature Operation of 'Update'. Bulk Insert is now being set to No, which can cause insert operations to be much slower
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|Testing for the existence of table 'public.edicao'...
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|Using existing table 'public.edicao'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|POSTGIS Writer: Creating 'quoted WKB' geometry processor for feature type 'public.edicao'
-2021-02-01 11:35:32|   0.8|  0.0|INFORM|POSTGIS Writer: Creating 'Insert' feature type processor for feature type 'public.edicao'
-2021-02-01 11:35:33|   0.9|  0.1|INFORM|AttributeKeeper_2_OUTPUT_1_eKOY+pR0mH0=_-1_109_Player (RecorderFactory): Played back 625 feature(s) from file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-XoqRKH\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  23e1fe4ff74ce36e0fe44d8990e33054605a4e37.ffs'
-2021-02-01 11:35:33|   0.9|  0.0|STATS |Destination Feature Type Routing Correlator (RoutingFactory): Tested 625 input feature(s), wrote 625 output feature(s): 0 matched merge filters, 625 were routed to output, 0 could not be routed.
-2021-02-01 11:35:33|   0.9|  0.0|STATS |Final Output Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
-2021-02-01 11:35:33|   0.9|  0.0|STATS |VisualizerProcessor (CreationFactory): Created 1 features
-2021-02-01 11:35:33|   0.9|  0.0|STATS |VisualizerCleaner (TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
-2021-02-01 11:35:33|   0.9|  0.0|INFORM|Successfully closed POSTGIS database writer
-2021-02-01 11:35:33|   0.9|  0.0|INFORM|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|INFORM|Feature output statistics for `POSTGIS' writer using keyword `POSTGIS_2':
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |                               Features Written
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |public.edicao                                                              625
-2021-02-01 11:35:33|   0.9|  0.0|STATS |==============================================================================
-2021-02-01 11:35:33|   0.9|  0.0|STATS |Total Features Written                                                     625
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |                            Features Read Summary
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |==============================================================================
-2021-02-01 11:35:33|   0.9|  0.0|STATS |Total Features Read                                                          0
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |                           Features Written Summary
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|STATS |public.edicao                                                              625
-2021-02-01 11:35:33|   0.9|  0.0|STATS |==============================================================================
-2021-02-01 11:35:33|   0.9|  0.0|STATS |Total Features Written                                                     625
-2021-02-01 11:35:33|   0.9|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
-2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~                                                                             ~-
-2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~    Feature caches have been recorded at every stage of the translation.     ~-
-2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~                      To inspect the recorded features,                      ~-
-2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~              click the feature cache icons next to the ports.               ~-
-2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~                                                                             ~-
-2021-02-01 11:35:33|   0.9|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
-2021-02-01 11:35:33|   0.9|  0.0|INFORM|Translation was SUCCESSFUL with 8 warning(s) (625 feature(s) output)
-2021-02-01 11:35:33|   0.9|  0.0|INFORM|FME Session Duration: 1.3 seconds. (CPU: 0.4s user, 0.1s system)
-2021-02-01 11:35:33|   0.9|  0.0|INFORM|END - ProcessID: 13168, peak process memory usage: 94908 kB, current process memory usage: 94908 kB
+2021-02-08 15:26:22|   0.1|  0.1|INFORM|FME 2020.0.0.1 (20200316 - Build 20202 - WIN64)
+2021-02-08 15:26:22|   0.1|  0.0|INFORM|FME_HOME is 'C:\Program Files\FME\'
+2021-02-08 15:26:22|   0.1|  0.0|INFORM|FME Desktop Professional Edition (floating)
+2021-02-08 15:26:22|   0.1|  0.0|INFORM|Permanent License.
+2021-02-08 15:26:22|   0.1|  0.0|INFORM|Machine host name is: DGEO-33
+2021-02-08 15:26:22|   0.1|  0.0|INFORM|START - ProcessID: 13760, peak process memory usage: 37164 kB, current process memory usage: 37164 kB
+2021-02-08 15:26:22|   0.1|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\FME\fme.exe' `C:/Marcos_Batista/www/Controle-Pernambuco/#\wb-xlate-161280878132_7420' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{d59da5ff-159c-4cb5-8cb4-e4fc8331d884}'
+2021-02-08 15:26:22|   0.1|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\marcosbatista\AppData\Roaming\Safe Software\FME\'
+2021-02-08 15:26:23|   0.5|  0.4|INFORM|Shared folders for formats are : C:\Program Files\FME\datasources;C:\Users\marcosbatista\Documents\FME\Formats
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Shared folders for transformers are : C:\Users\marcosbatista\AppData\Roaming\Safe Software\FME\Packages\20202-win64\transformers;C:\Program Files\FME\transformers
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Shared folders for coordinate systems are : C:\Users\marcosbatista\Documents\FME\CoordinateSystems
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Shared folders for coordinate system exceptions are : C:\Users\marcosbatista\Documents\FME\CoordinateSystemExceptions
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Shared folders for coordinate system grid overrides are : C:\Users\marcosbatista\Documents\FME\CoordinateSystemGridOverrides
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : C:\Users\marcosbatista\Documents\FME\CsmapTransformationExceptions
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Shared folders for transformer categories are : C:\Users\marcosbatista\Documents\FME\TransformerCategories
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Writer Keyword is `MULTI_WRITER'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `MULTI_WRITER_DEF'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Writer type is `MULTI_WRITER'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Current working folder is `C:\Marcos_Batista\www\Controle-Pernambuco\#'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Windows\TEMP', set from environment variable `FME_TEMP'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\FME\'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: FME_BASE is 'no'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: FME_MF_DIR is 'C:\Marcos_Batista\www\Controle-Pernambuco\#/'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: FME_MF_NAME is 'MI_ligacao_FME-2020.0_V1.0.0.fmw'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2020.0.0.1'
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|System Status: 576.74 GB of disk space available in the FME temporary folder (C:\Windows\TEMP)
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|System Status: 15.87 GB of physical memory available
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|System Status: 63.47 GB of virtual memory available
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 17134)
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Platform: WIN64
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Locale: pt_BR
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|System Encoding: windows-1252
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Start freeing memory when the process exceeds 47.60 GB
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|FME Configuration: Stop freeing memory when the process is below 35.70 GB
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Creating writer for format: 
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Creating reader for format: 
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|MULTI_READER(MULTI_READER): Adding POSTGIS Reader with keyword POSTGIS_1
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|MULTI_READER(MULTI_READER): Adding POSTGIS Reader with keyword POSTGIS_2
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|MULTI_READER(MULTI_READER): Adding POSTGIS Reader with keyword POSTGIS_3
+2021-02-08 15:26:23|   0.5|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
+2021-02-08 15:26:23|   0.6|  0.1|INFORM|Creating reader for format: PostGIS
+2021-02-08 15:26:23|   0.7|  0.0|INFORM|Trying to find a DYNAMIC plugin for reader named `POSTGIS'
+2021-02-08 15:26:23|   0.7|  0.0|INFORM|FME Configuration: Source coordinate system for reader POSTGIS_1[POSTGIS] set to `EPSG:4674'
+2021-02-08 15:26:23|   0.8|  0.1|INFORM|Coordinate System `EPSG:4674' parameters: CS_NAME=`SRG-SA/2000.LL' DESC_NM=`SIRGAS 2000' DT_NAME=`SIRGAS2000' EPSG_QD=`-1' GROUP=`LL' MAP_SCL=`1' MAX_LAT=`32.74' MAX_LNG=`-34' MIN_LAT=`-56.15' MIN_LNG=`-118.5' PROJ=`LL' QUAD=`1' SCL_RED=`1' SOURCE=`EPSG, V6.11.2, 4674 [EPSG. See 3D CRS for original informati]' UNIT=`Degree' ZERO_X=`1e-12' ZERO_Y=`1e-12'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Loaded module 'POSTGIS' from file 'C:\Program Files\FME\plugins/POSTGIS.dll'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Opening POSTGIS reader for dataset 'Controle_PE'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|PostGIS client encoding: 'UTF8'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|PostgreSQL 9.5.4, compiled by Visual C++ build 1800, 64-bit
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|2.2 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|POSTGIS reader: Building features into bulk mode features
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Using MultiWriter with keyword `MULTI_WRITER' to output data (ID_ATTRIBUTE is `multi_writer_id')
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Writer output will be ordered by value of multi_writer_id
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\FME\plugins/LogCount_func.dll'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20200115)
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|FME Configuration: Using FME Reprojection Engine
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Loaded module 'InspectorFactory' from file 'C:\Program Files\FME\plugins/InspectorFactory.dll'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|FME API version of module 'InspectorFactory' matches current internal version (3.8 20200115)
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Loaded module 'TransformPointCloud_func' from file 'C:\Program Files\FME\plugins/TransformPointCloud_func.dll'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|FME API version of module 'TransformPointCloud_func' matches current internal version (3.8 20200115)
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|Loaded module 'AttributeFilterFactory' from file 'C:\Program Files\FME\plugins/AttributeFilterFactory.dll'
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|FME API version of module 'AttributeFilterFactory' matches current internal version (3.8 20200115)
+2021-02-08 15:26:23|   0.8|  0.0|INFORM|FME API version of module 'InspectorFactory' matches current internal version (3.8 20200115)
+2021-02-08 15:26:23|   0.9|  0.0|INFORM|Executing data query: 'declare "public_edicao_crsr" cursor for select "id","mi","bloco","status","editor","inicioedicao","terminoedicao","revisor1","inicio1rev","termino1rev","servidor","niveis","densidade","revisor2","inicio2rev","termino2rev","nome_carta","inom","iniciocorrecao1","terminocorrecao1","iniciocorrecao2","terminocorrecao2","impressa","ligacao","totalobj","total_p","total_l","total_a","txt_p","txt_l","o","s","se","so","l","n","no","ne","linha","coluna","regiao","corretor1","corretor2","CQ1","CQ2","inicioCQ1","inicioCQ2","terminoCQ1","terminoCQ2","AdLoc","AdTra","AdHid","inicioAdLoc","inicioAdTra","inicioAdHid","terminoAdLoc","terminoAdTra","terminoAdHid", ST_AsEWKB("geom") as "geom" from "public"."edicao"'
+2021-02-08 15:26:23|   0.9|  0.0|INFORM|Reading POSTGIS table: 'public.edicao'...
+2021-02-08 15:26:23|   1.0|  0.1|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 2 -1  0  6466172ce4a217c1484fb95261e5d5a9bb503ed7.ffsupdating'
+2021-02-08 15:26:23|   1.0|  0.0|INFORM|FFS writer: Writing 625 feature(s) to file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 2 -1  0  6466172ce4a217c1484fb95261e5d5a9bb503ed7.fts'
+2021-02-08 15:26:24|   1.2|  0.2|INFORM|Spatial Index: Adding 625 features
+2021-02-08 15:26:24|   1.4|  0.2|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator -1 10 fo 0 OUTPUT  0  c746be859d59ce11bd4a1793cf6cf98ef4ae2f84.ffsupdating'
+2021-02-08 15:26:24|   1.5|  0.2|INFORM|Spatial Index: Adding 625 features
+2021-02-08 15:26:24|   1.8|  0.3|INFORM|AttributeKeeper: Splitting bulk mode features into features
+2021-02-08 15:26:24|   1.8|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.ffsupdating'
+2021-02-08 15:26:24|   1.8|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_CenterPointReplacer -1 6 fo 0 POINT  0  a36ef5d75337e6f199d6cc836bf4c9bf32d68cf9.ffsupdating'
+2021-02-08 15:26:24|   1.8|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NO -1 11 fo 0 OFFSET  0  e5b58e5fcf8608498e5e34b2f5d1a57c98b619d6.ffsupdating'
+2021-02-08 15:26:24|   1.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_2 -1 21 fo 0 OUTPUT  0  15615f8931fde5656787b88b5b1e7f3fa1092ef2.ffsupdating'
+2021-02-08 15:26:24|   1.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_4 -1 69 fo 0 Output  0  afdb37d02cbfe3e1db0aad5a63fee994a6bab86b.ffsupdating'
+2021-02-08 15:26:24|   1.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_3 -1 64 fo 0 Output  0  727d4644b05e752c02be612589e784e45ee98e45.ffsupdating'
+2021-02-08 15:26:24|   1.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_2 -1 60 fo 0 Output  0  100b89ecbc7879012877e23a9673707634932d0c.ffsupdating'
+2021-02-08 15:26:24|   1.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_O -1 16 fo 0 OFFSET  0  f00f8f11ca17c5384d14234fb96d258af93a5636.ffsupdating'
+2021-02-08 15:26:24|   2.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_3 -1 23 fo 0 OUTPUT  0  47b77a6b2cf4ae5ac79a0af97dbf7b218433a576.ffsupdating'
+2021-02-08 15:26:24|   2.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SO -1 19 fo 0 OFFSET  0  fc0957fb0cef148d3b8e323e981abe92b7aac507.ffsupdating'
+2021-02-08 15:26:24|   2.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_4 -1 25 fo 0 OUTPUT  0  991239eb56d66a92df923530559385ccfa668a1c.ffsupdating'
+2021-02-08 15:26:24|   2.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction -1 52 fo 0 Output  0  118f04395dbe98082ee41afddcd059c2dbdf888a.ffsupdating'
+2021-02-08 15:26:25|   2.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_N -1 29 fo 0 OFFSET  0  c9993edac3033edb66a90308576f56f4bdac1ad2.ffsupdating'
+2021-02-08 15:26:25|   2.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_5 -1 32 fo 0 OUTPUT  0  c074402b4d6f5c9e127fd0dfc0dedf32aaae9074.ffsupdating'
+2021-02-08 15:26:25|   2.0|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_S -1 31 fo 0 OFFSET  0  b2519abef25c1e0aaef607bf3f6d26a4c2129e8e.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_7 -1 34 fo 0 OUTPUT  0  bf2bc5934d2dc1864ec3180b643a60024d6f9209.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NE -1 42 fo 0 OFFSET  0  7e7e881c5510c9c012b6cac24ccbe03214d9340a.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_8 -1 45 fo 0 OUTPUT  0  80d2aca78db8ed07c128035dda880f336ef7749c.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_E -1 43 fo 0 OFFSET  0  b2b296b0510adf86c2873d9497b7b2f7d1c7941e.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_9 -1 46 fo 0 OUTPUT  0  7cc90a47bc43bbb50edd0e20eab5bc5c92589468.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SE -1 44 fo 0 OFFSET  0  8e44e9a842077fb4112bdbfbbaf108ad5a3e5cfc.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_10 -1 47 fo 0 OUTPUT  0  52c54b60bb19f0cda198bce7f62d4c9e88c6a5b6.ffsupdating'
+2021-02-08 15:26:25|   2.1|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-inspectors-BGebUz\inspector.ffs'
+2021-02-08 15:26:25|   2.9|  0.7|INFORM|Successfully closed POSTGIS database reader
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|Successfully closed POSTGIS database reader
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|Creating reader for format: PostGIS
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|Trying to find a DYNAMIC plugin for reader named `POSTGIS'
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|Opening POSTGIS reader for dataset 'MOLDURAS_EDGV_BAHIA_23S'
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|PostGIS client encoding: 'UTF8'
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|PostgreSQL 9.5.4, compiled by Visual C++ build 1800, 64-bit
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|2.2 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|POSTGIS reader: Building features into bulk mode features
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|Executing data query: 'declare "public_aux_moldura_a_crsr" cursor for select "id","mi","inom","escala","nomecarta","anoaquisicao","engrespaquisicao","opaquisicao","datainicioaquisicao","datafimaquisicao","engresprevisaoaquisicao","oprevisaoaquisicao","datainiciorevaquisicao","datafimrevaquisicao","engrespreambulacao","opreambulacao","datainicioreambulacao","datafimreambulacao","oprevisaoreambulacao","engrespvalidacaoedicao","opvalidacao","datainiciovalidacao","datafimvalidacao","opedicao1","datainicioedicao1","datafimedicao1","oprevedicao1","datainiciorevedicao1","datafimrevedicao1","opedicao2","datainicioedicao2","datafimedicao2", ST_AsEWKB("geom") as "geom" from "public"."aux_moldura_a"'
+2021-02-08 15:26:25|   2.9|  0.0|INFORM|Reading POSTGIS table: 'public.aux_moldura_a'...
+2021-02-08 15:26:26|   3.0|  0.0|INFORM|FME Configuration: Source coordinate system for reader POSTGIS_2[POSTGIS] set to `EPSG:31983' as read from input data
+2021-02-08 15:26:26|   3.0|  0.0|INFORM|Coordinate System `EPSG:31983' parameters: CS_NAME=`SIRGAS2000.UTM-23S' DESC_NM=`SIRGAS 2000 / UTM zone 23S' DT_NAME=`SIRGAS2000' EPSG_QD=`1' GROUP=`SAMER' MAP_SCL=`1' MAX_LNG=`-42' MIN_LAT=`-26.3' MIN_LNG=`-48' PARM1=`-45' PROJ=`TM' QUAD=`1' SCL_RED=`0.9996' SOURCE=`EPSG, V6.11.2, 31983 [EPSG]' UNIT=`Meter' X_OFF=`500000' Y_OFF=`10000000' ZERO_X=`0.001' ZERO_Y=`0.001'
+2021-02-08 15:26:28|   5.7|  2.7|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 110 -1  0  494c9eb9e0cf41d1af0089643ad1edf0aebd3484.ffsupdating'
+2021-02-08 15:26:28|   5.7|  0.0|INFORM|FFS writer: Writing 43712 feature(s) to file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 110 -1  0  494c9eb9e0cf41d1af0089643ad1edf0aebd3484.fts'
+2021-02-08 15:26:29|   6.0|  0.3|INFORM|Spatial Index: Adding 43712 features
+2021-02-08 15:26:29|   6.1|  0.1|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Reprojector -1 118 fo 0 REPROJECTED  0  9c83626f9d41867283202d80860a1e337460fbe9.ffsupdating'
+2021-02-08 15:26:29|   6.1|  0.0|INFORM|FFS writer: Writing 43712 feature(s) to file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Reprojector -1 118 fo 0 REPROJECTED  0  9c83626f9d41867283202d80860a1e337460fbe9.fts'
+2021-02-08 15:26:29|   6.5|  0.4|INFORM|Spatial Index: Adding 43712 features
+2021-02-08 15:26:30|   6.9|  0.4|INFORM|AttributeKeeper_3: Splitting bulk mode features into features
+2021-02-08 15:26:30|   6.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_3 -1 114 fo 0 OUTPUT  0  bc983bc13b042e4089ccf632e37e5c2f4ca6e5b1.ffsupdating'
+2021-02-08 15:26:32|   8.9|  2.0|INFORM|Successfully closed POSTGIS database reader
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|Successfully closed POSTGIS database reader
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|Creating reader for format: PostGIS
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|Trying to find a DYNAMIC plugin for reader named `POSTGIS'
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|Opening POSTGIS reader for dataset 'MOLDURAS_EDGV_BAHIA_24S'
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|PostGIS client encoding: 'UTF8'
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|PostgreSQL 9.5.4, compiled by Visual C++ build 1800, 64-bit
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|2.2 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|POSTGIS reader: Building features into bulk mode features
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|Executing data query: 'declare "public_aux_moldura_a_crsr" cursor for select "id","mi","inom","escala","nomecarta","anoaquisicao","engrespaquisicao","opaquisicao","datainicioaquisicao","datafimaquisicao","engresprevisaoaquisicao","oprevisaoaquisicao","datainiciorevaquisicao","datafimrevaquisicao","engrespreambulacao","opreambulacao","datainicioreambulacao","datafimreambulacao","oprevisaoreambulacao","engrespvalidacaoedicao","opvalidacao","datainiciovalidacao","datafimvalidacao","opedicao1","datainicioedicao1","datafimedicao1","oprevedicao1","datainiciorevedicao1","datafimrevedicao1","opedicao2","datainicioedicao2","datafimedicao2", ST_AsEWKB("geom") as "geom" from "public"."aux_moldura_a"'
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|Reading POSTGIS table: 'public.aux_moldura_a'...
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|FME Configuration: Source coordinate system for reader POSTGIS_3[POSTGIS] set to `EPSG:31984' as read from input data
+2021-02-08 15:26:32|   8.9|  0.0|INFORM|Coordinate System `EPSG:31984' parameters: CS_NAME=`SIRGAS2000.UTM-24S' DESC_NM=`SIRGAS 2000 / UTM zone 24S' DT_NAME=`SIRGAS2000' EPSG_QD=`1' GROUP=`SAMER' MAP_SCL=`1' MAX_LNG=`-36' MIN_LAT=`-23' MIN_LNG=`-42' PARM1=`-39' PROJ=`TM' QUAD=`1' SCL_RED=`0.9996' SOURCE=`EPSG, V6.11.2, 31984 [EPSG]' UNIT=`Meter' X_OFF=`500000' Y_OFF=`10000000' ZERO_X=`0.001' ZERO_Y=`0.001'
+2021-02-08 15:26:32|   9.3|  0.4|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 112 -1  0  1a50301cbc6920e891f07d773a1fccaa27681e04.ffsupdating'
+2021-02-08 15:26:32|   9.3|  0.0|INFORM|FFS writer: Writing 6352 feature(s) to file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 112 -1  0  1a50301cbc6920e891f07d773a1fccaa27681e04.fts'
+2021-02-08 15:26:32|   9.5|  0.2|INFORM|Spatial Index: Adding 6352 features
+2021-02-08 15:26:32|   9.6|  0.0|INFORM|FFS writer: Writing 6352 feature(s) to file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Reprojector -1 118 fo 0 REPROJECTED  0  9c83626f9d41867283202d80860a1e337460fbe9_1.fts'
+2021-02-08 15:26:32|   9.8|  0.2|INFORM|Spatial Index: Adding 6352 features
+2021-02-08 15:26:33|  10.0|  0.3|INFORM|AttributeKeeper_3: Splitting bulk mode features into features
+2021-02-08 15:26:33|  10.4|  0.3|INFORM|Successfully closed POSTGIS database reader
+2021-02-08 15:26:33|  10.4|  0.0|INFORM|Successfully closed POSTGIS database reader
+2021-02-08 15:26:33|  10.4|  0.0|INFORM|MULTI_READER(MULTI_READER): Done reading 50689 features from 3 readers
+2021-02-08 15:26:33|  10.4|  0.0|INFORM|Emptying factory pipeline
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Router and Unexpected Input Remover (RoutingFactory): Tested 50689 input feature(s), wrote 50689 output feature(s): 50689 matched merge filters, 50689 were routed to output, 0 could not be routed.
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Unexpected Input Remover Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |public.aux_moldura_a(POSTGIS_3) Splitter (TeeFactory): Cloned 6352 input feature(s) into 6352 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |public.aux_moldura_a_POSTGIS_3 Feature Counter -1 121 (TeeFactory): Cloned 6352 input feature(s) into 6352 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |public.edicao(POSTGIS_1) Splitter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |public.edicao_POSTGIS_1 Feature Counter -1 13 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |public.aux_moldura_a(POSTGIS_2) Splitter (TeeFactory): Cloned 43712 input feature(s) into 43712 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |public.aux_moldura_a_POSTGIS_2 Feature Counter -1 117 (TeeFactory): Cloned 43712 input feature(s) into 43712 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Reprojector (TeeFactory): Cloned 50064 input feature(s) into 50064 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Reprojector_REPROJECTED Feature Counter -1 115 (TeeFactory): Cloned 50064 input feature(s) into 50064 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeKeeper_3 (TeeFactory): Cloned 50064 input feature(s) into 50064 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeKeeper_3_OUTPUT Feature Counter -1 116 (TeeFactory): Cloned 50064 input feature(s) into 50064 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_OUTPUT Feature Counter -1 37 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeKeeper (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeKeeper OUTPUT Splitter (TeeFactory): Cloned 625 input feature(s) into 1250 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeKeeper_OUTPUT_0_rpABwRdi1ws= Feature Counter -1 38 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeKeeper_OUTPUT_1_ZImEmLS5GM8= Feature Counter -1 77 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer_router (TestFactory): Tested 0 input feature(s) -- 0 feature(s) passed and 0 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer_outputter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer POINT Splitter (TeeFactory): Cloned 625 input feature(s) into 2500 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer_POINT_0_0DOa0gOlwtk= Feature Counter -1 15 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer_POINT_1_R+HxJLrnoHo= Feature Counter -1 18 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer_POINT_2_YVX+UsGSTsg= Feature Counter -1 20 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer_POINT_3_UVB4hfPWOiI= Feature Counter -1 53 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |CenterPointReplacer_UNTOUCHED Feature Counter -1 2147680262 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction Output Splitter (TeeFactory): Cloned 625 input feature(s) into 3125 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_Output_0_sH9l3UTsGrw= Feature Counter -1 54 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_Output_1_/QQSbUuR6ZI= Feature Counter -1 51 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_Output_2_VzwNptf57aI= Feature Counter -1 55 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_Output_3_Es4q/I3oBKE= Feature Counter -1 56 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_Output_4_YCzeM8FpS5s= Feature Counter -1 57 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SE_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SE_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SE_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SE_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SE_OFFSET Feature Counter -1 50 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SE_<REJECTED> Feature Counter -1 2147680300 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_10_OUTPUT Feature Counter -1 61 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |E_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |E_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |E_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |E_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |E_OFFSET Feature Counter -1 49 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |E_<REJECTED> Feature Counter -1 2147680299 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_9_OUTPUT Feature Counter -1 59 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NE_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NE_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NE_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NE_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NE_OFFSET Feature Counter -1 48 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NE_<REJECTED> Feature Counter -1 2147680298 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_8_OUTPUT Feature Counter -1 63 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |S_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |S_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |S_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |S_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |S_OFFSET Feature Counter -1 41 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |S_<REJECTED> Feature Counter -1 2147680287 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_7_OUTPUT Feature Counter -1 66 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |N_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |N_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |N_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |N_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |N_OFFSET Feature Counter -1 39 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |N_<REJECTED> Feature Counter -1 2147680285 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_5_OUTPUT Feature Counter -1 65 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SO_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SO_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SO_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SO_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SO_OFFSET Feature Counter -1 26 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |SO_<REJECTED> Feature Counter -1 2147680275 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_4_OUTPUT Feature Counter -1 70 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |O_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |O_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |O_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |O_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |O_OFFSET Feature Counter -1 24 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |O_<REJECTED> Feature Counter -1 2147680272 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_3_OUTPUT Feature Counter -1 68 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NO_OffsetterInput (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NO_Offsetter (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NO_Rejector (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NO_PointCloudOffsetter (TestFactory): Tested 625 input feature(s) -- 0 feature(s) passed and 625 feature(s) failed
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NO_OFFSET Feature Counter -1 22 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |NO_<REJECTED> Feature Counter -1 2147680267 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |AttributeCreator_2_OUTPUT Feature Counter -1 72 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_4 (TeeFactory): Cloned 1875 input feature(s) into 1875 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_4_Output Feature Counter -1 71 (TeeFactory): Cloned 1875 input feature(s) into 1875 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_3 (TeeFactory): Cloned 3125 input feature(s) into 3125 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_3_Output Feature Counter -1 67 (TeeFactory): Cloned 3125 input feature(s) into 3125 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_2 (TeeFactory): Cloned 5000 input feature(s) into 5000 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|STATS |Junction_2_Output Feature Counter -1 62 (TeeFactory): Cloned 5000 input feature(s) into 5000 output feature(s)
+2021-02-08 15:26:33|  10.4|  0.0|INFORM|Creating spatial index of 50064 area features
+2021-02-08 15:26:33|  10.4|  0.0|INFORM|0.99% done creating area index
+2021-02-08 15:26:33|  10.5|  0.1|INFORM|100% done creating area index
+2021-02-08 15:26:33|  10.5|  0.0|INFORM|Computing relationships between 50064 input areas and 5000 input points
+2021-02-08 15:26:33|  10.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 0 POINT  0  583ab01652cef57d9be6bc090f97daddf84e8213.ffsupdating'
+2021-02-08 15:26:33|  10.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 11 SE  0  c9c1fe2ef976e6f542d0fbac21fc80566f8252b1.ffsupdating'
+2021-02-08 15:26:33|  10.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_17 -1 96 fo 0 OUTPUT  0  6beb6c340096fedb5f262f00441353136fd82af3.ffsupdating'
+2021-02-08 15:26:33|  10.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 10 E  0  e16da4aae597ea2b24b615f1161c84935f68ec05.ffsupdating'
+2021-02-08 15:26:33|  10.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_16 -1 94 fo 0 OUTPUT  0  a2333b11bc57dff7e44dce79956e85e7cace1d4d.ffsupdating'
+2021-02-08 15:26:33|  10.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 9 NE  0  809a7b32f83a79546ece564104eb1eb174df85dd.ffsupdating'
+2021-02-08 15:26:33|  10.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_15 -1 92 fo 0 OUTPUT  0  2fb4c5e7a5fa7083c4b482f633ef74ec64d50e70.ffsupdating'
+2021-02-08 15:26:33|  10.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 8 S  0  6277caf7dcc8473ead2cee0b0ba27891efd7504c.ffsupdating'
+2021-02-08 15:26:33|  10.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_14 -1 90 fo 0 OUTPUT  0  67d3a4e334945d97feaebf233ed2cd4d206dea92.ffsupdating'
+2021-02-08 15:26:33|  10.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 7 N  0  a451fe182ab70a1414f5258911cf683e6b26af8f.ffsupdating'
+2021-02-08 15:26:33|  10.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_13 -1 88 fo 0 OUTPUT  0  4ac7d55faf3edb84af33235b7f501bc86e228a68.ffsupdating'
+2021-02-08 15:26:33|  10.6|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 6 SO  0  4c0bc746528c8d66eef12334e6d19f1a775d8b9d.ffsupdating'
+2021-02-08 15:26:33|  10.7|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_12 -1 86 fo 0 OUTPUT  0  e66d6ce47f287bb3b7319de427dc8e96cd3affca.ffsupdating'
+2021-02-08 15:26:33|  10.7|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 5 O  0  a08d1a29647422212aa96cd2c26072914a7ef6d6.ffsupdating'
+2021-02-08 15:26:33|  10.7|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_11 -1 84 fo 0 OUTPUT  0  845cda8066c2590427cb5abcd5f6f655be78ad4d.ffsupdating'
+2021-02-08 15:26:33|  10.7|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 4 NO  0  48e3ae2ca53bb7c5a4c00117d7f1c8eb09b5099a.ffsupdating'
+2021-02-08 15:26:33|  10.7|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_6 -1 78 fo 0 OUTPUT  0  55b3c3b1bd7e12a532c1ef2ab9d73d3a5a4334ca.ffsupdating'
+2021-02-08 15:26:34|  11.1|  0.4|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 1 AREA  0  91f796104a23bbd3a9bb5e76a4d5705ab4efa71c.ffsupdating'
+2021-02-08 15:26:35|  11.9|  0.8|STATS |Input Summary:  50064 area(s), 5000 point(s), and 0 line(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |Output Summary: 50064 area(s), 5000 point(s), and 0 line(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |PointOnAreaOverlayer_POINT Feature Counter -1 83 (TeeFactory): Cloned 5000 input feature(s) into 5000 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |PointOnAreaOverlayer_AREA Feature Counter -1 2147680314 (TeeFactory): Cloned 50064 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |PointOnAreaOverlayer_<REJECTED> Feature Counter -1 2147745850 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter (TeeFactory): Cloned 5000 input feature(s) into 5000 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_<lt>EMPTY<gt> Feature Counter -1 2147614800 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_<lt>MISSING<gt> Feature Counter -1 2147680336 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_<lt>NULL<gt> Feature Counter -1 2147745872 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_<lt>UNFILTERED<gt> Feature Counter -1 2147811408 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_NO Feature Counter -1 79 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_O Feature Counter -1 85 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_SO Feature Counter -1 87 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_N Feature Counter -1 89 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_S Feature Counter -1 91 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_NE Feature Counter -1 93 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_E Feature Counter -1 95 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeFilter_SE Feature Counter -1 97 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_17_OUTPUT Feature Counter -1 104 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_16_OUTPUT Feature Counter -1 103 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_15_OUTPUT Feature Counter -1 102 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_14_OUTPUT Feature Counter -1 101 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_13_OUTPUT Feature Counter -1 100 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_12_OUTPUT Feature Counter -1 99 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_11_OUTPUT Feature Counter -1 98 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |AttributeCreator_6_OUTPUT Feature Counter -1 81 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  11.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Aggregator -1 75 fo 0 AGGREGATE  0  c512e97a2f641f95997fcfce4847417961d6dd4a.ffsupdating'
+2021-02-08 15:26:35|  11.9|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  62aa8ce73a378e5df365a63c309de737fc4d9426.ffsupdating'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|Creating writer for format: PostGIS
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `POSTGIS'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|FME Configuration: Destination coordinate system set to `EPSG:4674'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|Coordinate System `EPSG:4674' parameters: CS_NAME=`SRG-SA/2000.LL' DESC_NM=`SIRGAS 2000' DT_NAME=`SIRGAS2000' EPSG_QD=`-1' GROUP=`LL' MAP_SCL=`1' MAX_LAT=`32.74' MAX_LNG=`-34' MIN_LAT=`-56.15' MIN_LNG=`-118.5' PROJ=`LL' QUAD=`1' SCL_RED=`1' SOURCE=`EPSG, V6.11.2, 4674 [EPSG. See 3D CRS for original informati]' UNIT=`Degree' ZERO_X=`1e-12' ZERO_Y=`1e-12'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|Writer `POSTGIS_4' of type `POSTGIS' using group definition keyword `POSTGIS_4_DEF'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|FME API version of module 'POSTGIS' matches current internal version (3.8 20200115)
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|Opening POSTGIS writer for dataset 'Controle_PE'...
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|PostGIS client encoding: 'UTF8'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|PostgreSQL 9.5.4, compiled by Visual C++ build 1800, 64-bit
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|2.2 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
+2021-02-08 15:26:35|  11.9|  0.0|WARN  |POSTGIS Writer: Bulk Insert is set to Yes, but a conflicting Feature Operation has been detected. Feature type 'public.edicao' has a Feature Operation of 'Update'. Bulk Insert is now being set to No, which can cause insert operations to be much slower
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|Testing for the existence of table 'public.edicao'...
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|Using existing table 'public.edicao'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|POSTGIS Writer: Creating 'quoted WKB' geometry processor for feature type 'public.edicao'
+2021-02-08 15:26:35|  11.9|  0.0|INFORM|POSTGIS Writer: Creating 'Insert' feature type processor for feature type 'public.edicao'
+2021-02-08 15:26:35|  12.0|  0.1|INFORM|Aggregator (AggregateFactory): Group 500 / 625: Finished processing group 500 / 625
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Aggregator (AggregateFactory): Group 625 / 625: Finished processing group 625 / 625
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Aggregator (AggregateFactory): Combined 0 input feature(s) into 625 output feature(s), including 0 singleton(s)
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Aggregator_AGGREGATE Feature Counter -1 106 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  12.0|  0.0|STATS |AttributeKeeper_2 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  12.0|  0.0|STATS |AttributeKeeper_2 OUTPUT Splitter (TeeFactory): Cloned 625 input feature(s) into 1250 output feature(s)
+2021-02-08 15:26:35|  12.0|  0.0|STATS |AttributeKeeper_2_OUTPUT_0_muAz4GqwTdk= Feature Counter -1 107 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  12.0|  0.0|STATS |AttributeKeeper_2_OUTPUT_1_eKOY+pR0mH0= Feature Counter -1 109 (TeeFactory): Cloned 625 input feature(s) into 625 output feature(s)
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper -1 36 fo 0 OUTPUT  0  33d59ce8e7093f4ce1034d3443e7797945379fcd.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 3125 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_3 -1 64 fo 0 Output  0  727d4644b05e752c02be612589e784e45ee98e45.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_3 -1 64 fo 0 Output  0  727d4644b05e752c02be612589e784e45ee98e45.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_3 -1 64 fo 0 Output  0  727d4644b05e752c02be612589e784e45ee98e45.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 2 -1  0  6466172ce4a217c1484fb95261e5d5a9bb503ed7.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 2 -1  0  6466172ce4a217c1484fb95261e5d5a9bb503ed7.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 2 -1  0  6466172ce4a217c1484fb95261e5d5a9bb503ed7.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator -1 10 fo 0 OUTPUT  0  c746be859d59ce11bd4a1793cf6cf98ef4ae2f84.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator -1 10 fo 0 OUTPUT  0  c746be859d59ce11bd4a1793cf6cf98ef4ae2f84.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator -1 10 fo 0 OUTPUT  0  c746be859d59ce11bd4a1793cf6cf98ef4ae2f84.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_N -1 29 fo 0 OFFSET  0  c9993edac3033edb66a90308576f56f4bdac1ad2.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_N -1 29 fo 0 OFFSET  0  c9993edac3033edb66a90308576f56f4bdac1ad2.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_N -1 29 fo 0 OFFSET  0  c9993edac3033edb66a90308576f56f4bdac1ad2.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 1875 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_4 -1 69 fo 0 Output  0  afdb37d02cbfe3e1db0aad5a63fee994a6bab86b.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_4 -1 69 fo 0 Output  0  afdb37d02cbfe3e1db0aad5a63fee994a6bab86b.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_4 -1 69 fo 0 Output  0  afdb37d02cbfe3e1db0aad5a63fee994a6bab86b.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 9 NE  0  809a7b32f83a79546ece564104eb1eb174df85dd.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 9 NE  0  809a7b32f83a79546ece564104eb1eb174df85dd.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 9 NE  0  809a7b32f83a79546ece564104eb1eb174df85dd.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_CenterPointReplacer -1 6 fo 0 POINT  0  a36ef5d75337e6f199d6cc836bf4c9bf32d68cf9.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_CenterPointReplacer -1 6 fo 0 POINT  0  a36ef5d75337e6f199d6cc836bf4c9bf32d68cf9.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_CenterPointReplacer -1 6 fo 0 POINT  0  a36ef5d75337e6f199d6cc836bf4c9bf32d68cf9.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NO -1 11 fo 0 OFFSET  0  e5b58e5fcf8608498e5e34b2f5d1a57c98b619d6.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NO -1 11 fo 0 OFFSET  0  e5b58e5fcf8608498e5e34b2f5d1a57c98b619d6.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NO -1 11 fo 0 OFFSET  0  e5b58e5fcf8608498e5e34b2f5d1a57c98b619d6.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_2 -1 21 fo 0 OUTPUT  0  15615f8931fde5656787b88b5b1e7f3fa1092ef2.ffsupdating'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_2 -1 21 fo 0 OUTPUT  0  15615f8931fde5656787b88b5b1e7f3fa1092ef2.fsi'
+2021-02-08 15:26:35|  12.0|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_2 -1 21 fo 0 OUTPUT  0  15615f8931fde5656787b88b5b1e7f3fa1092ef2.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 5000 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_2 -1 60 fo 0 Output  0  100b89ecbc7879012877e23a9673707634932d0c.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_2 -1 60 fo 0 Output  0  100b89ecbc7879012877e23a9673707634932d0c.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction_2 -1 60 fo 0 Output  0  100b89ecbc7879012877e23a9673707634932d0c.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  62aa8ce73a378e5df365a63c309de737fc4d9426.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  62aa8ce73a378e5df365a63c309de737fc4d9426.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_2 -1 105 fo 0 OUTPUT  0  62aa8ce73a378e5df365a63c309de737fc4d9426.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_16 -1 94 fo 0 OUTPUT  0  a2333b11bc57dff7e44dce79956e85e7cace1d4d.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_16 -1 94 fo 0 OUTPUT  0  a2333b11bc57dff7e44dce79956e85e7cace1d4d.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_16 -1 94 fo 0 OUTPUT  0  a2333b11bc57dff7e44dce79956e85e7cace1d4d.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_O -1 16 fo 0 OFFSET  0  f00f8f11ca17c5384d14234fb96d258af93a5636.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_O -1 16 fo 0 OFFSET  0  f00f8f11ca17c5384d14234fb96d258af93a5636.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_O -1 16 fo 0 OFFSET  0  f00f8f11ca17c5384d14234fb96d258af93a5636.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_3 -1 23 fo 0 OUTPUT  0  47b77a6b2cf4ae5ac79a0af97dbf7b218433a576.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_3 -1 23 fo 0 OUTPUT  0  47b77a6b2cf4ae5ac79a0af97dbf7b218433a576.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_3 -1 23 fo 0 OUTPUT  0  47b77a6b2cf4ae5ac79a0af97dbf7b218433a576.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_15 -1 92 fo 0 OUTPUT  0  2fb4c5e7a5fa7083c4b482f633ef74ec64d50e70.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_15 -1 92 fo 0 OUTPUT  0  2fb4c5e7a5fa7083c4b482f633ef74ec64d50e70.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_15 -1 92 fo 0 OUTPUT  0  2fb4c5e7a5fa7083c4b482f633ef74ec64d50e70.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SO -1 19 fo 0 OFFSET  0  fc0957fb0cef148d3b8e323e981abe92b7aac507.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SO -1 19 fo 0 OFFSET  0  fc0957fb0cef148d3b8e323e981abe92b7aac507.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SO -1 19 fo 0 OFFSET  0  fc0957fb0cef148d3b8e323e981abe92b7aac507.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_4 -1 25 fo 0 OUTPUT  0  991239eb56d66a92df923530559385ccfa668a1c.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_4 -1 25 fo 0 OUTPUT  0  991239eb56d66a92df923530559385ccfa668a1c.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_4 -1 25 fo 0 OUTPUT  0  991239eb56d66a92df923530559385ccfa668a1c.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction -1 52 fo 0 Output  0  118f04395dbe98082ee41afddcd059c2dbdf888a.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction -1 52 fo 0 Output  0  118f04395dbe98082ee41afddcd059c2dbdf888a.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Junction -1 52 fo 0 Output  0  118f04395dbe98082ee41afddcd059c2dbdf888a.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 10 E  0  e16da4aae597ea2b24b615f1161c84935f68ec05.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 10 E  0  e16da4aae597ea2b24b615f1161c84935f68ec05.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 10 E  0  e16da4aae597ea2b24b615f1161c84935f68ec05.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 11 SE  0  c9c1fe2ef976e6f542d0fbac21fc80566f8252b1.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 11 SE  0  c9c1fe2ef976e6f542d0fbac21fc80566f8252b1.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 11 SE  0  c9c1fe2ef976e6f542d0fbac21fc80566f8252b1.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_5 -1 32 fo 0 OUTPUT  0  c074402b4d6f5c9e127fd0dfc0dedf32aaae9074.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_5 -1 32 fo 0 OUTPUT  0  c074402b4d6f5c9e127fd0dfc0dedf32aaae9074.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_5 -1 32 fo 0 OUTPUT  0  c074402b4d6f5c9e127fd0dfc0dedf32aaae9074.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_S -1 31 fo 0 OFFSET  0  b2519abef25c1e0aaef607bf3f6d26a4c2129e8e.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_S -1 31 fo 0 OFFSET  0  b2519abef25c1e0aaef607bf3f6d26a4c2129e8e.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_S -1 31 fo 0 OFFSET  0  b2519abef25c1e0aaef607bf3f6d26a4c2129e8e.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_7 -1 34 fo 0 OUTPUT  0  bf2bc5934d2dc1864ec3180b643a60024d6f9209.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_7 -1 34 fo 0 OUTPUT  0  bf2bc5934d2dc1864ec3180b643a60024d6f9209.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_7 -1 34 fo 0 OUTPUT  0  bf2bc5934d2dc1864ec3180b643a60024d6f9209.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Aggregator -1 75 fo 0 AGGREGATE  0  c512e97a2f641f95997fcfce4847417961d6dd4a.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Aggregator -1 75 fo 0 AGGREGATE  0  c512e97a2f641f95997fcfce4847417961d6dd4a.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Aggregator -1 75 fo 0 AGGREGATE  0  c512e97a2f641f95997fcfce4847417961d6dd4a.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NE -1 42 fo 0 OFFSET  0  7e7e881c5510c9c012b6cac24ccbe03214d9340a.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NE -1 42 fo 0 OFFSET  0  7e7e881c5510c9c012b6cac24ccbe03214d9340a.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_NE -1 42 fo 0 OFFSET  0  7e7e881c5510c9c012b6cac24ccbe03214d9340a.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_8 -1 45 fo 0 OUTPUT  0  80d2aca78db8ed07c128035dda880f336ef7749c.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_8 -1 45 fo 0 OUTPUT  0  80d2aca78db8ed07c128035dda880f336ef7749c.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_8 -1 45 fo 0 OUTPUT  0  80d2aca78db8ed07c128035dda880f336ef7749c.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_E -1 43 fo 0 OFFSET  0  b2b296b0510adf86c2873d9497b7b2f7d1c7941e.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_E -1 43 fo 0 OFFSET  0  b2b296b0510adf86c2873d9497b7b2f7d1c7941e.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_E -1 43 fo 0 OFFSET  0  b2b296b0510adf86c2873d9497b7b2f7d1c7941e.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_9 -1 46 fo 0 OUTPUT  0  7cc90a47bc43bbb50edd0e20eab5bc5c92589468.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_9 -1 46 fo 0 OUTPUT  0  7cc90a47bc43bbb50edd0e20eab5bc5c92589468.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_9 -1 46 fo 0 OUTPUT  0  7cc90a47bc43bbb50edd0e20eab5bc5c92589468.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 1250 feature(s) to FME feature store file `C:\Windows\TEMP\wb-inspectors-BGebUz\inspector.ffs'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-inspectors-BGebUz\inspector.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-inspectors-BGebUz\inspector.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SE -1 44 fo 0 OFFSET  0  8e44e9a842077fb4112bdbfbbaf108ad5a3e5cfc.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SE -1 44 fo 0 OFFSET  0  8e44e9a842077fb4112bdbfbbaf108ad5a3e5cfc.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_SE -1 44 fo 0 OFFSET  0  8e44e9a842077fb4112bdbfbbaf108ad5a3e5cfc.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_10 -1 47 fo 0 OUTPUT  0  52c54b60bb19f0cda198bce7f62d4c9e88c6a5b6.ffsupdating'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_10 -1 47 fo 0 OUTPUT  0  52c54b60bb19f0cda198bce7f62d4c9e88c6a5b6.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_10 -1 47 fo 0 OUTPUT  0  52c54b60bb19f0cda198bce7f62d4c9e88c6a5b6.fsi'
+2021-02-08 15:26:35|  12.1|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 110 -1  0  494c9eb9e0cf41d1af0089643ad1edf0aebd3484.ffsupdating'
+2021-02-08 15:26:36|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 110 -1  0  494c9eb9e0cf41d1af0089643ad1edf0aebd3484.fsi'
+2021-02-08 15:26:36|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 110 -1  0  494c9eb9e0cf41d1af0089643ad1edf0aebd3484.fsi'
+2021-02-08 15:26:36|  12.1|  0.0|STATS |Stored 2 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Reprojector -1 118 fo 0 REPROJECTED  0  9c83626f9d41867283202d80860a1e337460fbe9.ffsupdating'
+2021-02-08 15:26:36|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Reprojector -1 118 fo 0 REPROJECTED  0  9c83626f9d41867283202d80860a1e337460fbe9.fsi'
+2021-02-08 15:26:36|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_Reprojector -1 118 fo 0 REPROJECTED  0  9c83626f9d41867283202d80860a1e337460fbe9.fsi'
+2021-02-08 15:26:36|  12.1|  0.0|STATS |Stored 50064 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_3 -1 114 fo 0 OUTPUT  0  bc983bc13b042e4089ccf632e37e5c2f4ca6e5b1.ffsupdating'
+2021-02-08 15:26:36|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_3 -1 114 fo 0 OUTPUT  0  bc983bc13b042e4089ccf632e37e5c2f4ca6e5b1.fsi'
+2021-02-08 15:26:36|  12.1|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeKeeper_3 -1 114 fo 0 OUTPUT  0  bc983bc13b042e4089ccf632e37e5c2f4ca6e5b1.fsi'
+2021-02-08 15:26:36|  12.1|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 112 -1  0  1a50301cbc6920e891f07d773a1fccaa27681e04.ffsupdating'
+2021-02-08 15:26:36|  12.1|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 112 -1  0  1a50301cbc6920e891f07d773a1fccaa27681e04.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main__All_ -1 112 -1  0  1a50301cbc6920e891f07d773a1fccaa27681e04.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_17 -1 96 fo 0 OUTPUT  0  6beb6c340096fedb5f262f00441353136fd82af3.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_17 -1 96 fo 0 OUTPUT  0  6beb6c340096fedb5f262f00441353136fd82af3.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_17 -1 96 fo 0 OUTPUT  0  6beb6c340096fedb5f262f00441353136fd82af3.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 5000 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 0 POINT  0  583ab01652cef57d9be6bc090f97daddf84e8213.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 0 POINT  0  583ab01652cef57d9be6bc090f97daddf84e8213.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 0 POINT  0  583ab01652cef57d9be6bc090f97daddf84e8213.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 8 S  0  6277caf7dcc8473ead2cee0b0ba27891efd7504c.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 8 S  0  6277caf7dcc8473ead2cee0b0ba27891efd7504c.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 8 S  0  6277caf7dcc8473ead2cee0b0ba27891efd7504c.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_14 -1 90 fo 0 OUTPUT  0  67d3a4e334945d97feaebf233ed2cd4d206dea92.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_14 -1 90 fo 0 OUTPUT  0  67d3a4e334945d97feaebf233ed2cd4d206dea92.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_14 -1 90 fo 0 OUTPUT  0  67d3a4e334945d97feaebf233ed2cd4d206dea92.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 7 N  0  a451fe182ab70a1414f5258911cf683e6b26af8f.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 7 N  0  a451fe182ab70a1414f5258911cf683e6b26af8f.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 7 N  0  a451fe182ab70a1414f5258911cf683e6b26af8f.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_13 -1 88 fo 0 OUTPUT  0  4ac7d55faf3edb84af33235b7f501bc86e228a68.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_13 -1 88 fo 0 OUTPUT  0  4ac7d55faf3edb84af33235b7f501bc86e228a68.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_13 -1 88 fo 0 OUTPUT  0  4ac7d55faf3edb84af33235b7f501bc86e228a68.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 6 SO  0  4c0bc746528c8d66eef12334e6d19f1a775d8b9d.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 6 SO  0  4c0bc746528c8d66eef12334e6d19f1a775d8b9d.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 6 SO  0  4c0bc746528c8d66eef12334e6d19f1a775d8b9d.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_12 -1 86 fo 0 OUTPUT  0  e66d6ce47f287bb3b7319de427dc8e96cd3affca.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_12 -1 86 fo 0 OUTPUT  0  e66d6ce47f287bb3b7319de427dc8e96cd3affca.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_12 -1 86 fo 0 OUTPUT  0  e66d6ce47f287bb3b7319de427dc8e96cd3affca.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 5 O  0  a08d1a29647422212aa96cd2c26072914a7ef6d6.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 5 O  0  a08d1a29647422212aa96cd2c26072914a7ef6d6.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 5 O  0  a08d1a29647422212aa96cd2c26072914a7ef6d6.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_11 -1 84 fo 0 OUTPUT  0  845cda8066c2590427cb5abcd5f6f655be78ad4d.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_11 -1 84 fo 0 OUTPUT  0  845cda8066c2590427cb5abcd5f6f655be78ad4d.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_11 -1 84 fo 0 OUTPUT  0  845cda8066c2590427cb5abcd5f6f655be78ad4d.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 4 NO  0  48e3ae2ca53bb7c5a4c00117d7f1c8eb09b5099a.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 4 NO  0  48e3ae2ca53bb7c5a4c00117d7f1c8eb09b5099a.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeFilter -1 80 fo 4 NO  0  48e3ae2ca53bb7c5a4c00117d7f1c8eb09b5099a.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 625 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_6 -1 78 fo 0 OUTPUT  0  55b3c3b1bd7e12a532c1ef2ab9d73d3a5a4334ca.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_6 -1 78 fo 0 OUTPUT  0  55b3c3b1bd7e12a532c1ef2ab9d73d3a5a4334ca.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_AttributeCreator_6 -1 78 fo 0 OUTPUT  0  55b3c3b1bd7e12a532c1ef2ab9d73d3a5a4334ca.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Stored 50064 feature(s) to FME feature store file `C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 1 AREA  0  91f796104a23bbd3a9bb5e76a4d5705ab4efa71c.ffsupdating'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 1 AREA  0  91f796104a23bbd3a9bb5e76a4d5705ab4efa71c.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Finished saving spatial index into file 'C:\Windows\TEMP\wb-cache-MI_ligacao_FME-2020.0_V1.0.0-xSbhBs\Main_PointOnAreaOverlayer -1 58 fo 1 AREA  0  91f796104a23bbd3a9bb5e76a4d5705ab4efa71c.fsi'
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Destination Feature Type Routing Correlator (RoutingFactory): Tested 625 input feature(s), wrote 625 output feature(s): 0 matched merge filters, 625 were routed to output, 0 could not be routed.
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Final Output Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:36|  12.2|  0.0|STATS |VisualizerProcessor (CreationFactory): Created 1 features
+2021-02-08 15:26:36|  12.2|  0.0|STATS |VisualizerCleaner (TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Successfully closed POSTGIS database writer
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Feature output statistics for `POSTGIS' writer using keyword `POSTGIS_4':
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |                               Features Written
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |public.edicao                                                              625
+2021-02-08 15:26:36|  12.2|  0.0|STATS |==============================================================================
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Total Features Written                                                     625
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |                            Features Read Summary
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |public.aux_moldura_a                                                     50064
+2021-02-08 15:26:36|  12.2|  0.0|STATS |public.edicao                                                              625
+2021-02-08 15:26:36|  12.2|  0.0|STATS |==============================================================================
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Total Features Read                                                      50689
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |                           Features Written Summary
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|STATS |public.edicao                                                              625
+2021-02-08 15:26:36|  12.2|  0.0|STATS |==============================================================================
+2021-02-08 15:26:36|  12.2|  0.0|STATS |Total Features Written                                                     625
+2021-02-08 15:26:36|  12.2|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-02-08 15:26:36|  12.2|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-02-08 15:26:36|  12.2|  0.0|WARN  |-~                                                                             ~-
+2021-02-08 15:26:36|  12.2|  0.0|WARN  |-~    Feature caches have been recorded at every stage of the translation.     ~-
+2021-02-08 15:26:36|  12.2|  0.0|WARN  |-~                      To inspect the recorded features,                      ~-
+2021-02-08 15:26:36|  12.2|  0.0|WARN  |-~              click the feature cache icons next to the ports.               ~-
+2021-02-08 15:26:36|  12.2|  0.0|WARN  |-~                                                                             ~-
+2021-02-08 15:26:36|  12.2|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|Translation was SUCCESSFUL with 8 warning(s) (625 feature(s) output)
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|FME Session Duration: 13.7 seconds. (CPU: 10.4s user, 1.4s system)
+2021-02-08 15:26:36|  12.2|  0.0|INFORM|END - ProcessID: 13760, peak process memory usage: 360140 kB, current process memory usage: 114172 kB

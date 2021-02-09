@@ -90,7 +90,6 @@ a:visited {
     color:#03F;
 }
 
-
 .box-confirmacao-fundo {
     z-index: 100;
     position: absolute;
@@ -918,14 +917,15 @@ ul li span {
 #todos-mi-legenda-status { /* MUDANÇA MANUAL OP: Inserir afastamento Legenda Linhas onde ha a mudança de fuso no layout de cartas*/
     z-index: 7;
     position: absolute;
-    top: calc((var(--largura-mi-25k) + 2pt) * 23);
+    top: calc((var(--largura-mi-25k) + 2pt) * 25);
     left: 0pt;
     font-size: 18pt;
     border: none;
     padding: 0pt;
-    margin: 0;
+    margin: 0pt;
     border: none;
     width: 99%;
+    border: none;
 }
 
 #todos-mi-legenda-status p {
@@ -972,8 +972,6 @@ ul li span {
     padding-bottom: 10pt;
 }
 
-
-
 [descricao] {
     position: relative;
     font-weight: bold;
@@ -996,7 +994,6 @@ color: White;
 [descricao]:hover:after {
 display: block;
 }
-
 
 .blocos {
     width: calc(var(--largura-conteudo) - (2 * var(--padding)));
