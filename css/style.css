@@ -30,7 +30,7 @@
     --altura-titulo-historico: 50pt;
     --altura-titulo-trabalho: 70pt;
     --largura-usuario-trabalho: calc(var(--largura-usuario-historico) - var(--largura-menu-lateral) - var(--padding));
-    --largura-historico-usuarios-cartas: calc((var(--largura-usuario-historico) - var(--padding)) / 2);
+    --largura-historico-usuarios-cartas: calc((var(--largura-usuario-historico) - (2 * var(--padding))) / 3);
     --largura-botao: calc((var(--largura-usuario-trabalho) / 2) - var(--padding));
     --altura-botao: 60pt;
     --largura-avatar-mini: calc((var(--largura-conteudo) - (7 * var(--padding)) - var(--largura-scroll)) / 6);
@@ -692,18 +692,22 @@ ul li span {
     height: var(--altura-titulo-trabalho);
 }
 
-.usuario-historico-titulo-editadas, .usuario-historico-titulo-revisadas {
+.usuario-historico-titulo-adequadas, .usuario-historico-titulo-editadas, .usuario-historico-titulo-revisadas {
     position: absolute;
     top: calc(var(--altura-cabecalho) + var(--altura-titulo-historico) + var(--padding));
-    right: var(--padding);
+    right: calc(var(--padding) / 2);
     width: var(--largura-historico-usuarios-cartas);
     height: calc(var(--altura-titulo-historico) * 0.8);
-    font-size: 20pt;
+    font-size: 18pt;
     text-align: center;
 }
 
 .usuario-historico-titulo-editadas {
-    right: calc(((var(--largura-usuario-historico) - var(--padding)) / 2) + (2 * var(--padding)));
+    right: calc(var(--largura-historico-usuarios-cartas) + (var(--padding) * 2));
+}
+
+.usuario-historico-titulo-adequadas {
+    right: calc((var(--largura-historico-usuarios-cartas) * 2 ) + (var(--padding) * 3));
 }
 
 .usuario-trabalho-informacoes {
@@ -732,7 +736,7 @@ ul li span {
     width: 100%;
 }
 
-#botao_finalizar_iniciar_edicao, #botao_finalizar_iniciar_revisao {
+#botao_finalizar_iniciar_adequacao, #botao_finalizar_iniciar_edicao, #botao_finalizar_iniciar_revisao {
     display: none;
 }
 #botao_finalizar_iniciar_revisao {
@@ -746,6 +750,14 @@ ul li span {
 #botao_finalizar_iniciar_edicao:hover{
     border: 1pt solid #06F;
     background-color: #0CF;
+}
+#botao_finalizar_iniciar_adequacao {
+    border: 1pt solid #D61;
+    background-color: #DA2;
+}
+#botao_finalizar_iniciar_adequacao:hover{
+    border: 1pt solid #D33;
+    background-color: #D66;
 }
 
 .usuario, .usuario-table {
