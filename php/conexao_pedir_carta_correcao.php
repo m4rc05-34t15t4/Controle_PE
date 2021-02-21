@@ -4,30 +4,49 @@
 
     include_once $link."php/conexao.php";
 
-    if( (!isset($_GET["usuario"]) OR !isset($_GET["mi"]) OR !isset($_GET["tipo"]) ) && ( (intval($_GET["tipo"]) == 1) OR (intval($_GET["tipo"]) == 2) ) ){
+    if( (!isset($_GET["usuario"]) OR !isset($_GET["tipo"]) ) && ( intval($_GET["tipo"]) == 1 OR intval($_GET["tipo"]) == 2 ) ){
         echo 0; //ERRO SERÁ TRATADO NO JS, ERRO: FALTA DE PARÂMETRO
     }
     else{
         //DEFINE AS VARIAVEIS
         date_default_timezone_set('America/Recife');
-        $data_inicio_correcao = date('Y') . "-" . date('m') . "-" . date('d') . " " . date("H") . ":" . date("i") . ":" . date("s");
-        $editor = strval($_GET["usuario"]);
-        $mi = strval($_GET["mi"]);
+        $data_inicio = date('Y') . "-" . date('m') . "-" . date('d') . " " . date("H") . ":" . date("i") . ":" . date("s");
+        $usuario = strval($_GET["usuario"]);
         $tipo = intval($_GET["tipo"]);
-        $status_origem = "6";
-        $status_destino = "60";
+        $status_origem = "'3.8'";
+        $status_destino = "'3.16'";
+        $funcao = "corretor1";
+        $inicio = "iniciocor1";
         if($tipo == 2){
-            $status_origem = "8";
-            $status_destino = "80";
+            $status_origem = "'3.128'";
+            $status_destino = "'3.256'";
+            $funcao = "corretor2";
+            $inicio = "iniciocor2";
         }
 
         //QUERY para Pedir carta 
         $sql = "
-            --Faz o pedido da carta para correção<br>
-            UPDATE public.cartas SET status = '$status_destino', iniciocorrecao$tipo = '$data_inicio_correcao' 
-                WHERE mi = '$mi' AND editor = '$editor' AND status = '$status_origem' AND (iniciocorrecao$tipo isnull OR length(iniciocorrecao$tipo) < 1)
+            UPDATE public.cartas SET status = $status_destino, $funcao = $usuario, $inicio = '$data_inicio' WHERE id =  
+                CASE
+                    WHEN 
+                        --retorna se há cartas reservadas<br>
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND ($funcao = '$usuario' OR editor = '$usuario') AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1) > 0
+                    THEN
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND ($funcao = '$usuario' OR editor = '$usuario') AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1)
+                                       
+                    WHEN
+                        --retorna se há cartas disponiveis<br> 
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1) > 0 
+                    THEN 
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1)
+                    
+                    ELSE 
+                        --Retorna id carta inválido para nada ser atualizado e retornar vazio<br>
+                        -1
+                END
             --Faz o retorno da linha atualizada pela query<br>
-            RETURNING id, editor;";
+            RETURNING id, $funcao;
+        ";
         
         $query = pg_query($conexao,$sql);
         if($query) { 

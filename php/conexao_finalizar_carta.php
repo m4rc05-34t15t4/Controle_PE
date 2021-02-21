@@ -10,7 +10,7 @@
     elseif( !strpos($_GET["mi"], "-") > 0){
         echo 1; //ERRO SERÁ TRATADO NO JS, ERRO: mi com dado errado
     }
-    elseif(($_GET["tipo"] != "edicao") AND ($_GET["tipo"] != "1rev") AND ($_GET["tipo"] != "correcao1") AND ($_GET["tipo"] != "2rev")  AND ($_GET["tipo"] != "correcao2")){
+    elseif(($_GET["tipo"] != "edicao") AND ($_GET["tipo"] != "1rev") AND ($_GET["tipo"] != "correcao1") AND ($_GET["tipo"] != "2rev")  AND ($_GET["tipo"] != "correcao2") AND $_GET["tipo"] != "AdLoc" AND $_GET["tipo"] != "AdTra" AND $_GET["tipo"] != "AdHid" ){
         echo 3; //ERRO SERÁ TRATADO NO JS, ERRO: campo tipo especificado errado.
     }
     else{
@@ -26,30 +26,51 @@
         $termino = "termino" . $tipo;
 
         switch($tipo){
+            case "AdLoc":
+                $status = "CONCAT('2.',(cast(SPLIT_PART(status, '.', 2) as integer) + 2))";
+                $funcao = "\"".$tipo."\"";
+                $termino = "\"termino".$tipo."\"";
+                break;
+            case "AdTra":
+                $status = "CONCAT('2.',(cast(SPLIT_PART(status, '.', 2) as integer) + 8))";
+                $funcao = "\"".$tipo."\"";
+                $termino = "\"termino".$tipo."\"";
+                break;
+            case "AdHid":
+                $status = "CONCAT('2.',(cast(SPLIT_PART(status, '.', 2) as integer) + 32))";
+                $funcao = "\"".$tipo."\"";
+                $termino = "\"termino".$tipo."\"";
+                break;
+            case "CQ1":
+                $status = "'3'";
+                $funcao = $tipo;
+                break;
             case "edicao":
-                $status = "4";
+                $status = "'3.2'";
                 $funcao = "editor";
                 break;
             case "1rev":
-                $status = "61";//SERIA 6, mas foi alterado para não haver 1ª correção
+                $status = "'3.8'";
                 $funcao = "revisor1";
                 break;
             case "correcao1":
-                $status = "61";
-                $funcao = "editor";
+                $status = "'3.32'";
+                $funcao = "corretor1";
+                $termino = "terminocor1";
                 break;
             case "2rev":
-                $status = "81";//SERIA 8, mas foi alterado para não haver 1ª correção
+                $status = "'3.128'";
                 $funcao = "revisor2";
                 break;
             case "correcao2":
-                $status = "81";
-                $funcao = "editor";
+                $status = "'3.512'";
+                $funcao = "corretor2";
+                $termino = "terminocor2";
                 break;  
         }
 
         //Faz a SQL na tabela cartas - finaliozar cartas edição
-        $sql = "UPDATE public.cartas SET status = '$status', " . $termino . " = '$data_final' WHERE mi = '$mi' AND " . $funcao . " = '$usuario';";
+        $sql = "UPDATE public.cartas SET status = $status, " . $termino . " = '$data_final' WHERE mi = '$mi' AND " . $funcao . " = '$usuario';";
         $query = pg_query($conexao,$sql);
         if($query) {
             //codigo de sucesso
