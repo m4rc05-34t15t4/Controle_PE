@@ -70,7 +70,7 @@ $(document).ready(function(){
                     Finalizar_carta("AdHid");
                     break;
                 case "Iniciar "+CQ1:
-                    Pedir_carta("php/conexao_pedir_carta_controle_qualidade.php", $dificuldade_ultima_carta_revisada, null, "CQ1");
+                    Pedir_carta("php/conexao_pedir_carta_controle_qualidade.php", null, null, "CQ1");
                     break;
                 case "Finalizar "+CQ1:
                     Finalizar_carta("CQ1");
@@ -88,7 +88,7 @@ $(document).ready(function(){
                     Finalizar_carta("1rev");
                     break;
                 case "Iniciar "+CORR1:
-                    Pedir_carta("php/conexao_pedir_carta_correcao.php", null, null, "1", $lista_cartas_reservadas_correcao1[0]["mi"]);
+                    Pedir_carta("php/conexao_pedir_carta_correcao.php", null, null, "1");
                     break;
                 case "Finalizar "+CORR1:
                     Finalizar_carta("correcao1");
