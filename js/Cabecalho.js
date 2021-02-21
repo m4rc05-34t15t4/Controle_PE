@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    $CONTROLE = "Controle-Pernambuco";
+    //$CONTROLE = "Controle-Pernambuco";
 
     $link = "../";
     
@@ -49,7 +49,7 @@ $(document).ready(function(){
     //FUNÇÕES
 
     function Desabilitar_botao_menu_lateral_pagina_atual(){
-        $arr_url = String(location).split($CONTROLE+"/php/");
+        $arr_url = String(location).split("/php/");
         $attr_link = $arr_url[1];
         if($arr_url[1].indexOf("?") > 0){
             $arr_url = $arr_url[1].split("?");

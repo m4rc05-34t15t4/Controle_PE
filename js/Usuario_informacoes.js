@@ -4,12 +4,13 @@ $(document).ready(function(){
 
     //Fases Edição Inseridos no Banco de Dados Controle na Tabela Fases_Edicao
     let ADEQUACAO = "Adequação";
+    let CQ1 = "C. Qualidad 1";
     let EDICAO = "Edição";
     let REV1 = "1ª Rev";
     let CORR1 = "1ª Correção";
     let REV2 = "2ª Rev";
     let CORR2 = "2ª Correção";
-
+    
     Recarregar_pagina_resize();
 
     $lista_cartas_em_adequacao = [];
@@ -53,14 +54,26 @@ $(document).ready(function(){
         $("#box-confirmacao_botoes_confirmar").click(function() {
             $(".box-confirmacao_botoes, .box-confirmacao_content, .box-confirmacao-fundo").fadeOut();
             switch($texto){
-                case "Iniciar Adequacao LOC":
-                case "Iniciar Adequacao TRA":
-                case "Iniciar Adequacao HID":
+                case "Iniciar "+ADEQUACAO+" LOC":
+                case "Iniciar "+ADEQUACAO+" TRA":
+                case "Iniciar "+ADEQUACAO+" HID":
                     $ad = $texto.split(" ");
-                    Pedir_carta("php/conexao_pedir_carta_adequacao.php", $dificuldade_ultima_carta_adequada, $ad[2]);
+                    Pedir_carta("php/conexao_pedir_carta_adequacao.php", $dificuldade_ultima_carta_adequada, null, $ad[2]);
                     break;
-                case "Finalizar "+ADEQUACAO:
-                    Finalizar_carta("adequacao");
+                case "Finalizar "+ADEQUACAO+" LOC":
+                    Finalizar_carta("AdLoc");
+                    break;
+                case "Finalizar "+ADEQUACAO+" TRA":
+                    Finalizar_carta("AdTra");
+                    break;
+                case "Finalizar "+ADEQUACAO+" HID":
+                    Finalizar_carta("AdHid");
+                    break;
+                case "Iniciar "+CQ1:
+                    Pedir_carta("php/conexao_pedir_carta_controle_qualidade.php", $dificuldade_ultima_carta_revisada, null, "CQ1");
+                    break;
+                case "Finalizar "+CQ1:
+                    Finalizar_carta("CQ1");
                     break;
                 case "Iniciar Edição":
                     Pedir_carta("php/conexao_pedir_carta_edicao.php", $dificuldade_ultima_carta_editada, "edicao");
@@ -87,7 +100,7 @@ $(document).ready(function(){
                     Finalizar_carta("2rev");
                     break;
                 case "Iniciar "+CORR2:
-                    Pedir_carta("php/conexao_pedir_carta_correcao.php", null, null, "2", $lista_cartas_reservadas_correcao2[0]["mi"]);
+                    Pedir_carta("php/conexao_pedir_carta_correcao.php", null, null, "2");
                     break;
                 case "Finalizar "+CORR2:
                     Finalizar_carta("correcao2");
