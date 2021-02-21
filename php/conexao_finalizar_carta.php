@@ -43,7 +43,8 @@
                 break;
             case "CQ1":
                 $status = "'3'";
-                $funcao = $tipo;
+                $funcao = "\"".$tipo."\"";
+                $termino = "\"termino".$tipo."\"";
                 break;
             case "edicao":
                 $status = "'3.2'";
