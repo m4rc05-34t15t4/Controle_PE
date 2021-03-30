@@ -15,7 +15,7 @@ function validar_variavel_miss($variavel){
 //Retornar Descrição Status pelo codigo
 function status_desc($status, $conexao){
     if(!is_null($status)){
-        $sql = "SELECT \"descricao\" FROM \"public\".\"fases\" WHERE \"codigo\" = '" . $status . "'";
+        $sql = "SELECT \"descricao\" FROM \"public\".\"fases\" WHERE \"codigo\" <= '" . $status . "' ORDER BY \"codigo\" DESC LIMIT 1";
         $query = pg_query($conexao,$sql);
         if($query) {
             $row_aux = pg_fetch_all($query);

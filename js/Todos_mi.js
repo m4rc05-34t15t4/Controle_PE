@@ -81,10 +81,11 @@ $(document).ready(function(){
             $operador = Seleciona_ultimo_operador_mi(mi);
             
             //conteudo da div
-            $conteudo_div_descricao_mi = "<div class=\"fase_"+$lista_edicao.get(mi)["status"]+"\"><b>"+$dificuldade+"</b><br>"+mi+"<br><b>"+$operador+"</b></div>";
+            console.log();
+            $conteudo_div_descricao_mi = "<div class=\"fase_"+String($lista_edicao.get(mi)["status"])[0]+"\"><b>"+$dificuldade+"</b><br>"+mi+"<br><b>"+$operador+"</b></div>";
             $("#descricao_mi").text("");
             $("#descricao_mi").append($conteudo_div_descricao_mi);
-
+            
             //posicao da div descricao_mi
             $largura_mi = Converte_px_pt($(".blocos table tr td[mi=\""+mi+"\"]").css("height")) * 0.8;
             if($largura_mi < 10){
@@ -116,35 +117,14 @@ $(document).ready(function(){
 
     //Seleciona qual ultimo operador da carta
     function Seleciona_ultimo_operador_mi($mi){
-        $operador = "";
-        $status_mi = $lista_edicao.get($mi)["status"];
-
-        switch (String($status_mi)){
-            case "9": //revisor2
-            case "8": 
-            case "7":
-                //alteração feita por motivos do banco de dados esta faltando alguns revisor2 pq é igual a revisor1
-                if($lista_edicao.get($mi)["revisor2"]){
-                    $operador = $lista_edicao.get($mi)["revisor2"];
-                    break;
-                }
-            case "6": //revisor1
-            case "5":
-                $operador = $lista_edicao.get($mi)["revisor1"];
-                break;
-            case "81": //editor
-            case "80":
-            case "61":
-            case "60":
-            case "4":
-            case "3":
-            case "2":
-                $operador = $lista_edicao.get($mi)["editor"];
-                break;
-            default:
-                $operador = -1;
-                break;
-        }
+        $operador = -1;
+        $status_mi = parseFloat(String($lista_edicao.get($mi)["status"]));
+        if($status_mi == 2.64) $operador = $lista_edicao.get($mi)["CQ1"];
+        else if($status_mi >= 3.1 && $status_mi <= 3.2) $operador = $lista_edicao.get($mi)["editor"];
+        else if($status_mi >= 3.4 && $status_mi <= 3.8) $operador = $lista_edicao.get($mi)["revisor1"];
+        else if($status_mi >= 3.16 && $status_mi <= 3.32) $operador = $lista_edicao.get($mi)["corretor1"];
+        else if($status_mi >= 3.64 && $status_mi <= 3.128) $operador = $lista_edicao.get($mi)["revisor2"];
+        else if($status_mi >= 3.256 && $status_mi <= 3.512) $operador = $lista_edicao.get($mi)["corretor2"];
 
         if(($operador < 0) || ($operador == null)){
             return "Sem Operador";   
@@ -157,7 +137,6 @@ $(document).ready(function(){
         $.getJSON($link+'php/conexao_todos_mi.php', function(listas) {
             if(listas != 0){
                 //console.log(listas);
-
                 $lista_edicao = Formatar_variaveis_auxiliares(listas[0], "mi");
                 $lista_usuarios = Formatar_variaveis_auxiliares(listas[1], "codigo");
                 $lista_fases_edicao = Formatar_variaveis_auxiliares(listas[2], "codigo");
@@ -173,7 +152,7 @@ $(document).ready(function(){
     //Insere cores de fundo com base no status dos mi
     function Insere_backgroud_status_mi(lista_edicao){
         lista_edicao.forEach(function(valor, chave) {
-            $(".blocos table tr td[mi=\""+chave+"\"]").addClass("fase_"+valor["status"]);
+            $(".blocos table tr td[mi=\""+chave+"\"]").addClass("fase_"+String(valor["status"])[0]);
         });
     }
 

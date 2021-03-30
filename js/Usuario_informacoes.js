@@ -3,7 +3,7 @@ $(document).ready(function(){
     $link = "../";
 
     //Fases Edição Inseridos no Banco de Dados Controle na Tabela Fases_Edicao
-    let ADEQUACAO = "Adequação";
+    let ADEQUACAO = "Adq.";
     let CQ1 = "C. Qualidad 1";
     let EDICAO = "Edição";
     let REV1 = "1ª Rev";
@@ -117,7 +117,7 @@ $(document).ready(function(){
 
     //Pedir carta
     function Pedir_carta(url, dificuldade_ultima_carta, editor_ultima_carta, tipo_fase, carta = null){
-        //console.log(url, dificuldade_ultima_carta, editor_ultima_carta, tipo_fase, carta);
+        console.log($id, url, dificuldade_ultima_carta, editor_ultima_carta, tipo_fase, carta);
         $.get($link+url,{
             usuario: $id,
             dificuldade: dificuldade_ultima_carta,
@@ -243,10 +243,21 @@ $(document).ready(function(){
         }
         else if( $lista_cartas_em_edicao.length > 0 || $lista_cartas_em_revisao.length > 0 || $lista_cartas_em_adequacao.length > 0){
 
-            if( String($lista_cartas_em_adequacao[0]["inicio"]) >= ( String($lista_cartas_em_revisao[0]["inicio"]) && String($lista_cartas_em_edicao[0]["inicioedicao"]) ) ){
+            $ini_ad = $ini_ed = $ini_rv = "";
+            if($lista_cartas_em_adequacao[0]){ 
+                $ini_ad = $lista_cartas_em_adequacao[0]["inicio"];
+            }
+            if($lista_cartas_em_edicao[0]){ 
+                $ini_ed = $lista_cartas_em_edicao[0]["inicio"];
+            }
+            if($lista_cartas_em_revisao[0]){ 
+                $ini_rv = $lista_cartas_em_revisao[0]["inicio"];
+            }
+
+            if( String($ini_ad) >= ( String($ini_rv) && String($ini_ed) ) ){
                     $elemento_em_trabalho.push($lista_cartas_em_adequacao.shift());
             }
-            if( String($lista_cartas_em_revisao[0]["inicio"]) >= ( String($lista_cartas_em_adequacao[0]["inicio"]) && String($lista_cartas_em_edicao[0]["inicioedicao"]) ) ){
+            if( String($ini_rv) >= ( String($ini_ad) && String($ini_ed) ) ){
                 $elemento_em_trabalho.push($lista_cartas_em_revisao.shift());
             }
             else{
@@ -267,8 +278,11 @@ $(document).ready(function(){
         $lista_cartas_em_correcao1 = [];
         $lista_cartas_em_correcao2 = [];
 
-        if($elemento_em_trabalho.length > 0 && 
-            parseFloat($elemento_em_trabalho[0]["status"]) == (2.1|| 2.4 || 2.16 || 2.7 || 2.19 || 2.13 || 2.28 || 2.49 || 2.6 || 3.1 || 3.4 || 3.16 || 3.64 || 3.256 ) ){
+        //console.log($elemento_em_trabalho);
+
+        if($elemento_em_trabalho.length > 0 
+            //&& parseFloat($elemento_em_trabalho[0]["status"]) == (2.1 || 2.4 || 2.7 || 2.13 || 2.16 || 2.17 || 2.21 || 2.23 || 2.29 || 2.31 || 2.49 || 2.5 || 2.53 || 2.55 || 2.61 || 2.64 || 3.1 || 3.4 || 3.16 || 3.64 || 3.256 ) 
+            ){
 
                 //retira o primeiro elemento que é o trabalho atual e mostra no layout
                 $carta_atual_em_trabalho = $elemento_em_trabalho.shift();
@@ -287,8 +301,23 @@ $(document).ready(function(){
                 }
                 
                 //insere no html
+                $status = lista_status[$carta_atual_em_trabalho["status"]];
+                if(!lista_status[$carta_atual_em_trabalho["status"]]){
+                    $status = "";
+                    $max_cod = 4;
+                    $min_cod = 1;
+                    if(String($carta_atual_em_trabalho["status"])[0] == "2") $max_cod = 3;
+                    else $min_cod = 2;
+                    //VERIFICAR//////////////////
+                    lista_status.forEach(function(key, valor){
+                        console,log(key, valor, $carta_atual_em_trabalho["status"]);
+                        if(parseFloat(key) > $min_cod && parseFloat(key) < $max_cod && parseFloat(key) <= parseFloat($carta_atual_em_trabalho["status"])){
+                            $status = valor;
+                        }
+                    });
+                }
                 $(".usuario-trabalho-informacoes").html("<a href=\"Mi_informacoes.php?mi="+$carta_atual_em_trabalho["mi"]+"\">"+$carta_atual_em_trabalho["mi"]+
-                    "</a> <span class=\"descricao-funcoes-descricao\">( "+lista_status[$carta_atual_em_trabalho["status"]]+$dias+" ) </span>");
+                    "</a> <span class=\"descricao-funcoes-descricao\">( "+$status+$dias+" ) </span>");
                 Mostrar_botao_iniciar_finalizar("Finalizar");
         }
         else if($elemento_em_trabalho.length > 0){
@@ -305,7 +334,7 @@ $(document).ready(function(){
             Pedir_outra_carta();
         }
 
-        Insere_Descricao_Funcoes_SE_Fora_Produducao([$carta_atual_em_trabalho]);
+        Insere_Descricao_Funcoes_SE_Fora_Produducao($carta_atual_em_trabalho);
 
         Inserir_Reservadas_e_Pendentes();
 
@@ -318,7 +347,7 @@ $(document).ready(function(){
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_correcao2, CORR2, true);
         $lista_cartas_reservadas_correcao1.reverse();
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_correcao1, "1ª Correção", true);
-        Popula_reservadas_e_pendentes($lista_cartas_reservadas_edicao, "Reservadas Adequação", true);
+        Popula_reservadas_e_pendentes($lista_cartas_reservadas_adequacao, "Reservadas Adequação", true);
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_edicao, "Reservadas Edição", true);
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_revisao, "Reservadas Revisão", true);
         Popula_reservadas_e_pendentes($lista_cartas_pendentes, "Pendentes");
@@ -327,17 +356,19 @@ $(document).ready(function(){
     //Inserir cartas pendentes
     function Popula_reservadas_e_pendentes(lista_cartas, titulo, dias){
         if(lista_cartas.length > 0){
-            $(".usuario-trabalho-pendentes").append("<p>"+titulo+": ("+lista_cartas.length+")</p>");
             lista_cartas.forEach(function(valor){
                 $dias = "";
-                if((dias == true) && (parseInt(valor["dias"]) > 0)){
-                    $dias = "<b> - "+valor["dias"]+" dias</b>";
+                if(valor["dias"]){
+                    if((dias == true) && (parseInt(valor["dias"]) > 0)){
+                        $dias = "<b> - "+valor["dias"]+" dias</b>";
+                    }
+                    else if((dias == true) && (parseInt(valor["dias"]) == 0)){
+                        $dias = "<b> - de hoje</b>";
+                    }
+                    $(".usuario-trabalho-pendentes").append("<a href=\"Mi_informacoes.php?mi="+valor["mi"]+"\">"+valor["mi"]+$dias+"</a><br>");
                 }
-                else if((dias == true) && (parseInt(valor["dias"]) == 0)){
-                    $dias = "<b> - de hoje</b>";
-                }
-                $(".usuario-trabalho-pendentes").append("<a href=\"Mi_informacoes.php?mi="+valor["mi"]+"\">"+valor["mi"]+$dias+"</a><br>");
             })
+            $(".usuario-trabalho-pendentes").append("<p>"+titulo+": ("+lista_cartas.length+")</p>");
             $(".usuario-trabalho-pendentes").append("<br>");
         }
     }
@@ -357,27 +388,27 @@ $(document).ready(function(){
             $texto_botao_iniciar_finalizar = $(".usuario-trabalho-informacoes").text();
             $texto_botao = texto+" ";
 
-            if($texto_botao_iniciar_finalizar.indexOf(EDICAO) > 0){
-                $texto_botao += EDICAO;
-            }
-            else if($texto_botao_iniciar_finalizar.indexOf(REV1) > 0){
-                $texto_botao += REV1;
-            }
-            else if($texto_botao_iniciar_finalizar.indexOf(CORR1) > 0){
-                $texto_botao += CORR1;
-            }
-            else if($texto_botao_iniciar_finalizar.indexOf(REV2) > 0){
-                $texto_botao += REV2;
-            }
-            else if($texto_botao_iniciar_finalizar.indexOf(CORR2) > 0){
-                $texto_botao += CORR2;
-            }
+            if($texto_botao_iniciar_finalizar.indexOf("Loc") > 0) $texto_botao += ADEQUACAO+" LOC";
+            else if($texto_botao_iniciar_finalizar.indexOf("Tra") > 0) $texto_botao += ADEQUACAO+" TRA";
+            else if($texto_botao_iniciar_finalizar.indexOf("Hid") > 0) $texto_botao += ADEQUACAO+" HID";
+            else if($texto_botao_iniciar_finalizar.indexOf(EDICAO) > 0) $texto_botao += EDICAO;
+            else if($texto_botao_iniciar_finalizar.indexOf(REV1) > 0) $texto_botao += REV1;
+            else if($texto_botao_iniciar_finalizar.indexOf(CORR1) > 0) $texto_botao += CORR1;
+            else if($texto_botao_iniciar_finalizar.indexOf(REV2) > 0) $texto_botao += REV2;
+            else if($texto_botao_iniciar_finalizar.indexOf(CORR2) > 0) $texto_botao += CORR2;
 
             Inserir_Texto_Botao_Iniciar_Finalizar_Carta($texto_botao);
         }
         else{
 
             $texto_botao_iniciar_finalizar = String($(".usuario-funcao").text());
+            
+            //BOTÃO INICIAR ADEQUACAO
+            if($texto_botao_iniciar_finalizar.indexOf("Adequador") >= 0){
+                if($texto_botao_iniciar_finalizar.indexOf("Loc") >= 0) Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+ADEQUACAO+" LOC");
+                if($texto_botao_iniciar_finalizar.indexOf("Tra") >= 0) Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+ADEQUACAO+" TRA");
+                if($texto_botao_iniciar_finalizar.indexOf("Hid") >= 0) Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+ADEQUACAO+" HID");
+            }
             
             //BOTÃO INICIAR EDIÇÃO
             if($texto_botao_iniciar_finalizar.indexOf("Editor") >= 0){
@@ -398,7 +429,7 @@ $(document).ready(function(){
 
     //Insere Cartas em Pausa
     function Insere_Descricao_Funcoes_SE_Fora_Produducao(carta_em_trabalho){
-        if( (String($(".usuario-funcao").text()).indexOf("Editor") < 0) && (String($(".usuario-funcao").text()).indexOf("Revisor") < 0)){
+        if( (String($(".usuario-funcao").text()).indexOf("Editor") < 0) && (String($(".usuario-funcao").text()).indexOf("Revisor") < 0)  && (String($(".usuario-funcao").text()).indexOf("Adequador") < 0)){
             //Add Descrição funções
             Esconder_Botao_Finalizar_Iniciar();
             $(".usuario-trabalho-informacoes").html($descricao_funcoes);
@@ -415,6 +446,9 @@ $(document).ready(function(){
         $tipo_texto = "edicao";
         if((texto_botao.indexOf(REV2) > 0) || (texto_botao.indexOf(REV1) > 0)){
             $tipo_texto = "revisao";
+        }
+        else if(texto_botao.indexOf("Adequador") > 0){
+            $tipo_texto = "adequacao";
         }
 
         //Verifica se há cartas para corrigir e mostra o Botão referente
@@ -477,7 +511,7 @@ $(document).ready(function(){
                 if( (String(valor["termino"]).indexOf("-") > 0) && (String(valor["inicio"]).indexOf("-") > 0) ){
 
                     $historico_cartas_adequadas += "<a href=\"Mi_informacoes.php?mi=" + valor["mi"] + "\"><div>" + valor["mi"] + "<p>" +
-                        RetirarTime(valor["termino"]) + " "+valor["Adequacao"]+"</p><br></div></a>";
+                        RetirarTime(valor["termino"]) + " "+valor["adequacao"].toUpperCase()+"</p><br></div></a>";
                     
                     $contador++;
 

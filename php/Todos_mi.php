@@ -28,10 +28,10 @@
                     <tr><td colspan="10"><p>Legenda:</p>Obs: Em sublinhado processos que podem ocorrer em paralelo no mesmo grupo.<br></td></tr>
                     <tr>
                         <td id="fase_0" class="mi-fases fase_0">0</td><td class="mi-fases-descricao">Fora do Projeto</td>
-                        <td id="fase_1" class="mi-fases fase_1">1</td><td class="mi-fases-descricao">Preparo</td>
-                        <td id="fase_2" class="mi-fases fase_2">2</td><td class="mi-fases-descricao">Adequação Vetorial</td>
-                        <td id="fase_3" class="mi-fases fase_3">3</td><td class="mi-fases-descricao">Edição</td>
-                        <td id="fase_4" class="mi-fases fase_4">4</td><td class="mi-fases-descricao">Em Carga BDGEx</td>
+                        <td id="fase_1" class="mi-fases fase_1">1.0</td><td class="mi-fases-descricao">Preparo</td>
+                        <td id="fase_2" class="mi-fases fase_2">2.0</td><td class="mi-fases-descricao">Adequação Vetorial</td>
+                        <td id="fase_3" class="mi-fases fase_3">3.0</td><td class="mi-fases-descricao">Edição</td>
+                        <td id="fase_4" class="mi-fases fase_4">4.0</td><td class="mi-fases-descricao">Em Carga BDGEx</td>
                     </tr>
                     <tr>
                         <td id="" class=""></td><td class=""></td>

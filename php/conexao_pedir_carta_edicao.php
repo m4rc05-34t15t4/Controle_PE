@@ -15,7 +15,7 @@
         date_default_timezone_set('America/Recife');
         $data_inicio = date('Y') . "-" . date('m') . "-" . date('d') . " " . date("H") . ":" . date("i") . ":" . date("s");
         $usuario = strval($_GET["usuario"]);
-        $limite_servidor = 11;
+        $limite_servidor = -1;
         $primeira_dificuldade = strval($_GET["dificuldade"]);
         $segunda_dificuldade = "";
         $terceira_dificuldade = "";
@@ -64,7 +64,7 @@
             --Faz o retorno da linha atualizada pela query<br>
             RETURNING id, $funcao;
         ";
-        
+        //echo $sql;
         $query = pg_query($conexao,$sql);
         if($query) { 
 

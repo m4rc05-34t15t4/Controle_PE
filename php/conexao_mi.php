@@ -8,12 +8,13 @@ include_once $link."php/funcoes.php";
 
 function Recupera_Nome_Id($funcao_nome){
     global $row;
+    global $conexao;
     $id = "id_" . $funcao_nome;
     //recupera nome Editor usuarios
     $row[0][$id] = "";
-    if(!E_null($row[0]["editor"])){
+    if(!E_null($row[0][$funcao_nome])){
 
-        $sql = "SELECT \"nome\" FROM \"public\".\"usuarios\" WHERE \"codigo\" = '" . $row[0][$funcao_nome] . "'";
+        $sql = "SELECT \"nome\" FROM \"public\".\"usuarios\" WHERE \"codigo\" = " . $row[0][$funcao_nome];
         $query = pg_query($conexao,$sql);
         if(!$query) {
             echo "Um erro ocorreu na consulta do " . $funcao_nome . "!";
@@ -63,7 +64,8 @@ else{
     $row[0]["status_ne"] = mi_status_code($row[0]["mi_ligacao_ne"], "status", $conexao);
 
     //recupera o nome da Fase (status)
-    $row[0]["status"] = status_desc($row[0]["status"], $conexao);
+    if($row[0]["status"][0] == 2 || 4) $row[0]["status"] = status_desc($row[0]["status"][0], $conexao);
+    else $row[0]["status"] = status_desc($row[0]["status"], $conexao);
 
     //recupera nome e ids dos usuarios
     Recupera_Nome_Id("AdLoc");
@@ -154,6 +156,8 @@ else{
 
     //exibe
     echo json_encode($result);
+    //var_dump($result);
+
 }
 
 ?>

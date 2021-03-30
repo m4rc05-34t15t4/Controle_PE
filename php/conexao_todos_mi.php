@@ -7,7 +7,7 @@ include_once $link."php/conexao.php";
 
 Cria_variaveis_auxiliares();
 
-$lista_edicao = Busca_dados("SELECT mi, status, niveis, editor, revisor1, revisor2, servidor FROM public.cartas ORDER BY mi"); 
+$lista_edicao = Busca_dados("SELECT mi, status, niveis, \"CQ1\", editor, revisor1, corretor1, revisor2, corretor2, \"CQ2\", servidor FROM public.cartas ORDER BY mi"); 
 
 if(count($lista_edicao) > 0){
     
@@ -33,7 +33,7 @@ function Busca_dados_edicao(){
     global $conexao;
     global $lista_edicao;
 
-    $sql = "SELECT mi, status, niveis, editor, revisor1, revisor2, servidor FROM public.cartas ORDER BY mi";
+    $sql = "SELECT mi, status, niveis, CQ1, editor, revisor1, corretor1, revisor2, corretor2, CQ2, servidor FROM public.cartas ORDER BY mi";
     $query = pg_query($conexao,$sql);
     if($query) {
         $row = pg_fetch_all($query);

@@ -1,4 +1,37 @@
 <?php 
+
+$status_destino = '2';
+$funcao = "caaaa";
+$usuario = "marcos";
+$data_inicio = "20200101";
+
+$sql = "
+            UPDATE public.cartas SET status = '$status_destino', \"$funcao\" = '$usuario', \"inicio$funcao\" = '$data_inicio' WHERE id =  
+                CASE
+                    WHEN 
+                        --retorna se há cartas reservadas 
+                        SELECT id FROM public.cartas WHERE status >= '2' AND status < 2.63 AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY bloco LIMIT 1 > 0
+                    THEN
+                        SELECT id FROM public.cartas WHERE status >= '2' AND status < 2.63 AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY bloco LIMIT 1
+                    WHEN 
+                        --retorna se há cartas disponiveis 
+                        SELECT id FROM public.cartas WHERE status >= '2' AND status < 2.63 AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY bloco LIMIT 1 > 0
+                    THEN
+                        SELECT id FROM public.cartas WHERE status >= '2' AND status < 2.63 AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY bloco LIMIT 1
+                    ELSE 
+                        --Retorna id carta inválido para nada ser atualizado e retornar vazio<br>
+                        -1
+                END
+            --Faz o retorno da linha atualizada pela query<br>
+            RETURNING id, \"$funcao\";
+        ";
+echo $sql;
+
+/*
+if("casa" == "ka" ){
+    echo "ok";
+}
+
     if(!isset($link)) $link = "../../";
     
     include_once $link."php/base.php";
@@ -26,7 +59,6 @@
             echo $row[0];//mi
         }
     }
-/*
 
     // Variável com a senha guardada 
     $senha = "mypassword"; 

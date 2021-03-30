@@ -164,7 +164,7 @@ $(document).ready(function(){
         $map.forEach(function(valor, key, map){
             
             //cor status
-            $bg_color = $("#fase_"+carta["status_"+key]).css("background-color");
+            $bg_color = $("#fase_"+String(carta["status_"+key])[0]).css("background-color");
             $("#mi-ligacao_"+key).css("background", $bg_color);
 
             //Mergear ligacao

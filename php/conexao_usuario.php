@@ -6,7 +6,7 @@
 
     include_once $link."php/funcoes.php";
 
-    //Faz a busca na tabela edicao - cartas editadas
+    //Faz a busca na tabela cartas - cartas editadas
     $sql = "SELECT mi, status, niveis, inicioedicao, terminoedicao, iniciocorrecao1, terminocorrecao1, iniciocorrecao2, terminocorrecao2, termino1rev, termino2rev FROM public.cartas WHERE \"editor\" = '" . $_GET["id"] . "' 
         ORDER BY terminoedicao DESC, inicioedicao DESC, mi DESC;";
     $lista_cartas_editadas = Consulta_sql($sql);
@@ -71,7 +71,7 @@
         $funcoes = $row_funcoes;
     }
 
-    //Faz a busca na tabela Fases_edicao - nome status
+    //Faz a busca na tabela Fases - nome status
     $sql = "SELECT * FROM public.\"fases\" ORDER BY codigo;";
     $row_status = Consulta_sql($sql);
     $status = array();
@@ -127,7 +127,7 @@
     }
 
     //Faz busca noo banco de dados por cartas feitas pelo usuario
-    function Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas){
+    function Faz_busca_cartas_finalizadas_usuario($sql, &$lista_cartas){
         if($lista_cartas != 0){
             foreach ($lista_cartas as &$value) {
                 $data = "";

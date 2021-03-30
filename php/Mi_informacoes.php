@@ -92,7 +92,7 @@
                                 <td id="fase_3.1" class="mi-fases fase_3">3.1</td><td class="mi-fases-descricao">EmEdição</td>
                             </tr>
                             <tr>
-                                <td id="fase_1" class="mi-fases fase_1">1</td><td class="mi-fases-descricao">Preparo</td>
+                                <td id="fase_1" class="mi-fases fase_1">1.0</td><td class="mi-fases-descricao">Preparo</td>
                                 <td id="fase_3.2" class="mi-fases fase_3">3.2</td><td class="mi-fases-descricao">Editada</td>
                             </tr>
                             <tr>
@@ -124,7 +124,7 @@
                                 <td id="fase_3.256" class="mi-fases fase_3">3.256</td><td class="mi-fases-descricao">Em 2ª Correção</td>
                             </tr>
                             <tr>
-                                <td id="fase_2" class="mi-fases fase_2">2</td><td class="mi-fases-descricao">Adequação Vetorial</td>
+                                <td id="fase_2" class="mi-fases fase_2">2.0</td><td class="mi-fases-descricao">Adequação Vetorial</td>
                                 <td id="fase_3.512" class="mi-fases fase_3">3.512</td><td class="mi-fases-descricao">2ª Correção Concluída</td>
                             </tr>
                             <tr>
@@ -133,7 +133,7 @@
                             </tr>
                             <tr>
                                 <td id="fase_2.2" class="mi-fases fase_2">2.2</td><td class="mi-fases-descricao">Localidades Prontas</td>
-                                <td id="fase_4" class="mi-fases fase_4">4</td><td class="mi-fases-descricao">Em Carga BDGEx</td>
+                                <td id="fase_4" class="mi-fases fase_4">4.0</td><td class="mi-fases-descricao">Em Carga BDGEx</td>
                             </tr>
                             <tr>
                                 <td id="fase_2.4" class="mi-fases fase_2">2.4</td><td class="mi-fases-descricao"><u>Transportes</u></td>
@@ -156,8 +156,8 @@
                                 <td id="fase_4.16" class="mi-fases fase_4">4.16</td><td class="mi-fases-descricao"><u>Carta Orto Imagem</u></td>
                             </tr>
                             <tr>
-                                <td id="fase_3" class="mi-fases fase_3">3</td><td class="mi-fases-descricao">Edição</td>
-                                <td id="fase_5" class="mi-fases fase_5">5</td><td class="mi-fases-descricao">Carregada no BDGEx</td>
+                                <td id="fase_3" class="mi-fases fase_3">3.0</td><td class="mi-fases-descricao">Edição</td>
+                                <td id="fase_5" class="mi-fases fase_5">5.0</td><td class="mi-fases-descricao">Carregada no BDGEx</td>
                             </tr>
                         </table>
                     </td>
