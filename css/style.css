@@ -638,7 +638,7 @@ ul li span {
     font-size: 14pt;
 }
 
-.usuario-cartas-editadas, .usuario-cartas-revisadas {
+.usuario-cartas-editadas, .usuario-cartas-revisadas, .usuario-cartas-adequadas {
     position: absolute;
     top: calc(var(--altura-cabecalho) + ( 1.8 * var(--altura-titulo-historico)) + var(--padding));
     width: var(--largura-historico-usuarios-cartas);
@@ -1121,19 +1121,19 @@ display: block;
 .fase_0 {/*fora-projeto*/
     background-color: #666666;
 }
-.fase_1 {/*validada*/
+.fase_1 {/*PREPARO*/
     background-color: #FF99CC;
 }
-.fase_2 {/*no-gothic*/
+.fase_2 {/*ADEQUACAO*/
     background-color: #7ebcfa;
 }
-.fase_3 {/*em-edicao*/
+.fase_3 {/*EDICAO*/
     background-color: #FFCC33;
 }
-.fase_4 {/*editada*/
+.fase_4 {/*CARGA BDGEX*/
     background-color: #FFCC99;
 }
-.fase_5 {/*em-1rev*/
+.fase_5 {/*FINALIZADA*/
     background-color: #66CDAA;
 }
 
