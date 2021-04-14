@@ -10,7 +10,7 @@
     elseif( !strpos($_GET["mi"], "-") > 0){
         echo 1; //ERRO SERÁ TRATADO NO JS, ERRO: mi com dado errado
     }
-    elseif(($_GET["tipo"] != "edicao") AND ($_GET["tipo"] != "1rev") AND ($_GET["tipo"] != "correcao1") AND ($_GET["tipo"] != "2rev")  AND ($_GET["tipo"] != "correcao2") AND $_GET["tipo"] != "AdLoc" AND $_GET["tipo"] != "AdTra" AND $_GET["tipo"] != "AdHid" ){
+    elseif($_GET["tipo"] != "edicao" AND $_GET["tipo"] != "1rev" AND $_GET["tipo"] != "correcao1" AND $_GET["tipo"] != "2rev"  AND $_GET["tipo"] != "correcao2" AND $_GET["tipo"] != "AdVet" AND $_GET["tipo"] != "AqHid" AND $_GET["tipo"] != "RevHid" AND $_GET["tipo"] != "CQ1" ){
         echo 3; //ERRO SERÁ TRATADO NO JS, ERRO: campo tipo especificado errado.
     }
     else{
@@ -26,23 +26,23 @@
         $termino = "termino" . $tipo;
 
         switch($tipo){
-            case "AdLoc":
-                $status = "CONCAT('2.',(cast(SPLIT_PART(status, '.', 2) as integer) + 2))";
+            case "AqHid":
+                $status = "'1.128'";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
                 break;
-            case "AdTra":
-                $status = "CONCAT('2.',(cast(SPLIT_PART(status, '.', 2) as integer) + 8))";
+            case "RevHid":
+                $status = "'2.0'";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
                 break;
-            case "AdHid":
-                $status = "CONCAT('2.',(cast(SPLIT_PART(status, '.', 2) as integer) + 32))";
+            case "AdVet":
+                $status = "'2.2'";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
                 break;
             case "CQ1":
-                $status = "'3'";
+                $status = "'3.0'";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
                 break;
@@ -55,12 +55,12 @@
                 $funcao = "revisor1";
                 break;
             case "correcao1":
-                $status = "'3.32'";
+                $status = "'3.32999'";
                 $funcao = "corretor1";
                 $termino = "terminocor1";
                 break;
             case "2rev":
-                $status = "'3.128'";
+                $status = "'4.0'";
                 $funcao = "revisor2";
                 break;
             case "correcao2":

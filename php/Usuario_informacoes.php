@@ -37,6 +37,8 @@
                             <div class="usuario-trabalho-pendentes"></div>
                         </td>
                         <td>
+                            <div id="botao_finalizar_iniciar_aquisicao" class="usuario-botao-iniciar-finalizar"><div>Finalizar</div></div>
+                            <br>
                             <div id="botao_finalizar_iniciar_adequacao" class="usuario-botao-iniciar-finalizar"><div>Finalizar</div></div>
                             <br>
                             <div id="botao_finalizar_iniciar_edicao" class="usuario-botao-iniciar-finalizar"><div>Finalizar</div></div>
@@ -55,20 +57,31 @@
 
             <div class="usuario-conteudo-direita">
                 <div class="usuario-historico-titulo">Histórico</div>
-                <div class="usuario-historico-titulo-adequadas">Adequadas: <!--(10)--></div> 
-                <div class="usuario-historico-titulo-editadas">Editadas: <!--(10)--></div> 
-                <div  class="usuario-historico-titulo-revisadas">Revisadas: <!--(10)--></div>
-                <div class="usuario-cartas-adequadas"><!--
-                    <div> 1654-4-SO (1ª) <p>21/06/2020 TER</p> <br></div>
-                    <div> 1654-1-SO (1ª) <p>21/06/2020 TER</p> <br></div>-->
-                </div>
-                <div class="usuario-cartas-revisadas"><!--
-                    <div> 1654-4-SO (1ª) <p>21/06/2020 TER</p> <br></div>
-                    <div> 1654-1-SO (1ª) <p>21/06/2020 TER</p> <br></div>-->
-                </div>
-                <div class="usuario-cartas-editadas"><!--
-                    <div> 1654-4-SO <p>21/06/2020 TER </p> <br></div>
-                    <div> 1654-1-SO <p>14/03/2020 SEG</p> <br></div>-->
+                <div id="historico-cartas-div">
+                    <div class="historico-cartas">
+                        <div class="usuario-historico-titulo-adequadas">Adequadas: <!--(10)--></div> 
+                        <div class="usuario-cartas-adequadas"><!--
+                            <div> 1654-1-SO (1ª) <p>21/06/2020 TER</p> <br></div>-->
+                        </div>
+                    </div>
+                    <div class="historico-cartas">
+                        <div class="usuario-historico-titulo-revisadas">Revisadas:<!-- (10)--></div>
+                        <div class="usuario-cartas-revisadas"><!--
+                            <div> 1654-1-SO (1ª) <p>21/06/2020 TER</p> <br></div>-->
+                        </div>
+                    </div>
+                    <div class="historico-cartas">
+                        <div class="usuario-historico-titulo-editadas">Editadas: <!--(10)--></div>
+                        <div class="usuario-cartas-editadas"><!--
+                            <div> 1654-1-SO <p>14/03/2020 SEG</p> <br></div>-->
+                        </div>
+                    </div>
+                    <div class="historico-cartas">
+                        <div class="usuario-historico-titulo-adquiridas">Adquiridas: <!--(10)--></div>
+                        <div class="usuario-cartas-adquiridas"><!--
+                            <div> 1654-1-SO <p>14/03/2020 SEG</p> <br></div>-->
+                        </div>
+                    </div>
                 </div>
             </div>
 

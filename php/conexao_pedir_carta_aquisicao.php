@@ -22,11 +22,11 @@
         $terceira_dificuldade = "";
         
         //Status
-        $status_origem = 2; // >= 2 and < 2.63
-        $status_destino = "'2.1'";
-        $funcao = "AdVet";
-        if (isset($_GET["dificuldade"])){
-            $funcao = $_GET["dificuldade"];
+        $status_origem = 1.32; // >= 2 and < 2.63
+        $status_destino = "'1.64'";
+        $funcao = "AqHid";
+        if (!isset($_GET["dificuldade"])){
+            $primeira_dificuldade = "Difícil";
         }
 
         //verifica os possíveis niveis apos o nível desejado, no qual foi recebido por parâmetro GET
@@ -77,7 +77,7 @@
             if(pg_fetch_all($query)){
             
                 $row = pg_fetch_all($query);
-                
+
                 if(count($row) > 0){
                     //SUCESSO
                     echo 10;

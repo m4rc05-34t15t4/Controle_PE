@@ -13,16 +13,17 @@
     elseif(is_string(intval($_GET["editor"]))){
         echo 5; //ERRO SERÁ TRATADO NO JS, ERRO: id último editor inválido
     }
-    elseif(($_GET["tipo"] != "rev1") AND ($_GET["tipo"] != "rev2")){
+    elseif(($_GET["tipo"] != "rev1") AND ($_GET["tipo"] != "rev2") AND ($_GET["tipo"] != "hid") AND ($_GET["tipo"] != "cq1")){
         echo 7; //ERRO SERÁ TRATADO NO JS, ERRO: tipo inválido
     }
     else{
         //DEFINE AS VARIAVEIS
         date_default_timezone_set('America/Recife');
         $data_inicio = date('Y') . "-" . date('m') . "-" . date('d') . " " . date("H") . ":" . date("i") . ":" . date("s");
-        $usuario = strval($_GET["usuario"]);
-        $editor = strval($_GET["editor"]);
-        $limite_servidor = 11;
+        $usuario = "'".strval($_GET["usuario"])."'";
+        $operador = "'".strval($_GET["editor"])."'";
+        $func_op = "editor";
+        $limite_servidor = -1;
         $primeira_dificuldade = strval($_GET["dificuldade"]);
         $segunda_dificuldade = "";
         $terceira_dificuldade = "";
@@ -32,12 +33,31 @@
         $inicio = "inicio1rev";
 
         //SEGUNDA REVISÃO
-        if($_GET["tipo"] == "rev2"){
-            $status_origem = "'3.32'";
-            $status_destino = "'3.64'";
-            $funcao = "revisor2";
-            $inicio = "inicio2rev";
+        switch($_GET["tipo"]){
+            case "hid":
+                $status_origem = "'1.128'";
+                $status_destino = "'1.256'";
+                $funcao = "\"RevHid\"";
+                $inicio = "\"inicioRevHid\"";
+                $func_op = "\"AqHid\"";
+                $usuario = strval($_GET["usuario"]);
+                $operador = strval($_GET["editor"]);
+                break;
+            case "rev2":
+                $status_origem = "'3.8'";
+                $status_destino = "'3.16'";
+                $funcao = "revisor2";
+                $inicio = "inicio2rev";
+                break;
+            case "cq1":
+                $status_origem = "'2.2'";
+                $status_destino = "'2.4'";
+                $funcao = "CQ1";
+                $inicio = "inicioCQ1";
+                break;
         }
+
+        if($operador == null OR $operador == "") $operador = "null";
 
         //verifica os possíveis niveis apos o nível desejado, no qual foi recebido por parâmetro GET
         switch($primeira_dificuldade){
@@ -64,14 +84,14 @@
                 CASE
                     WHEN 
                         --retorna se há cartas reservadas<br>
-                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = '$usuario' AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1) > 0
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = $usuario AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1) > 0
                     THEN
-                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = '$usuario' AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1)
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = $usuario AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1)
                     
                     --retorna se há cartas disponiveis<br>                   
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND editor != '$editor' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND editor != '$editor' ORDER BY bloco, mi LIMIT 1)
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND editor != '$editor' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND editor != '$editor' ORDER BY bloco, mi LIMIT 1)
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND editor != '$editor' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND editor != '$editor' ORDER BY bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1)
                     WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1)
                     WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1)
                     WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1)
@@ -100,7 +120,7 @@
                 }
             }  
             else{
-                echo 6;
+                //echo 6;
             }
         }
         else{

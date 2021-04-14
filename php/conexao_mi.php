@@ -64,20 +64,20 @@ else{
     $row[0]["status_ne"] = mi_status_code($row[0]["mi_ligacao_ne"], "status", $conexao);
 
     //recupera o nome da Fase (status)
-    if($row[0]["status"][0] == 2 || 4) $row[0]["status"] = status_desc($row[0]["status"][0], $conexao);
+    if($row[0]["status"][0] >= 4) $row[0]["status"] = status_desc($row[0]["status"][0], $conexao);
     else $row[0]["status"] = status_desc($row[0]["status"], $conexao);
 
     //recupera nome e ids dos usuarios
-    Recupera_Nome_Id("AdLoc");
-    Recupera_Nome_Id("AdTra");
-    Recupera_Nome_Id("AdHid");
+    Recupera_Nome_Id("AqHid");
+    Recupera_Nome_Id("RevHid");
+    Recupera_Nome_Id("AdVet");
     Recupera_Nome_Id("CQ1");
     Recupera_Nome_Id("editor");
     Recupera_Nome_Id("revisor1");
-    Recupera_Nome_Id("corretor1");
+    #Recupera_Nome_Id("corretor1");
     Recupera_Nome_Id("revisor2");
-    Recupera_Nome_Id("corretor2");
-    Recupera_Nome_Id("CQ2");
+    #Recupera_Nome_Id("corretor2");
+    #Recupera_Nome_Id("CQ2");
     
     //exibir pagina como json
     header('Content-Type: application/json');
@@ -93,18 +93,18 @@ else{
         'servidor' => $row[0]["servidor"],
         'niveis' => $row[0]["niveis"],
         'densidade' => $row[0]["densidade"],
-        'AdLoc' => $row[0]["AdLoc"],
-        'id_AdLoc' => $row[0]["id_AdLoc"],
-        'inicioAdLoc' => $row[0]["inicioAdLoc"],
-        'terminoAdLoc' => $row[0]["terminoAdLoc"],
-        'AdTra' => $row[0]["AdTra"],
-        'id_AdTra' => $row[0]["id_AdTra"],
-        'inicioAdTra' => $row[0]["inicioAdTra"],
-        'terminoAdTra' => $row[0]["terminoAdTra"],
-        'AdHid' => $row[0]["AdHid"],
-        'id_AdHid' => $row[0]["id_AdHid"],
-        'inicioAdHid' => $row[0]["inicioAdHid"],
-        'terminoAdHid' => $row[0]["terminoAdHid"],
+        'AqHid' => $row[0]["AqHid"],
+        'id_AqHid' => $row[0]["id_AqHid"],
+        'inicioAqHid' => $row[0]["inicioAqHid"],
+        'terminoAqHid' => $row[0]["terminoAqHid"],
+        'RevHid' => $row[0]["RevHid"],
+        'id_RevHid' => $row[0]["id_RevHid"],
+        'inicioRevHid' => $row[0]["inicioRevHid"],
+        'terminoRevHid' => $row[0]["terminoRevHid"],
+        'AdVet' => $row[0]["AdVet"],
+        'id_AdVet' => $row[0]["id_AdVet"],
+        'inicioAdVet' => $row[0]["inicioAdVet"],
+        'terminoAdVet' => $row[0]["terminoAdVet"],
         'CQ1' => $row[0]["CQ1"],
         'id_CQ1' => $row[0]["id_CQ1"],
         'inicioCQ1' => $row[0]["inicioCQ1"],
@@ -121,6 +121,7 @@ else{
         'id_revisor2' => $row[0]["id_revisor2"],
         'inicio2rev' => $row[0]["inicio2rev"],
         'termino2rev' => $row[0]["termino2rev"],
+        /*
         'corretor1' => $row[0]["corretor1"],
         'id_corretor1' => $row[0]["id_corretor1"],
         'inicioCorrecao1' => $row[0]["iniciocorrecao1"],
@@ -133,6 +134,7 @@ else{
         'id_CQ2' => $row[0]["id_CQ2"],
         'inicioCQ2' => $row[0]["inicioCQ2"],
         'terminoCQ2' => $row[0]["terminoCQ2"],
+        */
         'impressa' => $row[0]["impressa"],
         'ligacao' => $row[0]["ligacao"],
         'ligacao_o' => $row[0]["mi_ligacao_o"],

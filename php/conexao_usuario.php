@@ -7,7 +7,7 @@
     include_once $link."php/funcoes.php";
 
     //Faz a busca na tabela cartas - cartas editadas
-    $sql = "SELECT mi, status, niveis, inicioedicao, terminoedicao, iniciocorrecao1, terminocorrecao1, iniciocorrecao2, terminocorrecao2, termino1rev, termino2rev FROM public.cartas WHERE \"editor\" = '" . $_GET["id"] . "' 
+    $sql = "SELECT mi, status, niveis, 'edicao' as tipo, inicioedicao, terminoedicao, termino1rev, termino2rev FROM public.cartas WHERE \"editor\" = '" . $_GET["id"] . "' 
         ORDER BY terminoedicao DESC, inicioedicao DESC, mi DESC;";
     $lista_cartas_editadas = Consulta_sql($sql);
     if($lista_cartas_editadas != 0){
@@ -18,18 +18,16 @@
                 
                 //Define data de referência para calcular qtd dias que a carta estava disponivel
                 $data_referencia = $value["inicioedicao"];
-                switch($value["status"]){
+                $st = $value["status"];
+                if(floatval($st) >= 4 AND floatval($st) <= 5){
+                    $st = "rev2";
+                }
+                switch($st){
                     case "3.8":
                         $data_referencia = $value["termino1rev"];
                         break;
-                    case "3.16":
-                        $data_referencia = $value["iniciocorrecao1"];
-                        break;
-                    case "3.128":
+                    case "rev2":
                         $data_referencia = $value["termino2rev"];
-                        break;
-                    case "3.256":
-                        $data_referencia = $value["iniciocorrecao2"];
                         break;
                 }
 
@@ -44,24 +42,25 @@
     }
 
     //Faz a busca na tabela cartas - cartas revisadas
-    $sql = "SELECT * FROM (
-        SELECT mi, status, niveis, revisor1 AS revisor, inicio1rev AS inicio, termino1rev AS termino, editor, 'rev1' as rev FROM public.cartas WHERE revisor1 = '" . $_GET["id"] . "'
+    $sql = "SELECT * , 'revisao' as tipo FROM (
+        SELECT mi, status, niveis, revisor1 AS revisor, inicio1rev AS inicio, termino1rev AS termino, editor as operador, 'rev1' as rev FROM public.cartas WHERE revisor1 = '" . $_GET["id"] . "'
         UNION
-        SELECT mi, status, niveis, revisor2 AS revisor, inicio2rev AS inicio, termino2rev AS termino, editor, 'rev2' as rev FROM public.cartas WHERE revisor2 = '" . $_GET["id"] . "'
+        SELECT mi, status, niveis, revisor2 AS revisor, inicio2rev AS inicio, termino2rev AS termino, editor as operador, 'rev2' as rev FROM public.cartas WHERE revisor2 = '" . $_GET["id"] . "'
+        UNION
+        SELECT mi, status, niveis, CAST(\"RevHid\" as TEXT) AS revisor, \"inicioRevHid\" AS inicio, \"terminoRevHid\" AS termino, CAST(\"AqHid\" as TEXT) as operador, 'hid' as rev FROM public.cartas WHERE \"RevHid\" = " . $_GET["id"] . "
         ) AS lista_cartas_revisadas ORDER BY termino DESC, inicio DESC, mi DESC;";
     $lista_cartas_revisadas = Consulta_sql($sql);
     Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_revisadas);
 
     //Faz a busca na tabela cartas - cartas Adequadas
-    $sql = "SELECT * FROM (
-        SELECT mi, status, niveis, \"AdLoc\" AS Adequador, \"inicioAdLoc\" AS inicio, \"terminoAdLoc\" AS termino, 'loc' as Adequacao FROM public.cartas WHERE \"AdLoc\" = '" . $_GET["id"] . "'
-        UNION
-        SELECT mi, status, niveis, \"AdTra\"  AS Adequador, \"inicioAdTra\" AS inicio, \"terminoAdTra\" AS termino, 'tra' as Adequacao FROM public.cartas WHERE \"AdTra\" = '" . $_GET["id"] . "'
-        UNION
-        SELECT mi, status, niveis, \"AdHid\"  AS Adequador, \"inicioAdHid\" AS inicio, \"terminoAdHid\" AS termino, 'hid' as Adequacao FROM public.cartas WHERE \"AdHid\" = '" . $_GET["id"] . "'
-        ) AS lista_cartas_adequadas ORDER BY termino DESC, inicio DESC, mi DESC;";
+    $sql = "SELECT mi, status, niveis, 'adequacao' as tipo, \"AdVet\" AS Adequador, \"inicioAdVet\" AS inicio, \"terminoAdVet\" AS termino, 'vet' as Adequacao FROM public.cartas WHERE \"AdVet\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC;";
     $lista_cartas_adequadas = Consulta_sql($sql);
     Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_adequadas);
+
+    //Faz a busca na tabela cartas - cartas Adquiridas
+    $sql = "SELECT mi, status, niveis, 'aquisicao' as tipo,  \"AqHid\" AS Aquisitor, \"inicioAqHid\" AS inicio, \"terminoAqHid\" AS termino, 'hid' as Aquisicao FROM public.cartas WHERE \"AqHid\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC;";
+    $lista_cartas_adquiridas = Consulta_sql($sql);
+    Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_adquiridas);
 
     //Faz a busca na tabela funcoes - nomes das funcoes
     $sql = "SELECT * FROM public.funcoes ORDER BY codigo DESC;";
@@ -112,6 +111,7 @@
 
         //cria json
         $resultado = array(
+            'lista_cartas_adquiridas' => $lista_cartas_adquiridas,
             'lista_cartas_adequadas' => $lista_cartas_adequadas,
             'lista_cartas_editadas' => $lista_cartas_editadas,
             'lista_cartas_revisadas' => $lista_cartas_revisadas,

@@ -23,93 +23,6 @@
                 <div id="bloco_E" class="blocos-nome" mi-central="12x50">E</div>
             </div>
 
-            <div id="todos-mi-legenda-status">
-                <table>
-                    <tr><td colspan="10"><p>Legenda:</p>Obs: Em sublinhado processos que podem ocorrer em paralelo no mesmo grupo.<br></td></tr>
-                    <tr>
-                        <td id="fase_0" class="mi-fases fase_0">0</td><td class="mi-fases-descricao">Fora do Projeto</td>
-                        <td id="fase_1" class="mi-fases fase_1">1.0</td><td class="mi-fases-descricao">Preparo</td>
-                        <td id="fase_2" class="mi-fases fase_2">2.0</td><td class="mi-fases-descricao">Adequação Vetorial</td>
-                        <td id="fase_3" class="mi-fases fase_3">3.0</td><td class="mi-fases-descricao">Edição</td>
-                        <td id="fase_4" class="mi-fases fase_4">4.0</td><td class="mi-fases-descricao">Em Carga BDGEx</td>
-                    </tr>
-                    <tr>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="fase_1.1" class="mi-fases fase_1">1.1</td><td class="mi-fases-descricao"><u>Coletar Raster</u></td>
-                        <td id="fase_2.1" class="mi-fases fase_2">2.1</td><td class="mi-fases-descricao"><u>Localidades</u></td>
-                        <td id="fase_3.1" class="mi-fases fase_3">3.1</td><td class="mi-fases-descricao">Em Edição</td>
-                        <td id="fase_4.1" class="mi-fases fase_4">4.1</td><td class="mi-fases-descricao"><u>MDT Carregado</u></td>
-                    </tr>
-                    <tr>
-                    <td id="" class=""></td><td class=""></td>
-                        <td id="fase_1.2" class="mi-fases fase_1">1.2</td><td class="mi-fases-descricao">Raster Coletado</td>
-                        <td id="fase_2.2" class="mi-fases fase_2">2.2</td><td class="mi-fases-descricao">Localidades Prontas</td>
-                        <td id="fase_3.2" class="mi-fases fase_3">3.2</td><td class="mi-fases-descricao">Editada</td>
-                        <td id="fase_4.2" class="mi-fases fase_4">4.2</td><td class="mi-fases-descricao"><u>MDS Carregado</u></td>
-                    </tr>
-                    <tr>
-                    <td id="" class=""></td><td class=""></td>
-                        <td id="fase_1.4" class="mi-fases fase_1">1.4</td><td class="mi-fases-descricao"><u>Coletar Vetores</u></td>
-                        <td id="fase_2.4" class="mi-fases fase_2">2.4</td><td class="mi-fases-descricao"><u>Transportes</u></td>
-                        <td id="fase_3.4" class="mi-fases fase_3">3.4</td><td class="mi-fases-descricao">Em 1ª Revisão</td>
-                        <td id="fase_4.4" class="mi-fases fase_4">4.4</td><td class="mi-fases-descricao"><u>Orto Img Carregada</u></td>
-                    </tr>
-                    <tr>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="fase_1.8" class="mi-fases fase_1">1.8</td><td class="mi-fases-descricao">Vetores coletado</td>
-                        <td id="fase_2.8" class="mi-fases fase_2">2.8</td><td class="mi-fases-descricao">Transportes Prontos</td>
-                        <td id="fase_3.8" class="mi-fases fase_3">3.8</td><td class="mi-fases-descricao">1ª Rev Pronta</td>
-                        <td id="fase_4.8" class="mi-fases fase_4">4.8</td><td class="mi-fases-descricao"><u>CDGV Carregados</u></td>
-                    </tr>
-                    <tr>
-                    <td id="" class=""></td><td class=""></td>
-                        <td id="fase_1.16" class="mi-fases fase_1">1.16</td><td class="mi-fases-descricao">Processar Imagem</td>
-                        <td id="fase_2.16" class="mi-fases fase_2">2.16</td><td class="mi-fases-descricao"><u>Hidrografias</u></td>
-                        <td id="fase_3.16" class="mi-fases fase_3">3.16</td><td class="mi-fases-descricao">Em 1ª Correção</td>
-                        <td id="fase_4.16" class="mi-fases fase_4">4.16</td><td class="mi-fases-descricao"><u>Carta Orto Imagem</u></td>
-                    </tr>
-                    <tr>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="fase_1.32" class="mi-fases fase_1">1.32</td><td class="mi-fases-descricao">Imagem Processada</td>
-                        <td id="fase_2.32" class="mi-fases fase_2">2.32</td><td class="mi-fases-descricao">Hidrografias Prontas</td>
-                        <td id="fase_3.32" class="mi-fases fase_3">3.32</td><td class="mi-fases-descricao">1ª Correção Concluída</td>
-                        <td id="fase_5" class="mi-fases fase_5">5</td><td class="mi-fases-descricao">Carregada no BDGEx</td>
-                    </tr>
-                    <tr>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="fase_1.64" class="mi-fases fase_1">1.64</td><td class="mi-fases-descricao">Verificar Insumos</td>
-                        <td id="fase_2.64" class="mi-fases fase_2">2.64</td><td class="mi-fases-descricao">Controle de Qualidade</td>
-                        <td id="fase_3.64" class="mi-fases fase_3">3.64</td><td class="mi-fases-descricao">Em 2ª Revisão</td>
-                        <td id="" class=""></td><td class=""></td>
-                    </tr>
-                    <tr>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="fase_3.128" class="mi-fases fase_3">3.128</td><td class="mi-fases-descricao">2ª Revisão Concluída</td>
-                        <td id="" class=""></td><td class=""></td>
-                    </tr>
-                    <tr>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="fase_3.256" class="mi-fases fase_3">3.256</td><td class="mi-fases-descricao">Em 2ª Correção</td>
-                        <td id="" class=""></td><td class=""></td>
-                    </tr>
-                    <tr>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="" class=""></td><td class=""></td>
-                        <td id="fase_3.512" class="mi-fases fase_3">3.512</td><td class="mi-fases-descricao">2ª Correção Concluída</td>
-                        <td id="" class=""></td><td class=""></td>
-                    </tr>
-                    <!--
-                    <tr><td id="fase_10" class="mi-fases fase_10">10</td><td class="mi-fases-descricao">4º CGEO</td></tr>
-                    <tr><td id="fase_11" class="mi-fases fase_11">11</td><td class="mi-fases-descricao">5º CGEO</td></tr>
-                    -->
-                </table>
-            </div>
-
             <div class="blocos">
 
                 <div id="descricao_mi">
@@ -143,6 +56,14 @@
                     <tr linha="17"><td linha="17" coluna="1" celula="17x1" class="fora-proj"></td><td linha="17" coluna="2" celula="17x2" class="fora-proj"></td><td linha="17" coluna="3" celula="17x3" class="fora-proj"></td><td linha="17" coluna="4" celula="17x4" class="fora-proj"></td><td class="limite_esquerdo limite_superior" bloco="A" mi="1515-3-NE" regiao="São Francisco Pernambucano" linha="17" coluna="5" celula="17x5"></td><td bloco="A" mi="1515-4-NO" regiao="São Francisco Pernambucano" linha="17" coluna="6" celula="17x6"></td><td bloco="A" mi="1515-4-NE" regiao="São Francisco Pernambucano" linha="17" coluna="7" celula="17x7"></td><td bloco="A" mi="1516-3-NO" regiao="São Francisco Pernambucano" linha="17" coluna="8" celula="17x8"></td><td class="limite_direito" bloco="A" mi="1516-3-NE" regiao="São Francisco Pernambucano" linha="17" coluna="9" celula="17x9"></td><td linha="17" coluna="10" celula="17x10" class="fora-proj"></td><td linha="17" coluna="11" celula="17x11" class="fora-proj"></td><td linha="17" coluna="12" celula="17x12" class="fora-proj"></td><td linha="17" coluna="13" celula="17x13" class="fora-proj"></td><td linha="17" coluna="14" celula="17x14" class="fora-proj"></td><td linha="17" coluna="15" celula="17x15" class="fora-proj"></td><td linha="17" coluna="16" celula="17x16" class="fora-proj"></td><td linha="17" coluna="17" celula="17x17" class="fora-proj"></td><td linha="17" coluna="18" celula="17x18" class="fora-proj"></td><td linha="17" coluna="19" celula="17x19" class="fora-proj"></td><td linha="17" coluna="20" celula="17x20" class="fora-proj"></td><td linha="17" coluna="21" celula="17x21" class="fora-proj"></td><td linha="17" coluna="22" celula="17x22" class="fora-proj"></td><td linha="17" coluna="23" celula="17x23" class="fora-proj"></td><td linha="17" coluna="24" celula="17x24" class="fora-proj"></td><td class="limite_esquerdo limite_inferior" bloco="B" mi="1520-3-NE" regiao="São Francisco Pernambucano" linha="17" coluna="25" celula="17x25"></td><td class="limite_direito limite_inferior" bloco="B" mi="1520-4-NO" regiao="São Francisco Pernambucano" linha="17" coluna="26" celula="17x26"></td><td linha="17" coluna="27" celula="17x27" class="fora-proj"></td><td linha="17" coluna="28" celula="17x28" class="fora-proj"></td><td linha="17" coluna="29" celula="17x29" class="fora-proj"></td><td linha="17" coluna="30" celula="17x30" class="fora-proj"></td><td linha="17" coluna="31" celula="17x31" class="fora-proj"></td><td linha="17" coluna="32" celula="17x32" class="fora-proj"></td><td linha="17" coluna="33" celula="17x33" class="fora-proj"></td><td class="limite_esquerdo limite_inferior" bloco="C" mi="1522-4-NO" regiao="Agreste" linha="17" coluna="34" celula="17x34"></td><td class="limite_inferior" bloco="C" mi="1522-4-NE" regiao="Agreste" linha="17" coluna="35" celula="17x35"></td><td bloco="C" mi="1523-3-NO" regiao="Agreste" linha="17" coluna="36" celula="17x36"></td><td class="limite_inferior" bloco="C" mi="1523-3-NE" regiao="Agreste" linha="17" coluna="37" celula="17x37"></td><td class="limite_inferior" bloco="C" mi="1523-4-NO" regiao="Agreste" linha="17" coluna="38" celula="17x38"></td><td class="limite_inferior" bloco="C" mi="1523-4-NE" regiao="Agreste" linha="17" coluna="39" celula="17x39"></td><td class="limite_direito limite_inferior" bloco="C" mi="1524-3-NO" regiao="Agreste" linha="17" coluna="40" celula="17x40"></td><td linha="17" coluna="41" celula="17x41" class="fora-proj"></td><td linha="17" coluna="42" celula="17x42" class="fora-proj"></td><td linha="17" coluna="43" celula="17x43" class="fora-proj"></td><td linha="17" coluna="44" celula="17x44" class="fora-proj"></td><td linha="17" coluna="45" celula="17x45" class="fora-proj"></td><td linha="17" coluna="46" celula="17x46" class="fora-proj"></td><td linha="17" coluna="47" celula="17x47" class="fora-proj"></td><td linha="17" coluna="48" celula="17x48" class="fora-proj"></td><td linha="17" coluna="49" celula="17x49" class="fora-proj"></td><td linha="17" coluna="50" celula="17x50" class="fora-proj"></td><td linha="17" coluna="51" celula="17x51" class="fora-proj"></td><td linha="17" coluna="52" celula="17x52" class="fora-proj"></td><td linha="17" coluna="53" celula="17x53" class="fora-proj"></td></tr>
                     <tr linha="18"><td linha="18" coluna="1" celula="18x1" class="fora-proj"></td><td linha="18" coluna="2" celula="18x2" class="fora-proj"></td><td linha="18" coluna="3" celula="18x3" class="fora-proj"></td><td linha="18" coluna="4" celula="18x4" class="fora-proj"></td><td class="limite_esquerdo limite_inferior" bloco="A" mi="1515-3-SE" regiao="São Francisco Pernambucano" linha="18" coluna="5" celula="18x5"></td><td class="limite_inferior" bloco="A" mi="1515-4-SO" regiao="São Francisco Pernambucano" linha="18" coluna="6" celula="18x6"></td><td class="limite_inferior" bloco="A" mi="1515-4-SE" regiao="São Francisco Pernambucano" linha="18" coluna="7" celula="18x7"></td><td class="limite_inferior" bloco="A" mi="1516-3-SO" regiao="São Francisco Pernambucano" linha="18" coluna="8" celula="18x8"></td><td class="limite_direito limite_inferior" bloco="A" mi="1516-3-SE" regiao="São Francisco Pernambucano" linha="18" coluna="9" celula="18x9"></td><td linha="18" coluna="10" celula="18x10" class="fora-proj"></td><td linha="18" coluna="11" celula="18x11" class="fora-proj"></td><td linha="18" coluna="12" celula="18x12" class="fora-proj"></td><td linha="18" coluna="13" celula="18x13" class="fora-proj"></td><td linha="18" coluna="14" celula="18x14" class="fora-proj"></td><td linha="18" coluna="15" celula="18x15" class="fora-proj"></td><td linha="18" coluna="16" celula="18x16" class="fora-proj"></td><td linha="18" coluna="17" celula="18x17" class="fora-proj"></td><td linha="18" coluna="18" celula="18x18" class="fora-proj"></td><td linha="18" coluna="19" celula="18x19" class="fora-proj"></td><td linha="18" coluna="20" celula="18x20" class="fora-proj"></td><td linha="18" coluna="21" celula="18x21" class="fora-proj"></td><td linha="18" coluna="22" celula="18x22" class="fora-proj"></td><td linha="18" coluna="23" celula="18x23" class="fora-proj"></td><td linha="18" coluna="24" celula="18x24" class="fora-proj"></td><td linha="18" coluna="25" celula="18x25" class="fora-proj"></td><td linha="18" coluna="26" celula="18x26" class="fora-proj"></td><td linha="18" coluna="27" celula="18x27" class="fora-proj"></td><td linha="18" coluna="28" celula="18x28" class="fora-proj"></td><td linha="18" coluna="29" celula="18x29" class="fora-proj"></td><td linha="18" coluna="30" celula="18x30" class="fora-proj"></td><td linha="18" coluna="31" celula="18x31" class="fora-proj"></td><td linha="18" coluna="32" celula="18x32" class="fora-proj"></td><td linha="18" coluna="33" celula="18x33" class="fora-proj"></td><td linha="18" coluna="34" celula="18x34" class="fora-proj"></td><td linha="18" coluna="35" celula="18x35" class="fora-proj"></td><td class="limite_esquerdo limite_direito limite_inferior" bloco="C" mi="1523-3-SO" regiao="Agreste" linha="18" coluna="36" celula="18x36"></td><td linha="18" coluna="37" celula="18x37" class="fora-proj"></td><td linha="18" coluna="38" celula="18x38" class="fora-proj"></td><td linha="18" coluna="39" celula="18x39" class="fora-proj"></td><td linha="18" coluna="40" celula="18x40" class="fora-proj"></td><td linha="18" coluna="41" celula="18x41" class="fora-proj"></td><td linha="18" coluna="42" celula="18x42" class="fora-proj"></td><td linha="18" coluna="43" celula="18x43" class="fora-proj"></td><td linha="18" coluna="44" celula="18x44" class="fora-proj"></td><td linha="18" coluna="45" celula="18x45" class="fora-proj"></td><td linha="18" coluna="46" celula="18x46" class="fora-proj"></td><td linha="18" coluna="47" celula="18x47" class="fora-proj"></td><td linha="18" coluna="48" celula="18x48" class="fora-proj"></td><td linha="18" coluna="49" celula="18x49" class="fora-proj"></td><td linha="18" coluna="50" celula="18x50" class="fora-proj"></td><td linha="18" coluna="51" celula="18x51" class="fora-proj"></td><td linha="18" coluna="52" celula="18x52" class="fora-proj"></td><td linha="18" coluna="53" celula="18x53" class="fora-proj"></td></tr>
                 </table>
+
+                <div id="todos-mi-legenda-titulo"><p>Legenda:</p>Obs: Em sublinhado processos que podem ocorrer em paralelo no mesmo grupo.</div>
+                <div id="todos-mi-legenda-status">
+
+                    <?php include_once $link."php/mi_legenda.php"; ?>
+                        
+                </div>
+
             </div>  
         </div>
 
