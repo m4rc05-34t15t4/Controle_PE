@@ -77,17 +77,17 @@ $(document).ready(function(){
             '<li><span>Densidade:</span> ' + carta["densidade"] + '</li>'+
             '<li><span>Fase:</span> ' + carta["status"] + '</li>'+
             '</ul><hr><ul>'+
-            '<li><span>Resp. Adq. Loc:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AdLoc"]+'">' + carta["AdLoc"] + '</a></li>'+
-            '<li><span>Início Loc:</span> ' + carta["inicioAdLoc"] + '</li>'+
-            '<li><span>Término Loc:</span> ' + carta["terminoAdLoc"] + '</li>'+
+            '<li><span>Resp. Aq. Hid:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AqHid"]+'">' + carta["AqHid"] + '</a></li>'+
+            '<li><span>Início Aq. Hid:</span> ' + carta["inicioAqHid"] + '</li>'+
+            '<li><span>Término Aq. Hid:</span> ' + carta["terminoAqHid"] + '</li>'+
             '</ul><hr><ul>'+
-            '<li><span>Resp. Adq. Tra:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AdTra"]+'">' + carta["AdTra"] + '</a></li>'+
-            '<li><span>Início Tra:</span> ' + carta["inicioAdTra"] + '</li>'+
-            '<li><span>Término Tra:</span> ' + carta["terminoAdTra"] + '</li>'+
+            '<li><span>Resp. Rev. Hidro:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_RevHid"]+'">' + carta["RevHid"] + '</a></li>'+
+            '<li><span>Início Rev. Hid:</span> ' + carta["inicioRevHid"] + '</li>'+
+            '<li><span>Término Rev. Hid:</span> ' + carta["terminoRevHid"] + '</li>'+
             '</ul><hr><ul>'+
-            '<li><span>Resp. Adq. Hid:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AdHid1"]+'">' + carta["AdHid"] + '</a></li>'+
-            '<li><span>Início Hid:</span> ' + carta["inicioAdHid"] + '</li>'+
-            '<li><span>Término Hid:</span> ' + carta["terminoAdHid"] + '</li>'+
+            '<li><span>Resp. Ad. Vetorial:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AdVet"]+'">' + carta["AdVet"] + '</a></li>'+
+            '<li><span>Início Ad. Vet:</span> ' + carta["inicioAdVet"] + '</li>'+
+            '<li><span>Término Ad. Vet:</span> ' + carta["terminoAdVet"] + '</li>'+
             '</ul><hr><ul>'+
             '<li><span>Resp. CQ 1:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_CQ1"]+'">' + carta["CQ1"] + '</a></li>'+
             '<li><span>Início 1º CQ:</span> ' + carta["inicioCQ1"] + '</li>'+
@@ -101,23 +101,10 @@ $(document).ready(function(){
             '<li><span>Início 1ª Rev:</span> ' + carta["inicio1rev"] + '</li>'+
             '<li><span>Término 1ª Rev:</span> ' + carta["termino1rev"] + '</li>'+
             '</ul><hr><ul>'+
-            '<li><span>1º Corretor:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_corretor1"]+'">' + carta["corretor1"] + '</a></li>'+
-            '<li><span>Início 1ª Correção:</span> ' + carta["inicioCorrecao1"] + '</li>'+
-            '<li><span>Término 1ª Correção:</span> ' + carta["terminoCorrecao1"] + '</li>'+
-            '</ul><hr><ul>'+
             '<li><span>2º Revisor:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_revisor2"]+'">' + carta["revisor2"] + '</a></li>'+
             '<li><span>Início 2ª Rev:</span> ' + carta["inicio2rev"] + '</li>'+
             '<li><span>Término 2ª Rev:</span> ' + carta["termino2rev"] + '</li>'+
-            '</ul><hr><ul>'+
-            '<li><span>2º Corretor:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_corretor2"]+'">' + carta["corretor2"] + '</a></li>'+
-            '<li><span>Início 2ª Correção:</span> ' + carta["inicioCorrecao2"] + '</li>'+
-            '<li><span>Término 2ª Correção:</span> ' + carta["terminoCorrecao2"] + '</li>'+
-            '</ul><hr><ul>'+
-            '<li><span>Resp. CQ 2:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_CQ2"]+'">' + carta["CQ2"] + '</a></li>'+
-            '<li><span>Início 2º CQ:</span> ' + carta["inicioCQ2"] + '</li>'+
-            '<li><span>Término 2º CQ:</span> ' + carta["terminoCQ2"] + '</li>'+
             '</ul></div>'
-
             
         $(".informacoes-mi-descricao").append($info_mi_desc);
     }

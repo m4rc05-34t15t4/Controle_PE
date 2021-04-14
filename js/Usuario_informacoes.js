@@ -3,16 +3,19 @@ $(document).ready(function(){
     $link = "../";
 
     //Fases Edição Inseridos no Banco de Dados Controle na Tabela Fases_Edicao
-    let ADEQUACAO = "Adq.";
-    let CQ1 = "C. Qualidad 1";
+    let AQUISICAO = "Aq. Hidro";
+    let ADEQUACAO = "Adquação";
+    let CQ1 = "C. Qualidade";
     let EDICAO = "Edição";
-    let REV1 = "1ª Rev";
+    let REV1 = "1ª Rev.";
     let CORR1 = "1ª Correção";
-    let REV2 = "2ª Rev";
+    let REV2 = "2ª Rev.";
+    let REVHID = "Rev. Hidro";
     let CORR2 = "2ª Correção";
     
     Recarregar_pagina_resize();
 
+    $lista_cartas_em_aquisicao = [];
     $lista_cartas_em_adequacao = [];
     $lista_cartas_em_edicao = [];
     $lista_cartas_em_revisao = [];
@@ -20,11 +23,13 @@ $(document).ready(function(){
     $lista_cartas_em_correcao2 = [];
     $lista_cartas_pendentes = [];
     $lista_cartas_reservadas_adequacao = [];
+    $lista_cartas_reservadas_aquisicao = [];
     $lista_cartas_reservadas_edicao = [];
     $lista_cartas_reservadas_revisao = [];
     $lista_cartas_reservadas_correcao1 = [];
     $lista_cartas_reservadas_correcao2 = [];
     $carta_atual_em_trabalho = []
+    $dificuldade_ultima_carta_adquirida = "";
     $dificuldade_ultima_carta_adequada = "";
     $dificuldade_ultima_carta_editada = "";
     $editor_ultima_carta_revisada = "";
@@ -54,23 +59,26 @@ $(document).ready(function(){
         $("#box-confirmacao_botoes_confirmar").click(function() {
             $(".box-confirmacao_botoes, .box-confirmacao_content, .box-confirmacao-fundo").fadeOut();
             switch($texto){
-                case "Iniciar "+ADEQUACAO+" LOC":
-                case "Iniciar "+ADEQUACAO+" TRA":
-                case "Iniciar "+ADEQUACAO+" HID":
-                    $ad = $texto.split(" ");
-                    Pedir_carta("php/conexao_pedir_carta_adequacao.php", $dificuldade_ultima_carta_adequada, null, $ad[2]);
+                case "Iniciar "+AQUISICAO:
+                    Pedir_carta("php/conexao_pedir_carta_aquisicao.php", $dificuldade_ultima_carta_adquirida, null, "AqHid");
                     break;
-                case "Finalizar "+ADEQUACAO+" LOC":
-                    Finalizar_carta("AdLoc");
+                case "Finalizar "+AQUISICAO:
+                    Finalizar_carta("AqHid");
                     break;
-                case "Finalizar "+ADEQUACAO+" TRA":
-                    Finalizar_carta("AdTra");
+                case "Iniciar "+REVHID:
+                    Pedir_carta("php/conexao_pedir_carta_revisao.php", $dificuldade_ultima_carta_revisada, $editor_ultima_carta_revisada, "hid");
                     break;
-                case "Finalizar "+ADEQUACAO+" HID":
-                    Finalizar_carta("AdHid");
+                case "Finalizar "+REVHID:
+                    Finalizar_carta("RevHid");
+                    break;
+                case "Iniciar "+ADEQUACAO:
+                    Pedir_carta("php/conexao_pedir_carta_adequacao.php", $dificuldade_ultima_carta_adequada, null, "AdVet");
+                    break;
+                case "Finalizar "+ADEQUACAO:
+                    Finalizar_carta("AdVet");
                     break;
                 case "Iniciar "+CQ1:
-                    Pedir_carta("php/conexao_pedir_carta_controle_qualidade.php", null, null, "CQ1");
+                    Pedir_carta("php/conexao_pedir_carta_revisao.php", $dificuldade_ultima_carta_revisada, $editor_ultima_carta_revisada, "cq1");
                     break;
                 case "Finalizar "+CQ1:
                     Finalizar_carta("CQ1");
@@ -125,6 +133,7 @@ $(document).ready(function(){
             tipo: tipo_fase,
             mi: carta
             }, function(pedido) {
+                console.log(pedido);
                 switch(parseInt(pedido)){
                     case 0:
                         alert("Requisição faltando parâmetros");
@@ -145,7 +154,7 @@ $(document).ready(function(){
                         alert("Id do editor da sua última revisão, está inválido, verifique com adm!");
                         break;
                     case 6: 
-                        alert("Limite de usuários nos servidores, fale com adm!");
+                        alert("Sem cartas disponíveis, fale com adm!");
                         break;
                     case 7: 
                         alert("Tipo_Fase inválido!");
@@ -212,11 +221,13 @@ $(document).ready(function(){
 
             if(listas != 0){
 
+                Insere_historico_cartas_adquiridas(listas["lista_cartas_adquiridas"]);
+
                 Insere_historico_cartas_adequadas(listas["lista_cartas_adequadas"]);
-               
+                
                 Insere_historico_cartas_editadas(listas["lista_cartas_editadas"]);
 
-                Insere_historico_cartas_revisadas(listas["lista_cartas_revisadas"], id);
+                Insere_historico_cartas_revisadas(listas["lista_cartas_revisadas"]);
 
                 Configura_conteudo_central(id);
                 
@@ -231,7 +242,7 @@ $(document).ready(function(){
         });
     }
 
-    //Insere carta em trabalho e lista de pendentes
+    //Insere carta em trabalho e lista de pendentes ///VERIFICAR
     function Inserir_trabalho_atual_e_pendentes(lista_status){
         $elemento_em_trabalho = [];
         
@@ -241,48 +252,47 @@ $(document).ready(function(){
         else if($lista_cartas_em_correcao1.length > 0){
             $elemento_em_trabalho.push($lista_cartas_em_correcao1.shift());
         }
-        else if( $lista_cartas_em_edicao.length > 0 || $lista_cartas_em_revisao.length > 0 || $lista_cartas_em_adequacao.length > 0){
+        else if( $lista_cartas_em_edicao.length > 0 || $lista_cartas_em_revisao.length > 0 || $lista_cartas_em_adequacao.length > 0 || $lista_cartas_em_aquisicao.length > 0){
 
-            $ini_ad = $ini_ed = $ini_rv = "";
-            if($lista_cartas_em_adequacao[0]){ 
-                $ini_ad = $lista_cartas_em_adequacao[0]["inicio"];
-            }
-            if($lista_cartas_em_edicao[0]){ 
-                $ini_ed = $lista_cartas_em_edicao[0]["inicio"];
-            }
-            if($lista_cartas_em_revisao[0]){ 
-                $ini_rv = $lista_cartas_em_revisao[0]["inicio"];
-            }
+            $array = [];
+            $array = $array.concat($lista_cartas_em_aquisicao).concat($lista_cartas_em_adequacao).concat($lista_cartas_em_edicao).concat($lista_cartas_em_revisao);
+            $array.sort(function(a,b){ Comparacao_data_string(a,b) });
 
-            if( String($ini_ad) >= ( String($ini_rv) && String($ini_ed) ) ){
-                    $elemento_em_trabalho.push($lista_cartas_em_adequacao.shift());
+            switch($array[0]["tipo"]){
+                case "aquisicao":
+                    $elemento_em_trabalho.push($lista_cartas_em_aquisicao.pop());
+                    break;
+                case "adequacao":
+                    $elemento_em_trabalho.push($lista_cartas_em_adequacao.pop());
+                    break;
+                case "edicao":
+                    $elemento_em_trabalho.push($lista_cartas_em_edicao.pop());
+                    break;
+                case "revisao":
+                    $elemento_em_trabalho.push($lista_cartas_em_revisao.pop());
+                    break;
             }
-            if( String($ini_rv) >= ( String($ini_ad) && String($ini_ed) ) ){
-                $elemento_em_trabalho.push($lista_cartas_em_revisao.shift());
-            }
-            else{
-                $elemento_em_trabalho.push($lista_cartas_em_edicao.shift());
-            }
+            
         }
-    
+
         //Add a lista de cartas pendentes
+        $lista_cartas_reservadas_aquisicao = $lista_cartas_em_aquisicao.concat($lista_cartas_reservadas_aquisicao);
         $lista_cartas_reservadas_adequacao = $lista_cartas_em_adequacao.concat($lista_cartas_reservadas_adequacao);
         $lista_cartas_reservadas_edicao = $lista_cartas_em_edicao.concat($lista_cartas_reservadas_edicao);
         $lista_cartas_reservadas_revisao = $lista_cartas_em_revisao.concat($lista_cartas_reservadas_revisao);
         $lista_cartas_reservadas_correcao1 = $lista_cartas_em_correcao1.concat($lista_cartas_reservadas_correcao1);
         $lista_cartas_reservadas_correcao2 = $lista_cartas_em_correcao2.concat($lista_cartas_reservadas_correcao2);
 
+        $lista_cartas_em_aquisicao = [];
         $lista_cartas_em_adequacao = [];
         $lista_cartas_em_revisao = [];
         $lista_cartas_em_edicao = [];
         $lista_cartas_em_correcao1 = [];
         $lista_cartas_em_correcao2 = [];
 
-        //console.log($elemento_em_trabalho);
-
-        if($elemento_em_trabalho.length > 0 
-            //&& parseFloat($elemento_em_trabalho[0]["status"]) == (2.1 || 2.4 || 2.7 || 2.13 || 2.16 || 2.17 || 2.21 || 2.23 || 2.29 || 2.31 || 2.49 || 2.5 || 2.53 || 2.55 || 2.61 || 2.64 || 3.1 || 3.4 || 3.16 || 3.64 || 3.256 ) 
-            ){
+        $status_tb = 0;
+        if($elemento_em_trabalho.length > 0) $status_tb = parseFloat($elemento_em_trabalho[0]["status"]);
+        if($elemento_em_trabalho.length > 0 && ($status_tb == 1.256 || $status_tb == 1.64 || $status_tb == 2.1 || $status_tb == 2.4 || $status_tb == 3.1 || $status_tb == 3.4 || $status_tb == 3.16 ) ){
 
                 //retira o primeiro elemento que é o trabalho atual e mostra no layout
                 $carta_atual_em_trabalho = $elemento_em_trabalho.shift();
@@ -301,24 +311,15 @@ $(document).ready(function(){
                 }
                 
                 //insere no html
-                $status = lista_status[$carta_atual_em_trabalho["status"]];
-                if(!lista_status[$carta_atual_em_trabalho["status"]]){
-                    $status = "";
-                    $max_cod = 4;
-                    $min_cod = 1;
-                    if(String($carta_atual_em_trabalho["status"])[0] == "2") $max_cod = 3;
-                    else $min_cod = 2;
-                    //VERIFICAR//////////////////
-                    lista_status.forEach(function(key, valor){
-                        console,log(key, valor, $carta_atual_em_trabalho["status"]);
-                        if(parseFloat(key) > $min_cod && parseFloat(key) < $max_cod && parseFloat(key) <= parseFloat($carta_atual_em_trabalho["status"])){
-                            $status = valor;
-                        }
-                    });
+                $status = Status_texto_em_trabalho($carta_atual_em_trabalho["status"]);
+                if($status == ""){
+                    alert("Erro ao verificar carta em trabalho fale com Adm!");
                 }
+
                 $(".usuario-trabalho-informacoes").html("<a href=\"Mi_informacoes.php?mi="+$carta_atual_em_trabalho["mi"]+"\">"+$carta_atual_em_trabalho["mi"]+
                     "</a> <span class=\"descricao-funcoes-descricao\">( "+$status+$dias+" ) </span>");
                 Mostrar_botao_iniciar_finalizar("Finalizar");
+
         }
         else if($elemento_em_trabalho.length > 0){
             
@@ -334,19 +335,54 @@ $(document).ready(function(){
             Pedir_outra_carta();
         }
 
-        Insere_Descricao_Funcoes_SE_Fora_Produducao($carta_atual_em_trabalho);
-
+        Insere_Descricao_Funcoes_SE_Fora_Producao($carta_atual_em_trabalho);
+        
         Inserir_Reservadas_e_Pendentes();
 
-    
+    }
+
+    //Retorna o texto adequado para carta status em trabalho
+    function Status_texto_em_trabalho(valor){
+        $status = "";
+        switch(valor){
+            case "1.64":
+                $status = AQUISICAO;
+                break;
+            case "1.256":
+                $status = REVHID;
+                break;
+            case "2.1":
+                $status = ADEQUACAO;
+                break;
+            case "2.4":
+                $status = CQ1;
+                break;
+            case "3.1":
+                $status = EDICAO;
+                break;
+            case "3.4":
+                $status = REV1;
+                break;
+            case "3.16":
+                $status = REV2;
+                break;
+        }
+        return $status
+    }
+
+    function Comparacao_data_string(a,b, data = "inicio"){
+        if(a[data] !== undefined && b[data] !== undefined) return b[data] > a[data];
     }
 
     //Inserir cartas reservadas
     function Inserir_Reservadas_e_Pendentes(){
+        /*
         $lista_cartas_reservadas_correcao2.reverse();
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_correcao2, CORR2, true);
         $lista_cartas_reservadas_correcao1.reverse();
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_correcao1, "1ª Correção", true);
+        */
+        Popula_reservadas_e_pendentes($lista_cartas_reservadas_aquisicao, "Reservadas Aquisição", true);
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_adequacao, "Reservadas Adequação", true);
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_edicao, "Reservadas Edição", true);
         Popula_reservadas_e_pendentes($lista_cartas_reservadas_revisao, "Reservadas Revisão", true);
@@ -356,7 +392,10 @@ $(document).ready(function(){
     //Inserir cartas pendentes
     function Popula_reservadas_e_pendentes(lista_cartas, titulo, dias){
         if(lista_cartas.length > 0){
+            $(".usuario-trabalho-pendentes").append("<p>"+titulo+": ("+lista_cartas.length+")</p>");
+            $(".usuario-trabalho-pendentes").append("<br>");
             lista_cartas.forEach(function(valor){
+                //console.log(valor);
                 $dias = "";
                 if(valor["dias"]){
                     if((dias == true) && (parseInt(valor["dias"]) > 0)){
@@ -368,8 +407,6 @@ $(document).ready(function(){
                     $(".usuario-trabalho-pendentes").append("<a href=\"Mi_informacoes.php?mi="+valor["mi"]+"\">"+valor["mi"]+$dias+"</a><br>");
                 }
             })
-            $(".usuario-trabalho-pendentes").append("<p>"+titulo+": ("+lista_cartas.length+")</p>");
-            $(".usuario-trabalho-pendentes").append("<br>");
         }
     }
 
@@ -388,9 +425,9 @@ $(document).ready(function(){
             $texto_botao_iniciar_finalizar = $(".usuario-trabalho-informacoes").text();
             $texto_botao = texto+" ";
 
-            if($texto_botao_iniciar_finalizar.indexOf("Loc") > 0) $texto_botao += ADEQUACAO+" LOC";
-            else if($texto_botao_iniciar_finalizar.indexOf("Tra") > 0) $texto_botao += ADEQUACAO+" TRA";
-            else if($texto_botao_iniciar_finalizar.indexOf("Hid") > 0) $texto_botao += ADEQUACAO+" HID";
+            if($texto_botao_iniciar_finalizar.indexOf(AQUISICAO) > 0) $texto_botao += AQUISICAO;
+            else if($texto_botao_iniciar_finalizar.indexOf(ADEQUACAO) > 0) $texto_botao += ADEQUACAO;
+            else if($texto_botao_iniciar_finalizar.indexOf(REVHID) > 0) $texto_botao += REVHID;
             else if($texto_botao_iniciar_finalizar.indexOf(EDICAO) > 0) $texto_botao += EDICAO;
             else if($texto_botao_iniciar_finalizar.indexOf(REV1) > 0) $texto_botao += REV1;
             else if($texto_botao_iniciar_finalizar.indexOf(CORR1) > 0) $texto_botao += CORR1;
@@ -398,16 +435,20 @@ $(document).ready(function(){
             else if($texto_botao_iniciar_finalizar.indexOf(CORR2) > 0) $texto_botao += CORR2;
 
             Inserir_Texto_Botao_Iniciar_Finalizar_Carta($texto_botao);
+
         }
         else{
 
             $texto_botao_iniciar_finalizar = String($(".usuario-funcao").text());
             
+             //BOTÃO INICIAR AQUISICAO
+             if($texto_botao_iniciar_finalizar.indexOf("Aquisitor") >= 0){
+                Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+AQUISICAO);
+            }
+            
             //BOTÃO INICIAR ADEQUACAO
             if($texto_botao_iniciar_finalizar.indexOf("Adequador") >= 0){
-                if($texto_botao_iniciar_finalizar.indexOf("Loc") >= 0) Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+ADEQUACAO+" LOC");
-                if($texto_botao_iniciar_finalizar.indexOf("Tra") >= 0) Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+ADEQUACAO+" TRA");
-                if($texto_botao_iniciar_finalizar.indexOf("Hid") >= 0) Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+ADEQUACAO+" HID");
+                Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+ADEQUACAO);
             }
             
             //BOTÃO INICIAR EDIÇÃO
@@ -422,14 +463,20 @@ $(document).ready(function(){
             else if($texto_botao_iniciar_finalizar.indexOf("1º Revisor") >= 0){
                 Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+REV1);
             }
-            
+            else if($texto_botao_iniciar_finalizar.indexOf("Revisor Hidro") >= 0){
+                Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+REVHID);
+            }
+            else if($texto_botao_iniciar_finalizar.indexOf("Controlador de Qualidade") >= 0){
+                Inserir_Texto_Botao_Iniciar_Finalizar_Carta(texto+" "+CQ1);
+            }
         }
-        
     }
 
     //Insere Cartas em Pausa
-    function Insere_Descricao_Funcoes_SE_Fora_Produducao(carta_em_trabalho){
-        if( (String($(".usuario-funcao").text()).indexOf("Editor") < 0) && (String($(".usuario-funcao").text()).indexOf("Revisor") < 0)  && (String($(".usuario-funcao").text()).indexOf("Adequador") < 0)){
+    function Insere_Descricao_Funcoes_SE_Fora_Producao(carta_em_trabalho){
+        if( String($(".usuario-funcao").text()).indexOf("Editor") < 0 && String($(".usuario-funcao").text()).indexOf("Revisor") < 0  && 
+            String($(".usuario-funcao").text()).indexOf("Adequador") < 0 && String($(".usuario-funcao").text()).indexOf("Aquisitor") < 0 && 
+            String($(".usuario-funcao").text()).indexOf("Controlador") < 0){
             //Add Descrição funções
             Esconder_Botao_Finalizar_Iniciar();
             $(".usuario-trabalho-informacoes").html($descricao_funcoes);
@@ -444,16 +491,20 @@ $(document).ready(function(){
         
         //Define qual botão utilizar
         $tipo_texto = "edicao";
-        if((texto_botao.indexOf(REV2) > 0) || (texto_botao.indexOf(REV1) > 0)){
+        if((texto_botao.indexOf(REV2) > 0) || (texto_botao.indexOf(REV1) > 0) || (texto_botao.indexOf(REVHID) > 0)){
             $tipo_texto = "revisao";
         }
-        else if(texto_botao.indexOf("Adequador") > 0){
+        else if(texto_botao.indexOf(ADEQUACAO) > 0){
             $tipo_texto = "adequacao";
+        }
+        else if(texto_botao.indexOf(AQUISICAO) > 0){
+            $tipo_texto = "aquisicao";
         }
 
         //Verifica se há cartas para corrigir e mostra o Botão referente
         if((texto_botao.indexOf("Finalizar") < 0) && ( ($lista_cartas_reservadas_correcao1.length > 0) || ($lista_cartas_reservadas_correcao2.length > 0) )){
             $tipo_texto = "edicao";
+            
             if($lista_cartas_reservadas_correcao2.length > 0){
                 texto_botao = "Iniciar "+CORR2;
             }
@@ -470,11 +521,12 @@ $(document).ready(function(){
 
         $("#botao_finalizar_iniciar_"+$tipo_texto+" div").html(texto_botao);
         $("#botao_finalizar_iniciar_"+$tipo_texto).css("display", "flex");
+
     }
 
     //Esconder Botão Finalizar e Iniciar Carta
     function Esconder_Botao_Finalizar_Iniciar(){
-        $("#botao_finalizar_iniciar_revisao, #botao_finalizar_iniciar_edicao, #botao_finalizar_iniciar_adequacao").css("display", "none");
+        $("#botao_finalizar_iniciar_revisao, #botao_finalizar_iniciar_edicao, #botao_finalizar_iniciar_adequacao, #botao_finalizar_iniciar_aquisicao").css("display", "none");
     }
 
     //Setagem de cor do botao de finalizar e pedir carta
@@ -521,24 +573,76 @@ $(document).ready(function(){
                     }
                 }
                 else if((String(valor["inicio"]).indexOf("-") > 0) && (String(valor["termino"]).indexOf("-") < 0) && parseFloat(valor["status"]) > 2.0 && 
-                    parseFloat(valor["status"]) < 2.63 && parseFloat(valor["status"]) != (2.3 || 2.12 || 2.15 || 2.48 || 2.51 || 2.6 ) ){
+                    parseFloat(valor["status"]) == 2.1 ){
                     $lista_cartas_em_adequacao.push(valor);
                 }
                 else if( String(valor["inicio"]).indexOf("-") < 0 && String(valor["termino"]).indexOf("-") < 0 && 
-                    parseFloat(valor["status"]) < 2.63 ){
+                    parseFloat(valor["status"]) < 2.4 ){
                     $lista_cartas_reservadas_adequacao.push(valor);
                 }
                 else{
                     Add_lista_cartas_pendentes(valor);
                 }
-            })
+            }) 
         }
         else{
             $dificuldade_ultima_carta_adequada = "Fácil";
         }
-
+        
+        //console.log("ADEQUADAS: ",$historico_cartas_adequadas);
         $(".usuario-historico-titulo-adequadas").html("Adequadas: ("+$contador+")");
         $(".usuario-cartas-adequadas").html($historico_cartas_adequadas);
+    }
+
+    //Insere histórico de cartas adquiridas
+    function Insere_historico_cartas_adquiridas(lista_cartas_adquiridas){
+        $historico_cartas_adquiridas = "";
+        $contador = 0;
+        //se = 0, não há cartas adequadas ou em adequação para este usuario
+        if(lista_cartas_adquiridas != 0){
+            
+            //add dificuldade de ultima carta adquirida ou em aquisicao
+            $dificuldade_ultima_carta_adquirida = lista_cartas_adquiridas[0]["niveis"];
+
+            //distribui as finalizadas e as em andamento
+            lista_cartas_adquiridas.forEach(function(valor, key){
+
+                //Pendentes referente a data e tempo cartas
+                if( ( (valor["dias"] == "") && (valor["dias"] != 0) ) || (valor["tempo"] == "") ){
+                    Add_lista_cartas_pendentes(valor);
+                }
+                
+                //Historico cartas adquiridas
+                if( (String(valor["termino"]).indexOf("-") > 0) && (String(valor["inicio"]).indexOf("-") > 0) ){
+
+                    $historico_cartas_adquiridas += "<a href=\"Mi_informacoes.php?mi=" + valor["mi"] + "\"><div>" + valor["mi"] + "<p>" +
+                        RetirarTime(valor["termino"]) + " "+valor["aquisicao"].toUpperCase()+"</p><br></div></a>";
+                    $contador++;
+
+                    //verifica se o status ta correto para uma carta ja adiquirida
+                    if( parseFloat(valor["status"]) < 1.64 && parseFloat(valor["status"]) != (1.128 || 1.256) ){
+                        Add_lista_cartas_pendentes(valor);
+                    }
+                }
+                else if((String(valor["inicio"]).indexOf("-") > 0) && (String(valor["termino"]).indexOf("-") < 0) && parseFloat(valor["status"]) == 1.64 ){
+                    $lista_cartas_em_aquisicao.push(valor);
+                }
+                else if( String(valor["inicio"]).indexOf("-") < 0 && String(valor["termino"]).indexOf("-") < 0 && 
+                    parseFloat(valor["status"]) < 1.64 && parseFloat(valor["status"]) != (1.128 || 1.256) ){
+                    $lista_cartas_reservadas_aquisicao.push(valor);
+                }
+                else{
+                    Add_lista_cartas_pendentes(valor);
+                }
+            }) 
+        }
+        else{
+            $dificuldade_ultima_carta_adquirida = "Fácil";
+        }
+
+        //console.log("em aquisição: ",$lista_cartas_em_aquisicao);
+        $(".usuario-historico-titulo-adquiridas").html("Adquiridas: ("+$contador+")");
+        $(".usuario-cartas-adquiridas").html($historico_cartas_adquiridas);
     }
 
     //Insere histórico de cartas editadas
@@ -554,7 +658,7 @@ $(document).ready(function(){
             //distribui as finalizadas e as em andamento
             lista_cartas_editadas.forEach(function(valor, key){
 
-                Add_Lista_Correcao(valor);
+                //Add_Lista_Correcao(valor);
 
                 //Pendentes referente a data e tempo cartas
                 if( ( (valor["dias"] == "") && (valor["dias"] != 0) ) || (valor["tempo"] == "") ){
@@ -566,7 +670,7 @@ $(document).ready(function(){
                     
                     $corrigida = "";
                     $img_corrigida = "<img class=\"checked\" src=\"../img/checked.png\" />";
-                    
+                    /*
                     if(String(valor["terminocorrecao2"]).indexOf("-") > 0){
                         $corrigida += $img_corrigida;
                     }
@@ -574,24 +678,21 @@ $(document).ready(function(){
                     if(String(valor["terminocorrecao1"]).indexOf("-") > 0){
                         $corrigida += $img_corrigida;
                     }
-
+                    */
                     $historico_cartas_editadas += "<a href=\"Mi_informacoes.php?mi=" + valor["mi"] + "\"><div>" + valor["mi"] + "<p>" +
                         RetirarTime(valor["terminoedicao"]) + " "+$corrigida+"</p><br></div></a>";
                     
                     $contador++;
 
                     //verifica se o status ta correto para uma carta ja editada
-                    if((parseInt(valor["status"]) < 4) || 
-                        ( ((parseInt(valor["status"]) < 7) || (parseInt(valor["status"]) == 60)) && (String(valor["terminocorrecao1"]).indexOf("-") > 0) ) ||    
-                        ( ((parseInt(valor["status"]) < 9) || (parseInt(valor["status"]) == 80)) && (String(valor["terminocorrecao2"]).indexOf("-") > 0) )){
-                            Add_lista_cartas_pendentes(valor);
+                    if(parseInt(valor["status"]) < 3.2){
+                        Add_lista_cartas_pendentes(valor);
                     }
                 }
-                else if((String(valor["inicioedicao"]).indexOf("-") > 0) && (String(valor["terminoedicao"]).indexOf("-") < 0) && (parseInt(valor["status"]) == 3) ){
+                else if((String(valor["inicioedicao"]).indexOf("-") > 0) && (String(valor["terminoedicao"]).indexOf("-") < 0) && (parseInt(valor["status"]) == 3.1) ){
                     $lista_cartas_em_edicao.push(valor);
                 }
-                else if((String(valor["inicioedicao"]).indexOf("-") < 0) && (String(valor["terminoedicao"]).indexOf("-") < 0) && 
-                    ( (parseInt(valor["status"]) == 2) || (parseInt(valor["status"]) == 3) )){
+                else if(String(valor["inicioedicao"]).indexOf("-") < 0 && String(valor["terminoedicao"]).indexOf("-") < 0 && parseInt(valor["status"]) < 3.1){
                     $lista_cartas_reservadas_edicao.push(valor);
                 }
                 else{
@@ -603,8 +704,72 @@ $(document).ready(function(){
             $dificuldade_ultima_carta_editada = "Fácil";
         }
 
+        //console.log("EDITADAS:",$historico_cartas_editadas);
         $(".usuario-historico-titulo-editadas").html("Editadas: ("+$contador+")");
         $(".usuario-cartas-editadas").html($historico_cartas_editadas);
+    }
+
+    //Insere histórico de cartas revisadas
+    function Insere_historico_cartas_revisadas(lista_cartas_revisadas){
+        $historico_cartas_revisadas = "";
+        $contador = 0;
+         //se = 0, não há cartas revisadas ou em revisão para este usuario
+        if(lista_cartas_revisadas != 0){
+
+            //add dificuldade de ultima carta editada ou em edicao
+            $dificuldade_ultima_carta_revisada = lista_cartas_revisadas[0]["niveis"];
+            $editor_ultima_carta_revisada = lista_cartas_revisadas[0]["operador"];
+
+            //verifica as que estão finalizadas e as em andamento
+            lista_cartas_revisadas.forEach(function(valor, key){
+                
+                if((String(valor["inicio"]).indexOf("-") > 0) && (String(valor["termino"]).indexOf("-") > 0)){
+                    $tipo = "(";
+                    switch(valor["rev"]){
+                        case "rev1":
+                            $tipo += REV1;
+                            break;
+                        case "rev2":
+                            $tipo += REV2;
+                            break;
+                        case "hid":
+                            $tipo += REVHID;
+                            break;
+                    }
+                    $tipo += ")";
+                    $historico_cartas_revisadas += "<a href=\"Mi_informacoes.php?mi="+valor["mi"]+"\"><div>"+valor["mi"]+"<p>"+ RetirarTime(valor["termino"]) +
+                        " "+$tipo+"</p><br></div></a>";
+                    $contador++;
+                    
+                    //verifica se o status ta correto para uma carta ja revisada
+                    if( ( valor["rev"] == "rev2" && parseInt(valor["status"]) < 4.0 && parseInt(valor["status"]) != 3.16 ) || 
+                        ( valor["rev"] == "rev1" && parseInt(valor["status"]) < 3.8 && parseInt(valor["status"]) != (3.4 || 3.16) ) || 
+                        ( valor["rev"] == "hid" && parseInt(valor["status"]) < 2 && parseInt(valor["status"]) != (1.128 || 1.256) ) ){
+                            Add_lista_cartas_pendentes(valor);
+                    }
+                }
+                else if((String(valor["inicio"]).indexOf("-") > 0)){
+                    $lista_cartas_em_revisao.push(valor);
+                }
+                else if( String(valor["inicio"]).indexOf("-") < 0 && String(valor["termino"]).indexOf("-") < 0 && 
+                    ( (valor["rev"] == "rev2" && parseInt(valor["status"]) < 4 && parseInt(valor["status"]) != 3.16) || 
+                        (valor["rev"] == "rev1" && parseInt(valor["status"]) < 3.4 && parseInt(valor["status"]) != 3.8) || 
+                        (valor["rev"] == "hid" && parseInt(valor["status"]) < 2 && parseInt(valor["status"]) != 1.256) ) ){
+                    $lista_cartas_reservadas_revisao.push(valor);
+                }
+                else {
+                    Add_lista_cartas_pendentes(valor);
+                }
+            })
+        }
+        else{
+            $dificuldade_ultima_carta_revisada = "Fácil";
+            $editor_ultima_carta_revisada = $id;
+        }
+
+        //console.log("REVISADAS: ",$historico_cartas_revisadas);
+        $(".usuario-historico-titulo-revisadas").html("Revisadas: ("+$contador+")");
+        $(".usuario-cartas-revisadas").html($historico_cartas_revisadas);
     }
 
     //Add carta a lista de cartas correção 1
@@ -627,96 +792,11 @@ $(document).ready(function(){
         }
     }
 
-    //Function Validador de cartas
-    function Validar_Dados_Cartas(carta){
-        switch(carta["status"]){
-            case "0": //FORA DO PROJETO
-                break;
-            case "1": 
-                break;
-            case "2":
-                break;
-            case "3":
-                break;
-            case "4":
-                break;
-            case "5":
-                break;
-            case "6":
-                break;
-            case "60":
-                break;
-            case "61":
-                break;
-            case "7":
-                break;
-            case "8":
-                break;
-            case "80":
-                break;
-            case "81":
-                break;
-            case "9":
-                break;
-            default:
-                break;
-        }
-    }
-
     //Add carta a lista de cartas pendentes
     function Add_lista_cartas_pendentes(carta_add){
         if($lista_cartas_pendentes.indexOf(carta_add) < 0){
             $lista_cartas_pendentes.push(carta_add);
         }
-    }
-
-    //Insere histórico de cartas revisadas
-    function Insere_historico_cartas_revisadas(lista_cartas_revisadas, id){
-        $historico_cartas_revisadas = "";
-        $contador = 0;
-         //se = 0, não há cartas revisadas ou em revisão para este usuario
-        if(lista_cartas_revisadas != 0){
-
-            //add dificuldade de ultima carta editada ou em edicao
-            $dificuldade_ultima_carta_revisada = lista_cartas_revisadas[0]["niveis"];
-            $editor_ultima_carta_revisada = lista_cartas_revisadas[0]["editor"];
-
-            //verifica as que estão finalizadas e as em andamento
-            lista_cartas_revisadas.forEach(function(valor, key){
-                if((String(valor["inicio"]).indexOf("-") > 0) && (String(valor["termino"]).indexOf("-") > 0)){
-                    $tipo = "("+REV1+")";
-                    if(valor["rev"] == "rev2"){
-                        $tipo = "("+REV2+")";
-                    }
-                    $historico_cartas_revisadas += "<a href=\"Mi_informacoes.php?mi="+valor["mi"]+"\"><div>"+valor["mi"]+"<p>"+ RetirarTime(valor["termino"]) +
-                        " "+$tipo+"</p><br></div></a>";
-                    $contador++;
-                    
-                    //verifica se o status ta correto para uma carta ja revisada
-                    if(( (valor["rev"] == "rev2") && ((parseInt(valor["status"]) < 8) && (parseInt(valor["status"]) != 60)  && (parseInt(valor["status"]) != 61)) ) ||
-                        ( (valor["rev"] == "rev1") && (parseInt(valor["status"]) < 6) )){
-                        Add_lista_cartas_pendentes(valor);
-                    }
-                }
-                else if((String(valor["inicio"]).indexOf("-") > 0)){
-                    $lista_cartas_em_revisao.push(valor);
-                }
-                else if((String(valor["inicio"]).indexOf("-") < 0) && (String(valor["termino"]).indexOf("-") < 0) && 
-                    ((parseInt(valor["status"]) == 61) || (parseInt(valor["status"]) == 7) || (parseInt(valor["status"]) == 4) || (parseInt(valor["status"]) == 5)) ){
-                    $lista_cartas_reservadas_revisao.push(valor);
-                }
-                else {
-                    Add_lista_cartas_pendentes(valor);
-                }
-            })
-        }
-        else{
-            $dificuldade_ultima_carta_revisada = "Fácil";
-            $editor_ultima_carta_revisada = $id;
-        }
-
-        $(".usuario-historico-titulo-revisadas").html("Revisadas: ("+$contador+")");
-        $(".usuario-cartas-revisadas").html($historico_cartas_revisadas);
     }
 
     //Insere o nome do usuario e suas funções
@@ -783,12 +863,6 @@ $(document).ready(function(){
         $(".usuario-avatar, .usuario-nome, .usuario-funcao, .usuario-conteudo-central").css("width", $largura_img_avatar+"pt");
         $(".usuario-conteudo-central").css("left","calc( 50% - "+($largura_img_avatar/2)+"pt)");
         $(".usuario-avatar").css("background-image", $img_avatar_background);
-        $largura_historico_cartas = "calc( (50% - "+($largura_img_avatar/2)+"pt - var(--padding)) / 3";
-        $(".usuario-historico-titulo-adequadas, .usuario-historico-titulo-editadas, .usuario-historico-titulo-revisadas, .usuario-cartas-adequadas, .usuario-cartas-editadas, .usuario-cartas-revisadas")
-            .css("width", $largura_historico_cartas+")");
-        $(".usuario-historico-titulo-editadas, .usuario-cartas-editadas").css("right", $largura_historico_cartas+" + (var(--padding) / 2))");
-        $(".usuario-historico-titulo-adequadas, .usuario-cartas-adequadas").css("right", $largura_historico_cartas+" * 2 + (var(--padding) / 2))");
-        $(".usuario-conteudo-esquerdo").css("width", "calc( (50% - "+($largura_img_avatar/2)+"pt) - (2 * var(--padding)) - var(--largura-menu-lateral) )");
     }
 
     //Retirar Time
