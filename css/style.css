@@ -30,7 +30,7 @@
     --altura-titulo-historico: 50pt;
     --altura-titulo-trabalho: 70pt;
     --largura-usuario-trabalho: calc(var(--largura-usuario-historico) - var(--largura-menu-lateral) - var(--padding));
-    --largura-historico-usuarios-cartas: calc((var(--largura-usuario-historico) - (2 * var(--padding))) / 3);
+    --largura-historico-usuarios-cartas: calc((var(--largura-usuario-historico) - (3 * var(--padding))) / 4);
     --largura-botao: calc((var(--largura-usuario-trabalho) / 2) - var(--padding));
     --altura-botao: 60pt;
     --largura-avatar-mini: calc((var(--largura-conteudo) - (7 * var(--padding)) - var(--largura-scroll)) / 6);
@@ -168,7 +168,6 @@ a:visited {
     background-color: green;
     color: white;
 }
-
 
 .cabecalho {
     position: relative;
@@ -638,34 +637,39 @@ ul li span {
     font-size: 14pt;
 }
 
-.usuario-cartas-editadas, .usuario-cartas-revisadas, .usuario-cartas-adequadas {
+.usuario-conteudo-direita {
     position: absolute;
-    top: calc(var(--altura-cabecalho) + ( 1.8 * var(--altura-titulo-historico)) + var(--padding));
-    width: var(--largura-historico-usuarios-cartas);
-    max-height: calc( var(--altura-do-corpo) - ( 1.8 * var(--altura-titulo-historico)) - (3 * var(--padding)));
-    font-size: 20pt;
+    right: 0;
+    top: var(--altura-cabecalho);
+    width: var(--largura-usuario-historico);
+    height: var(--altura-do-corpo);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    border: none;
+}
+
+.usuario-cartas-editadas, .usuario-cartas-revisadas, .usuario-cartas-adequadas, .usuario-cartas-adquiridas {
+    max-height: 90%;
+    font-size: 16pt;
     text-align: center;
     border: none;
-    border-radius: 10pt;
-    min-width: 100pt;
+    width: 100%;
+    height: 100%;
     padding-top: 10pt;
     overflow: auto;
+    display: block;
 }
 
-.usuario-cartas-editadas {
-    right: calc(var(--largura-historico-usuarios-cartas) + (2 * var(--padding)));
-}
 
-.usuario-cartas-revisadas {
-    right: var(--padding);
-}
-
-.usuario-cartas-editadas p, .usuario-cartas-revisadas p {
+.usuario-cartas-editadas p, .usuario-cartas-revisadas p, .usuario-cartas-adequedas p, .usuario-cartas-adquiridas p{
     padding-top: 5pt;
     font-size: 14pt;
 }
 
-.usuario-cartas-editadas div:hover, .usuario-cartas-revisadas div:hover{
+.usuario-cartas-editadas div:hover, .usuario-cartas-revisadas div:hover,  .usuario-cartas-adequedas div:hover, .usuario-cartas-adquiridas div:hover {
     cursor: pointer;
 }
 
@@ -676,13 +680,11 @@ ul li span {
 }
 
 .usuario-historico-titulo {
-    position: absolute;
     text-align: center;
-    top: calc(var(--altura-cabecalho) + var(--padding));
-    right: var(--padding);
     width: var(--largura-usuario-historico);
     height: var(--altura-titulo-historico);
     font-size: 40pt;
+    padding: calc(var(--padding) / 2);
 }
 
 .usuario-trabalho-titulo {
@@ -692,22 +694,33 @@ ul li span {
     height: var(--altura-titulo-trabalho);
 }
 
-.usuario-historico-titulo-adequadas, .usuario-historico-titulo-editadas, .usuario-historico-titulo-revisadas {
-    position: absolute;
-    top: calc(var(--altura-cabecalho) + var(--altura-titulo-historico) + var(--padding));
-    right: calc(var(--padding) / 2);
-    width: var(--largura-historico-usuarios-cartas);
+#historico-cartas-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; 
+    height: calc(var(--altura-do-corpo) - var(--altura-titulo-historico) - var(--padding));
+    width: 100%;
+}
+
+.historico-cartas {
+    width: 33%;
+    height: calc(50% - var(--altura-titulo-historico) * 0.8);
+    margin: 0pt;
+    border: none;
+    display: block;
+}
+
+.usuario-historico-titulo-adequadas, .usuario-historico-titulo-editadas, .usuario-historico-titulo-revisadas, .usuario-historico-titulo-adquiridas {
     height: calc(var(--altura-titulo-historico) * 0.8);
-    font-size: 18pt;
+    font-size: 16pt;
     text-align: center;
-}
-
-.usuario-historico-titulo-editadas {
-    right: calc(var(--largura-historico-usuarios-cartas) + (var(--padding) * 2));
-}
-
-.usuario-historico-titulo-adequadas {
-    right: calc((var(--largura-historico-usuarios-cartas) * 2 ) + (var(--padding) * 3));
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-weight: 600;
 }
 
 .usuario-trabalho-informacoes {
@@ -736,7 +749,7 @@ ul li span {
     width: 100%;
 }
 
-#botao_finalizar_iniciar_adequacao, #botao_finalizar_iniciar_edicao, #botao_finalizar_iniciar_revisao {
+#botao_finalizar_iniciar_adequacao, #botao_finalizar_iniciar_edicao, #botao_finalizar_iniciar_revisao, #botao_finalizar_iniciar_aquisicao {
     display: none;
 }
 #botao_finalizar_iniciar_revisao {
@@ -746,6 +759,10 @@ ul li span {
 #botao_finalizar_iniciar_revisao:hover{
     border: 1pt solid #030;
     background-color: #3F3;
+}
+#botao_finalizar_iniciar_edicao{
+    border: 1pt solid #09F;
+    background-color: #0FF;
 }
 #botao_finalizar_iniciar_edicao:hover{
     border: 1pt solid #06F;
@@ -758,6 +775,14 @@ ul li span {
 #botao_finalizar_iniciar_adequacao:hover{
     border: 1pt solid #D33;
     background-color: #D66;
+}
+#botao_finalizar_iniciar_aquisicao {
+    border: 1pt solid rgb(102, 23, 247);
+    background-color: rgb(135, 71, 253);
+}
+#botao_finalizar_iniciar_aquisicao:hover{
+    border: 1pt solid rgb(58, 3, 161);
+    background-color: rgb(99, 52, 187);
 }
 
 .usuario, .usuario-table {
@@ -926,49 +951,74 @@ ul li span {
     margin: var(--padding);
 }
 
-#todos-mi-legenda-status { /* MUDANÇA MANUAL OP: Inserir afastamento Legenda Linhas onde ha a mudança de fuso no layout de cartas*/
-    z-index: 7;
-    position: absolute;
-    top: calc((var(--largura-mi-25k) + 2pt) * 25);
-    left: 0pt;
+#todos-mi-legenda-status, #legenda_mi_informacao {
     font-size: 18pt;
     border: none;
     padding: 0pt;
     margin: 0pt;
-    border: none;
-    width: 99%;
-    border: none;
+    padding-bottom: 30pt;
+    width: 100%;
+    height: 200pt;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: var(--padding);
 }
 
-#todos-mi-legenda-status p {
+#todos-mi-legenda-titulo p, #todos-mi-legenda-titulo_direita {
     font-size: 25pt;
-}
-#todos-mi-legenda-status tr td {
-    vertical-align: middle;
-    height: auto;
+    padding: 10pt;
+    padding-left: var(--padding);
 }
 
-#todos-mi-legenda-status table { /* EDITAR MANUAL OP */
-    width: 95%;
-    height: 400pt;
-    border: none;
+#todos-mi-legenda-titulo_direita {
+    padding: 0;
+    margin: 0;
 }
 
-#todos-mi-legenda-status tr {
-    border: none;
-    margin: 0pt;
-    padding: 0pt;
-    height: auto;
+#todos-mi-legenda-status div, #todos-mi-legenda-titulo, #legenda_mi_informacao div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#todos-mi-legenda-status div div:first-child {
+    width: 50pt;
+    height: 40pt;
+    justify-content: center;
+}
+
+#todos-mi-legenda-status div div:last-child {
+    height: 40pt;
+}
+
+#legenda_mi_informacao div div:first-child {
+    width: 30pt;
+    height: 30pt;
+    justify-content: center;
+    margin: 0;
+    font-size: 15pt;
+}
+
+#legenda_mi_informacao div div:last-child {
+    height: 30pt;
+    width: 100pt;
+    font-size: 15pt;
+    margin: 0;
+    padding: 5pt;
 }
 
 #legenda_mi_informacao {
     font-size: 15pt;
     font-weight: 500;
-    padding: 2pt;
-}
-
-#legenda_mi_informacao tr td {
-    height: 24pt;  
+    padding: 0pt;
+    max-width: 300pt;
+    max-height: 500pt;
+    min-height: 420pt;
 }
 
 #legenda_mi_informacao .mi-fases{
@@ -977,11 +1027,13 @@ ul li span {
     padding-left: 3pt;
 }
 
-#legenda_mi_informacao tr td p {
-    font-size: 20pt;
-    font-weight: 600;
-    text-align: left;
-    padding-bottom: 10pt;
+.div_legenda {
+    padding: 0;
+    margin: 0;
+    height: 30pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 [descricao] {
