@@ -4,7 +4,7 @@ $(document).ready(function(){
 
     //Fases Edição Inseridos no Banco de Dados Controle na Tabela Fases_Edicao
     let AQUISICAO = "Aq. Hidro";
-    let ADEQUACAO = "Adquação";
+    let ADEQUACAO = "Adequação";
     let CQ1 = "C. Qualidade";
     let EDICAO = "Edição";
     let REV1 = "1ª Rev.";
@@ -426,6 +426,7 @@ $(document).ready(function(){
             $texto_botao = texto+" ";
 
             if($texto_botao_iniciar_finalizar.indexOf(AQUISICAO) > 0) $texto_botao += AQUISICAO;
+            else if($texto_botao_iniciar_finalizar.indexOf(CQ1) > 0) $texto_botao += CQ1;
             else if($texto_botao_iniciar_finalizar.indexOf(ADEQUACAO) > 0) $texto_botao += ADEQUACAO;
             else if($texto_botao_iniciar_finalizar.indexOf(REVHID) > 0) $texto_botao += REVHID;
             else if($texto_botao_iniciar_finalizar.indexOf(EDICAO) > 0) $texto_botao += EDICAO;
@@ -491,7 +492,7 @@ $(document).ready(function(){
         
         //Define qual botão utilizar
         $tipo_texto = "edicao";
-        if((texto_botao.indexOf(REV2) > 0) || (texto_botao.indexOf(REV1) > 0) || (texto_botao.indexOf(REVHID) > 0)){
+        if((texto_botao.indexOf(REV2) > 0) || (texto_botao.indexOf(REV1) > 0) || (texto_botao.indexOf(REVHID) > 0) || (texto_botao.indexOf(CQ1) > 0)){
             $tipo_texto = "revisao";
         }
         else if(texto_botao.indexOf(ADEQUACAO) > 0){
@@ -620,7 +621,7 @@ $(document).ready(function(){
                     $contador++;
 
                     //verifica se o status ta correto para uma carta ja adiquirida
-                    if( parseFloat(valor["status"]) < 1.64 && parseFloat(valor["status"]) != (1.128 || 1.256) ){
+                    if( parseFloat(valor["status"]) < 1.64 && parseFloat(valor["status"]) != 1.128 && parseFloat(valor["status"])  != 1.256 ){
                         Add_lista_cartas_pendentes(valor);
                     }
                 }
@@ -628,7 +629,7 @@ $(document).ready(function(){
                     $lista_cartas_em_aquisicao.push(valor);
                 }
                 else if( String(valor["inicio"]).indexOf("-") < 0 && String(valor["termino"]).indexOf("-") < 0 && 
-                    parseFloat(valor["status"]) < 1.64 && parseFloat(valor["status"]) != (1.128 || 1.256) ){
+                    parseFloat(valor["status"]) < 1.64 && parseFloat(valor["status"]) != 1.128 && parseFloat(valor["status"]) != 1.256 ){
                     $lista_cartas_reservadas_aquisicao.push(valor);
                 }
                 else{
@@ -666,11 +667,11 @@ $(document).ready(function(){
                 }
                 
                 //Historico cartas editadas
-                if( (String(valor["terminoedicao"]).indexOf("-") > 0) && (String(valor["inicioedicao"]).indexOf("-") > 0) ){
-                    
+                if( String(valor["terminoedicao"]).indexOf("-") > 0 && String(valor["inicioedicao"]).indexOf("-") > 0 ){
+                    /*
                     $corrigida = "";
                     $img_corrigida = "<img class=\"checked\" src=\"../img/checked.png\" />";
-                    /*
+                    
                     if(String(valor["terminocorrecao2"]).indexOf("-") > 0){
                         $corrigida += $img_corrigida;
                     }
@@ -680,19 +681,20 @@ $(document).ready(function(){
                     }
                     */
                     $historico_cartas_editadas += "<a href=\"Mi_informacoes.php?mi=" + valor["mi"] + "\"><div>" + valor["mi"] + "<p>" +
-                        RetirarTime(valor["terminoedicao"]) + " "+$corrigida+"</p><br></div></a>";
+                        RetirarTime(valor["terminoedicao"])+"</p><br></div></a>";
+                        //RetirarTime(valor["terminoedicao"]) + " "+$corrigida+"</p><br></div></a>";
                     
                     $contador++;
 
                     //verifica se o status ta correto para uma carta ja editada
-                    if(parseInt(valor["status"]) < 3.2){
+                    if(parseFloat(valor["status"]) < 3.2){
                         Add_lista_cartas_pendentes(valor);
                     }
                 }
-                else if((String(valor["inicioedicao"]).indexOf("-") > 0) && (String(valor["terminoedicao"]).indexOf("-") < 0) && (parseInt(valor["status"]) == 3.1) ){
+                else if( String(valor["inicioedicao"]).indexOf("-") > 0 && String(valor["terminoedicao"]).indexOf("-") < 0 && parseFloat(valor["status"]) == 3.1 ){
                     $lista_cartas_em_edicao.push(valor);
                 }
-                else if(String(valor["inicioedicao"]).indexOf("-") < 0 && String(valor["terminoedicao"]).indexOf("-") < 0 && parseInt(valor["status"]) < 3.1){
+                else if(String(valor["inicioedicao"]).indexOf("-") < 0 && String(valor["terminoedicao"]).indexOf("-") < 0 && parseFloat(valor["status"]) < 3.1){
                     $lista_cartas_reservadas_edicao.push(valor);
                 }
                 else{
@@ -735,6 +737,9 @@ $(document).ready(function(){
                         case "hid":
                             $tipo += REVHID;
                             break;
+                        case "cq1":
+                            $tipo += CQ1;
+                            break;
                     }
                     $tipo += ")";
                     $historico_cartas_revisadas += "<a href=\"Mi_informacoes.php?mi="+valor["mi"]+"\"><div>"+valor["mi"]+"<p>"+ RetirarTime(valor["termino"]) +
@@ -742,9 +747,10 @@ $(document).ready(function(){
                     $contador++;
                     
                     //verifica se o status ta correto para uma carta ja revisada
-                    if( ( valor["rev"] == "rev2" && parseInt(valor["status"]) < 4.0 && parseInt(valor["status"]) != 3.16 ) || 
-                        ( valor["rev"] == "rev1" && parseInt(valor["status"]) < 3.8 && parseInt(valor["status"]) != (3.4 || 3.16) ) || 
-                        ( valor["rev"] == "hid" && parseInt(valor["status"]) < 2 && parseInt(valor["status"]) != (1.128 || 1.256) ) ){
+                    if( ( valor["rev"] == "rev2" && parseFloat(valor["status"]) < 4.0 && parseFloat(valor["status"]) != 3.16 ) || 
+                        ( valor["rev"] == "rev1" && parseFloat(valor["status"]) < 3.8 && parseFloat(valor["status"]) != 3.4 && parseFloat(valor["status"]) != 3.16 ) || 
+                        ( valor["rev"] == "cq1" && parseFloat(valor["status"]) < 3 ) || 
+                        ( valor["rev"] == "hid" && parseFloat(valor["status"]) < 2 && parseFloat(valor["status"]) != 1.128 && parseFloat(valor["status"]) !=  1.256 ) ){
                             Add_lista_cartas_pendentes(valor);
                     }
                 }
@@ -752,9 +758,10 @@ $(document).ready(function(){
                     $lista_cartas_em_revisao.push(valor);
                 }
                 else if( String(valor["inicio"]).indexOf("-") < 0 && String(valor["termino"]).indexOf("-") < 0 && 
-                    ( (valor["rev"] == "rev2" && parseInt(valor["status"]) < 4 && parseInt(valor["status"]) != 3.16) || 
-                        (valor["rev"] == "rev1" && parseInt(valor["status"]) < 3.4 && parseInt(valor["status"]) != 3.8) || 
-                        (valor["rev"] == "hid" && parseInt(valor["status"]) < 2 && parseInt(valor["status"]) != 1.256) ) ){
+                    ( (valor["rev"] == "rev2" && parseFloat(valor["status"]) < 4 && parseFloat(valor["status"]) != 3.16) || 
+                        (valor["rev"] == "rev1" && parseFloat(valor["status"]) < 3.4 && parseFloat(valor["status"]) != 3.8) || 
+                        (valor["rev"] == "cq1" && parseFloat(valor["status"]) < 2.4 ) || 
+                        (valor["rev"] == "hid" && parseFloat(valor["status"]) < 2 && parseFloat(valor["status"]) != 1.256) ) ){
                     $lista_cartas_reservadas_revisao.push(valor);
                 }
                 else {
