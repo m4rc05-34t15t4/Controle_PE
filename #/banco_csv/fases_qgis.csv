@@ -1,0 +1,29 @@
+codigo,descricao
+0,0 - Fora do Projeto
+1,1 - Preparo
+1.1,1.1 - Coletar Raster
+1.2,1.2 - Raster Coletado
+1.4,1.4 - Coletar Vetores
+1.8,1.8 - Vetores coletado
+1.16,1.16 - Em Ajustes Finais
+1.32,1.32 - Preparo Finalizado
+1.64,1.64 - Aquisição de Hidrografia
+1.128,1.128 - Hidrografia Adquirida
+1.256,1.256 - Revisão Hidrografia
+2,2 - Adequação Vetorial
+2.1,2.1 - Em Adequação
+2.2,2.2 - Adequação Pronta
+2.4,2.4 - Controle de Qualidade
+3,3 - Edição
+3.1,3.1 - Em Edição
+3.2,3.2 - Editada
+3.4,3.4 - Em 1ª Revisão
+3.8,3.8 - 1ª Rev Pronta
+3.16,3.16 - Em 2ª Revisão
+4,4 - Em Carga BDGEx
+4.1,4.1 - MDT Carregado
+4.2,4.2 - MDS Carregado
+4.4,4.4 - Orto Img Carregada
+4.8,4.8 - CDGV Carregados
+4.16,4.16 - Carta Orto Imagem
+5,5 - Carregada no BDGEx

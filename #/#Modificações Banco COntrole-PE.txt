@@ -1,0 +1,19 @@
+--14/01/2021
+ALTER TABLE public.edicao
+    ADD COLUMN totalobj character varying(200) COLLATE pg_catalog."default",
+    ADD COLUMN total_p numeric(20,0),
+    ADD COLUMN total_l numeric(20,0),
+    ADD COLUMN total_a numeric(20,0),
+    ADD COLUMN txt_p numeric(20,0),
+    ADD COLUMN txt_l character varying(200) COLLATE pg_catalog."default",
+	ADD COLUMN o character varying COLLATE pg_catalog."default",
+    ADD COLUMN s character varying COLLATE pg_catalog."default",
+    ADD COLUMN se character varying COLLATE pg_catalog."default",
+    ADD COLUMN so character varying COLLATE pg_catalog."default",
+    ADD COLUMN l character varying COLLATE pg_catalog."default",
+    ADD COLUMN n character varying COLLATE pg_catalog."default",
+    ADD COLUMN no character varying COLLATE pg_catalog."default",
+    ADD COLUMN ne character varying COLLATE pg_catalog."default",
+    ADD COLUMN linha smallint,
+    ADD COLUMN coluna smallint,
+    ADD COLUMN regiao text COLLATE pg_catalog."default"

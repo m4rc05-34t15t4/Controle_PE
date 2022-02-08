@@ -1,0 +1,15 @@
+#BACKUP
+pg_dump -Fp -C -h localhost -U postgres Controle_PE > "C:/Marcos_Batista/www/Controle_PE/#/Controle_PE_bck.sql"
+pg_dump -Fp -C -h 10.46.136.22 -U postgres Controle_PE > "C:/Marcos_Batista/www/Controle_PE/#/Controle_PE_bck22.sql"
+
+#RESTAURAR
+psql -d postgres -U postgres -h 10.46.136.22 -p 5432 -f "C:/Marcos_Batista/www/Controle_PE/#/Controle_PE_bck_utf8.sql"
+
+#limpa dados dos MI
+update cartas set status = '1.32', 
+editor = null, revisor1 = null, revisor2 = null, "AqHid" = null, "RevHid" = null, "AdVet" = null, "CQ1" = null,
+inicioedicao = null, terminoedicao = null, "inicioAqHid" = null, "terminoAqHid" = null, "inicioRevHid" = null, "terminoRevHid" = null,
+"inicioAdVet" = null, "terminoAdVet" = null, inicio1rev = null, termino1rev = null, inicio2rev = null, termino2rev = null,
+"inicioCQ1" = null, "terminoCQ1" = null, prioridade = null
+
+
