@@ -50,15 +50,15 @@
     border-left: 3pt groove black;
 }
 
-#fuso_23 { /* MUDANÇA MANUAL OP: Inserir afastamento se necessário */
+#fuso_24 { /* MUDANÇA MANUAL OP: Inserir afastamento se necessário */
     left: calc(var(--largura-mi-25k) * 25); 
     left: var(--padding);
     top: calc(var(--padding) / 2);
     text-align: left;
 }
-#fuso_24 { /* MUDANÇA MANUAL OP: Inserir afastamento se necessário */
+#fuso_25 { /* MUDANÇA MANUAL OP: Inserir afastamento se necessário */
     right: calc(var(--padding) + (var(--largura-mi-25k) * 0));
-    top: calc((var(--padding) / 2) + (var(--largura-mi-25k) * 21));
+    top: calc((var(--padding) / 2) + (var(--largura-mi-25k) * 20));
     text-align: right;
 }
   
@@ -951,6 +951,12 @@ ul li span {
     margin: var(--padding);
 }
 
+.todos-mi table tr td {
+    color: rgba(50, 50, 50, 0.70);
+    text-align: center;
+    font-size: 10pt;
+}
+
 #todos-mi-legenda-status, #legenda_mi_informacao {
     font-size: 18pt;
     border: none;
@@ -1175,6 +1181,9 @@ display: block;
 }
 .fase_1 {/*PREPARO*/
     background-color: #FF99CC;
+}
+.fase_1_5 {/*PREPARO*/
+    background-color: #FF66CC;
 }
 .fase_2 {/*ADEQUACAO*/
     background-color: #7ebcfa;
