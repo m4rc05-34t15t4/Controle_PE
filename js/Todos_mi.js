@@ -8,7 +8,7 @@ $(document).ready(function(){
 
     Recarregar_pagina_resize();
     
-    //Configuracoes_iniciais();
+    Configuracoes_iniciais();
 
     Insere_dados_variaveis_auxiliares();
     
@@ -73,7 +73,7 @@ $(document).ready(function(){
 
             //dificuldade
             $dificuldade = "Não classificado";
-            if($lista_edicao.get(mi)["niveis"]){
+            if($lista_edicao.get(mi)["niveis"] && $lista_edicao.get(mi)){
                 $dificuldade = $lista_edicao.get(mi)["niveis"];
             }
             
@@ -81,8 +81,7 @@ $(document).ready(function(){
             $operador = Seleciona_ultimo_operador_mi(mi);
             
             //conteudo da div
-            console.log();
-            $conteudo_div_descricao_mi = "<div class=\"fase_"+String($lista_edicao.get(mi)["status"])[0]+"\"><b>"+$dificuldade+"</b><br>"+mi+"<br><b>"+$operador+"</b></div>";
+            $conteudo_div_descricao_mi = "<div class=\"fase_"+Retorna_Code_fase($lista_edicao.get(mi)["status"])+"\"><b>"+$dificuldade+"</b><br>"+mi+"<br><b>"+$operador+"</b><br>"+$lista_edicao.get(mi)["status"]+"</div>";
             $("#descricao_mi").text("");
             $("#descricao_mi").append($conteudo_div_descricao_mi);
             
@@ -117,14 +116,16 @@ $(document).ready(function(){
 
     //Seleciona qual ultimo operador da carta
     function Seleciona_ultimo_operador_mi($mi){
+        //console.log($lista_edicao.get($mi));
         $operador = -1;
         $status_mi = parseFloat(String($lista_edicao.get($mi)["status"]));
-        if($status_mi == 2.64) $operador = $lista_edicao.get($mi)["CQ1"];
-        else if($status_mi >= 3.1 && $status_mi <= 3.2) $operador = $lista_edicao.get($mi)["editor"];
-        else if($status_mi >= 3.4 && $status_mi <= 3.8) $operador = $lista_edicao.get($mi)["revisor1"];
-        else if($status_mi >= 3.16 && $status_mi <= 3.32) $operador = $lista_edicao.get($mi)["corretor1"];
-        else if($status_mi >= 3.64 && $status_mi <= 3.128) $operador = $lista_edicao.get($mi)["revisor2"];
-        else if($status_mi >= 3.256 && $status_mi <= 3.512) $operador = $lista_edicao.get($mi)["corretor2"];
+        if($status_mi == 1.64 || $status_mi == 1.128) $operador = $lista_edicao.get($mi)["AqHid"];
+        else if($status_mi == 1.256 || $status_mi == 2.0) $operador = $lista_edicao.get($mi)["RevHid"];
+        else if($status_mi == 2.1 || $status_mi == 2.2) $operador = $lista_edicao.get($mi)["AdVet"];
+        else if($status_mi == 2.4 || $status_mi == 3.0) $operador = $lista_edicao.get($mi)["CQ1"];
+        else if($status_mi == 3.1 || $status_mi == 3.2) $operador = $lista_edicao.get($mi)["editor"];
+        else if($status_mi == 3.4 || $status_mi == 3.8) $operador = $lista_edicao.get($mi)["revisor1"];
+        else if($status_mi >= 3.16 && $status_mi <= 5.0) $operador = $lista_edicao.get($mi)["revisor2"];
 
         if(($operador < 0) || ($operador == null)){
             return "Sem Operador";   
@@ -149,10 +150,21 @@ $(document).ready(function(){
         });
     }
 
+    //Retorna codigo fase
+    function Retorna_Code_fase(status){
+        if(parseFloat(status) == 1.32 || parseFloat(status) == 1.64 || parseFloat(status) == 1.128 || parseFloat(status) == 1.256){
+            return "1_5";
+        }
+        return String(status)[0];
+    }
+
     //Insere cores de fundo com base no status dos mi
     function Insere_backgroud_status_mi(lista_edicao){
         lista_edicao.forEach(function(valor, chave) {
-            $(".blocos table tr td[mi=\""+chave+"\"]").addClass("fase_"+String(valor["status"])[0]);
+            $(".blocos table tr td[mi=\""+chave+"\"]").addClass("fase_"+Retorna_Code_fase(valor["status"]));
+            sub_status = 0
+            if(valor["status"].split(".")[1] != undefined) sub_status = valor["status"].split(".")[1];
+            $(".blocos table tr td[mi=\""+chave+"\"]").html("<br>"+sub_status);
         });
     }
 
@@ -170,7 +182,8 @@ $(document).ready(function(){
     function Configuracoes_iniciais(){
 
         //Insere a altura das td MI com base em sua largura
-        $(".blocos table tr td").css('height', $(".blocos table tr td").css('width'));
+        //$(".blocos table tr td").css('height', $(".blocos table tr td").css('width'));
+        $(".blocos table tr td").css('height', '1px');
         
         //Defina a posicao nas DIV nomes Bloco
         $qtd_colunas = parseInt($(".blocos table").attr('colunas'));
@@ -190,6 +203,7 @@ $(document).ready(function(){
             $div.css("top", "calc( var(--padding) - (var(--largura-div-nome-bloco) / 2) + "+$top+"pt)");
         }
         
+        /*
         //legenda
         $legenda_top = $altura_td_mi * 23;
         $altura_legenda = $altura_td_mi * 24;
@@ -201,6 +215,7 @@ $(document).ready(function(){
         if($e_menor){
             $legenda.css("font-size", "15pt");
         }
+        */
 
     }
 

@@ -18,7 +18,7 @@ $(document).ready(function(){
             mi: $mi
             }, 
             function(carta){
-                console.log(carta);
+                console.log('carta:', carta);
                 if(carta == 0){
                     alert("Erro ao consultar carta!");
                 }

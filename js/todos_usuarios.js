@@ -32,7 +32,7 @@ $(document).ready(function(){
                     Inserir_link_img_selos(usuarios["descricao_situacao"]);
 
                     //cria o conteudo da div .todos-usuarios
-                    $Content_usuarios = "";
+                    $Content_usuarios = $Content_usuarios_ausentes = "";
                     $total_usuarios = 0;
                     for($i=0; $i < $usuarios.length; $i++){
 
@@ -48,14 +48,17 @@ $(document).ready(function(){
                         //define a graduação
                         $posto_graduacao = usuarios["descricao_posto_graduacao"][$usuarios[$i]["posto_graduacao"]]["abrev"]+" "
 
-                        $Content_usuarios += '<div selos_id="'+$retorno_selos["codigo"]+'" id="'+$usuarios[$i]["codigo"]+'" class="usuario"><a href="Usuario_informacoes.php?id=' + 
+                        $Content_usu = '<div selos_id="'+$retorno_selos["codigo"]+'" id="'+$usuarios[$i]["codigo"]+'" class="usuario"><a href="Usuario_informacoes.php?id=' + 
                             $usuarios[$i]["codigo"] +'"><table class="usuario-table"><tr><td class="usuario-avatar-mini" style="background-image: '+$backgroud_imagem+'">' +
                             '<div class="selos" style="background-image: '+$retorno_selos["img"]+';">'+$retorno_selos["texto"]+'</div></td></tr><tr><td class="usuario-nome-mini">' + 
                             $posto_graduacao + $usuarios[$i]["nome"] + '<br><span class="usuario-funcao-all">'+$usuarios_funcoes+'</span></span></td></tr></table></a></div>';
                             
+                        if(parseInt($usuarios[$i]["situacao"]) < 4) $Content_usuarios += $Content_usu;
+                        else $Content_usuarios_ausentes += $Content_usu;
+                        
                         $total_usuarios++;
                     }
-                    $(".todos-usuarios").html($Content_usuarios);
+                    $(".todos-usuarios").html($Content_usuarios + $Content_usuarios_ausentes);
                     
                     //Totais situacções usuarios menu superior
                     Totais_situacao(usuarios["descricao_situacao"], $total_usuarios);
