@@ -12,6 +12,9 @@
             include_once $link."php/Rodape.php";
 
             $permissao = intval($_SESSION['funcao']);
+            if($permissao >= 32768) $permissao -= 32768;//AQ PLAN
+            if($permissao >= 16384) $permissao -= 16384;//AQ HID
+            if($permissao >= 8192) $permissao -= 8192;//CONTROLADOR DE QUALIDADE
             if($permissao >= 4096) $permissao -= 4096;//OUTROS
             if($permissao >= 2048) $permissao -= 2048;//CARREGADOR BDGEX
             if($permissao >= 1024) $permissao -= 1024;//CORRETOR
@@ -59,7 +62,7 @@
                 <div class="usuario-historico-titulo">Histórico</div>
                 <div id="historico-cartas-div">
                     <div class="historico-cartas">
-                        <div class="usuario-historico-titulo-adequadas">Adequadas: <!--(10)--></div> 
+                        <div class="usuario-historico-titulo-adequadas">Aquisição HID/PLAN: <!-- Adequação (10)--></div> 
                         <div class="usuario-cartas-adequadas"><!--
                             <div> 1654-1-SO (1ª) <p>21/06/2020 TER</p> <br></div>-->
                         </div>
@@ -77,7 +80,7 @@
                         </div>
                     </div>
                     <div class="historico-cartas">
-                        <div class="usuario-historico-titulo-adquiridas">Adquiridas: <!--(10)--></div>
+                        <div class="usuario-historico-titulo-adquiridas">Ajustadas: <!-- Adquiridas (10)--></div>
                         <div class="usuario-cartas-adquiridas"><!--
                             <div> 1654-1-SO <p>14/03/2020 SEG</p> <br></div>-->
                         </div>

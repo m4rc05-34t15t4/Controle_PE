@@ -50,10 +50,11 @@
                 $inicio = "inicio2rev";
                 break;
             case "cq1":
-                $status_origem = "'2.2'";
-                $status_destino = "'2.4'";
-                $funcao = "CQ1";
-                $inicio = "inicioCQ1";
+                $status_origem = "'2.16'";
+                $status_destino = "'2.32'";
+                $funcao = "\"CQ1\"";
+                $usuario = strval($_GET["usuario"]);
+                $inicio = "\"inicioCQ1\"";
                 break;
         }
 
@@ -80,21 +81,21 @@
 
         //Faz QUERY pedir carta revisão
         $sql = "
-            UPDATE public.cartas SET status = $status_destino, $funcao = '$usuario', $inicio = '$data_inicio' WHERE id =  
+            UPDATE public.cartas SET status = $status_destino, $funcao = $usuario, $inicio = '$data_inicio' WHERE id =  
                 CASE
                     WHEN 
                         --retorna se há cartas reservadas<br>
-                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = $usuario AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1) > 0
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = $usuario AND ($inicio isnull OR length($inicio) < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1) > 0
                     THEN
-                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = $usuario AND ($inicio isnull OR length($inicio) < 1) ORDER BY bloco, mi LIMIT 1)
+                        (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao = $usuario AND ($inicio isnull OR length($inicio) < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1)
                     
                     --retorna se há cartas disponiveis<br>                   
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1)
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1)
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1)
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1)
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1)
-                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' AND $func_op != $operador ORDER BY prioridade DESC, bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' AND $func_op != $operador ORDER BY prioridade DESC, bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND $func_op != $operador ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' AND $func_op != $operador ORDER BY prioridade DESC, bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$primeira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$segunda_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1)
+                    WHEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status = $status_origem AND $funcao isnull AND ($inicio isnull OR length($inicio) < 1) AND niveis = '$terceira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1)
 
                     ELSE 
                         --Retorna id carta inválido para nada ser atualizado e retornar vazio<br>

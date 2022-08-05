@@ -48,17 +48,37 @@
         SELECT mi, status, niveis, revisor2 AS revisor, inicio2rev AS inicio, termino2rev AS termino, editor as operador, 'rev2' as rev FROM public.cartas WHERE revisor2 = '" . $_GET["id"] . "'
         UNION
         SELECT mi, status, niveis, CAST(\"RevHid\" as TEXT) AS revisor, \"inicioRevHid\" AS inicio, \"terminoRevHid\" AS termino, CAST(\"AqHid\" as TEXT) as operador, 'hid' as rev FROM public.cartas WHERE \"RevHid\" = " . $_GET["id"] . "
+        UNION
+        SELECT mi, status, niveis, CAST(\"CQ1\" as TEXT) AS revisor, \"inicioCQ1\" AS inicio, \"terminoCQ1\" AS termino, CAST(\"AdVet\" as TEXT) as operador, 'cq1' as rev FROM public.cartas WHERE \"CQ1\" = " . $_GET["id"] . "
         ) AS lista_cartas_revisadas ORDER BY termino DESC, inicio DESC, mi DESC;";
     $lista_cartas_revisadas = Consulta_sql($sql);
-    Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_revisadas);
+    //Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_revisadas);
 
     //Faz a busca na tabela cartas - cartas Adequadas
-    $sql = "SELECT mi, status, niveis, 'adequacao' as tipo, \"AdVet\" AS Adequador, \"inicioAdVet\" AS inicio, \"terminoAdVet\" AS termino, 'vet' as Adequacao FROM public.cartas WHERE \"AdVet\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC;";
-    $lista_cartas_adequadas = Consulta_sql($sql);
+    $sql = "SELECT * FROM (
+        (SELECT mi, status, niveis, 'adequacao' as tipo, \"AdVet\"::integer AS Adequador, \"inicioAdVet\" AS inicio, \"terminoAdVet\" AS termino, 'vet' as Adequacao FROM public.cartas WHERE \"AdVet\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC)" . " 
+        UNION 
+        (SELECT mi, status, niveis, 'aq_hid' as tipo, \"AqHid\" AS Adequador, \"inicioAqHid\" AS inicio, \"terminoAqHid\" AS termino, 'hid' as Adequacao FROM public.cartas WHERE \"AqHid\" = " . $_GET["id"] . " ORDER BY termino DESC, inicio DESC, mi DESC)" . " 
+        UNION 
+        (SELECT mi, status, niveis, 'aq_plan' as tipo, \"AqPlan\" AS Adequador, \"inicioAqPlan\" AS inicio, \"terminoAqPlan\" AS termino, 'plan' as Adequacao FROM public.cartas WHERE \"AqPlan\" = " . $_GET["id"] . " ORDER BY termino DESC, inicio DESC, mi DESC)" ."
+        ) AS lista_cartas_adeqaudas ORDER BY termino DESC, inicio DESC, mi DESC;";
+        $lista_cartas_adequadas = Consulta_sql($sql);
+    
     Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_adequadas);
 
+    //Faz a busca na tabela cartas - cartas Adequadas == adquiridas HID 
+    $sql = "SELECT mi, status, niveis, 'aq_hid' as tipo, \"AqHid\" AS Adequador, \"inicioAqHid\" AS inicio, \"terminoAqHid\" AS termino, 'hid' as Adequacao FROM public.cartas WHERE \"AqHid\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC;";
+    $lista_cartas_aqHid = Consulta_sql($sql);
+    Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_aqHid);
+
+    //Faz a busca na tabela cartas - cartas Adequadas == adquiridas PLAN 
+    $sql = "SELECT mi, status, niveis, 'aq_plan' as tipo, \"AqPlan\" AS Adequador, \"inicioAqPlan\" AS inicio, \"terminoAqPlan\" AS termino, 'plan' as Adequacao FROM public.cartas WHERE \"AqPlan\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC;";
+    $lista_cartas_aqPLAN = Consulta_sql($sql);
+    Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_aqPLAN);
+    
+
     //Faz a busca na tabela cartas - cartas Adquiridas
-    $sql = "SELECT mi, status, niveis, 'aquisicao' as tipo,  \"AqHid\" AS Aquisitor, \"inicioAqHid\" AS inicio, \"terminoAqHid\" AS termino, 'hid' as Aquisicao FROM public.cartas WHERE \"AqHid\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC;";
+    $sql = "SELECT mi, status, niveis, 'aquisicao' as tipo,  \"AjtHid\" AS Aquisitor, \"inicioAjtHid\" AS inicio, \"terminoAjtHid\" AS termino, 'hid' as Aquisicao FROM public.cartas WHERE \"AjtHid\" = '" . $_GET["id"] . "' ORDER BY termino DESC, inicio DESC, mi DESC;";
     $lista_cartas_adquiridas = Consulta_sql($sql);
     Faz_busca_cartas_finalizadas_usuario($sql, $lista_cartas_adquiridas);
 

@@ -1,5 +1,7 @@
 <?php
 
+#aquisição == ajuste
+
     if(!isset($link)) $link = "../";
 
     include_once $link."php/conexao.php";
@@ -24,10 +26,7 @@
         //Status
         $status_origem = 1.32; // >= 2 and < 2.63
         $status_destino = "'1.64'";
-        $funcao = "AqHid";
-        if (!isset($_GET["dificuldade"])){
-            $primeira_dificuldade = "Difícil";
-        }
+        $funcao = "AjtHid";
 
         //verifica os possíveis niveis apos o nível desejado, no qual foi recebido por parâmetro GET
         switch($primeira_dificuldade){
@@ -54,14 +53,14 @@
                 CASE
                     WHEN 
                         --retorna se há cartas reservadas<br>
-                        (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY bloco, mi LIMIT 1) > 0
+                        (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1) > 0
                     THEN
-                        (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY bloco, mi LIMIT 1)
+                        (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1)
                     
                     --retorna se há cartas disponiveis<br>
-                    WHEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1) --<br>
-                    WHEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1) --<br>
-                    WHEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1) --<br>
+                    WHEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
+                    WHEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
+                    WHEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE cast(status as float) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
                     
                     ELSE 
                         --Retorna id carta inválido para nada ser atualizado e retornar vazio<br>

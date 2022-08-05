@@ -10,7 +10,7 @@
     elseif( !strpos($_GET["mi"], "-") > 0){
         echo 1; //ERRO SERÁ TRATADO NO JS, ERRO: mi com dado errado
     }
-    elseif($_GET["tipo"] != "edicao" AND $_GET["tipo"] != "1rev" AND $_GET["tipo"] != "correcao1" AND $_GET["tipo"] != "2rev"  AND $_GET["tipo"] != "correcao2" AND $_GET["tipo"] != "AdVet" AND $_GET["tipo"] != "AqHid" AND $_GET["tipo"] != "RevHid" AND $_GET["tipo"] != "CQ1" ){
+    elseif($_GET["tipo"] != "edicao" AND $_GET["tipo"] != "1rev" AND $_GET["tipo"] != "correcao1" AND $_GET["tipo"] != "2rev"  AND $_GET["tipo"] != "correcao2" AND $_GET["tipo"] != "AdVet" AND $_GET["tipo"] != "AqHid" AND $_GET["tipo"] != "AqPlan" AND $_GET["tipo"] != "RevHid" AND $_GET["tipo"] != "CQ1" ){
         echo 3; //ERRO SERÁ TRATADO NO JS, ERRO: campo tipo especificado errado.
     }
     else{
@@ -26,7 +26,7 @@
         $termino = "termino" . $tipo;
 
         switch($tipo){
-            case "AqHid":
+            case "AjtHid":
                 $status = "'1.128'";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
@@ -37,7 +37,17 @@
                 $termino = "\"termino".$tipo."\"";
                 break;
             case "AdVet":
-                $status = "'2.2'";
+                $status = "'2.16'";
+                $funcao = "\"".$tipo."\"";
+                $termino = "\"termino".$tipo."\"";
+                break;
+            case "AqHid":
+                $status = "(CASE WHEN ((status::numeric(4,3)+0.3) = 2.12::NUMERIC(4,3)) THEN '2.16' ELSE (status::numeric(4,3)+0.3)::TEXT END)";
+                $funcao = "\"".$tipo."\"";
+                $termino = "\"termino".$tipo."\"";
+                break;
+            case "AqPlan":
+                $status = "(CASE WHEN ((status::numeric(4,3)+0.6) = 2.12::NUMERIC(4,3)) THEN '2.16' ELSE (status::numeric(4,3)+0.6)::TEXT END)";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
                 break;

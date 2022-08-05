@@ -15,11 +15,12 @@ function validar_variavel_miss($variavel){
 //Retornar Descrição Status pelo codigo
 function status_desc($status, $conexao){
     if(!is_null($status)){
-        $sql = "SELECT \"descricao\" FROM \"public\".\"fases\" WHERE \"codigo\" <= '" . $status . "' ORDER BY \"codigo\" DESC LIMIT 1";
+        $sql = "SELECT descricao FROM public.fases WHERE codigo::numeric(4,3) = '" . $status . "'::numeric(4,3);";
         $query = pg_query($conexao,$sql);
         if($query) {
             $row_aux = pg_fetch_all($query);
-            return $row_aux[0]["descricao"];
+            if($row_aux) return $row_aux[0]["descricao"];
+            else return 'Status Pendente ' . strval($status);
         }
     }
     return $status;

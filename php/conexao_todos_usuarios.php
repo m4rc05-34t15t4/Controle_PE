@@ -19,17 +19,17 @@ else{
 }
 
 //define order by
-$order_by = " ORDER BY \"funcao\" ASC, \"nome\" ASC";
+$order_by = " ORDER BY \"funcao\" ASC, \"posto_graduacao\" ASC, \"nome\" ASC";
 if(isset($_GET["ordenar"])){
     switch(strtolower($_GET["ordenar"])){
-        case "funcao": $order_by = " ORDER BY \"funcao\" ASC, \"nome\" ASC";
+        case "funcao": $order_by = " ORDER BY \"funcao\" ASC, \"posto_graduacao\" ASC, \"nome\" ASC";
             break;
-        case "nome": $order_by = " ORDER BY \"nome\" ASC";
+        case "nome": $order_by = " ORDER BY \"nome\" ASC, \"posto_graduacao\" ASC, \"nome\" ASC";
             break;
-        case "situacao": $order_by = " ORDER BY \"situacao\" ASC";
+        case "situacao": $order_by = " ORDER BY \"situacao\" ASC, \"posto_graduacao\" ASC, \"nome\" ASC";
             break;
         case "posto-graduacao":
-            $order_by = " ORDER BY \"posto_graduacao\" ASC";  
+            $order_by = " ORDER BY \"posto_graduacao\" ASC, \"nome\" ASC";  
             break;
     }
 }
