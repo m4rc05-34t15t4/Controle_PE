@@ -60,12 +60,13 @@ $(document).ready(function(){
         //confirmado
         $("#box-confirmacao_botoes_confirmar").click(function() {
             $(".box-confirmacao_botoes, .box-confirmacao_content, .box-confirmacao-fundo").fadeOut();
+            console.log($texto);
             switch($texto){
                 case "Iniciar "+AQUISICAO:
                     Pedir_carta("php/conexao_pedir_carta_aquisicao.php", $dificuldade_ultima_carta_adquirida, null, "AjtHid");
                     break;
                 case "Finalizar "+AQUISICAO:
-                    Finalizar_carta("AqHid");
+                    Finalizar_carta("AjtHid");
                     break;
                 case "Iniciar "+REVHID:
                     Pedir_carta("php/conexao_pedir_carta_revisao.php", $dificuldade_ultima_carta_revisada, $editor_ultima_carta_revisada, "hid");
@@ -197,7 +198,7 @@ $(document).ready(function(){
                 mi: $mi,
                 tipo: tipo_fase
                 }, function(finalizacao) {
-                    console.log(finalizacao);
+                    console.log('finalizacao', finalizacao);
                     switch(parseInt(finalizacao)){
                         case 0:
                             alert("Requisição faltando parâmetros");
@@ -360,8 +361,11 @@ $(document).ready(function(){
     //Retorna o texto adequado para carta status em trabalho
     function Status_texto_em_trabalho(valor, func_usu){
         $status = "";
-        switch(valor){
-            case "1.64":
+        switch(String(parseFloat(valor).toFixed(3))){
+            case "1.000":
+                $status = "Preparo";
+                break;
+            case "1.640":
                 $status = AQUISICAO;
                 break;
             case "1.256":
@@ -449,7 +453,8 @@ $(document).ready(function(){
 
         if(texto == "Finalizar"){
             
-            $texto_botao_iniciar_finalizar = $(".usuario-trabalho-informacoes").text();
+            //$texto_botao_iniciar_finalizar = $(".usuario-trabalho-informacoes").text();
+            $texto_botao_iniciar_finalizar = $(".usuario-funcao").text();
             $texto_botao = texto+" ";
 
             if($texto_botao_iniciar_finalizar.indexOf(AQUISICAO) > 0) $texto_botao += AQUISICAO;
@@ -463,6 +468,8 @@ $(document).ready(function(){
             else if($texto_botao_iniciar_finalizar.indexOf(CORR1) > 0) $texto_botao += CORR1;
             else if($texto_botao_iniciar_finalizar.indexOf(REV2) > 0) $texto_botao += REV2;
             else if($texto_botao_iniciar_finalizar.indexOf(CORR2) > 0) $texto_botao += CORR2;
+
+            //console.log('texto_botao 222', $texto_botao, $texto_botao_iniciar_finalizar);
 
             Inserir_Texto_Botao_Iniciar_Finalizar_Carta($texto_botao);
 

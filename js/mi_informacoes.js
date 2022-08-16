@@ -8,6 +8,9 @@ $(document).ready(function(){
     else{
         $mi = $mi.get("mi");
         Mi_informacoes();
+
+        //Ajusta altura da legenda lateral
+        $(".div_legenda").css("height", "28pt");
     }
 
     //FUNÇÕES
@@ -77,17 +80,25 @@ $(document).ready(function(){
             '<li><span>Densidade:</span> ' + carta["densidade"] + '</li>'+
             '<li><span>Fase:</span> ' + carta["status"] + '</li>'+
             '</ul><hr><ul>'+
-            '<li><span>Resp. Aq. Hid:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AqHid"]+'">' + carta["AqHid"] + '</a></li>'+
-            '<li><span>Início Aq. Hid:</span> ' + carta["inicioAqHid"] + '</li>'+
-            '<li><span>Término Aq. Hid:</span> ' + carta["terminoAqHid"] + '</li>'+
+            '<li><span>Resp. Ajt. Hid:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AjtHid"]+'">' + carta["AjtHid"] + '</a></li>'+
+            '<li><span>Início Ajt. Hid:</span> ' + carta["inicioAjtHid"] + '</li>'+
+            '<li><span>Término Ajt. Hid:</span> ' + carta["terminoAjtHid"] + '</li>'+
             '</ul><hr><ul>'+
             '<li><span>Resp. Rev. Hidro:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_RevHid"]+'">' + carta["RevHid"] + '</a></li>'+
             '<li><span>Início Rev. Hid:</span> ' + carta["inicioRevHid"] + '</li>'+
             '<li><span>Término Rev. Hid:</span> ' + carta["terminoRevHid"] + '</li>'+
             '</ul><hr><ul>'+
-            '<li><span>Resp. Ad. Vetorial:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AdVet"]+'">' + carta["AdVet"] + '</a></li>'+
-            '<li><span>Início Ad. Vet:</span> ' + carta["inicioAdVet"] + '</li>'+
-            '<li><span>Término Ad. Vet:</span> ' + carta["terminoAdVet"] + '</li>'+
+            //'<li><span>Resp. Ad. Vetorial:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AdVet"]+'">' + carta["AdVet"] + '</a></li>'+
+            //'<li><span>Início Ad. Vet:</span> ' + carta["inicioAdVet"] + '</li>'+
+            //'<li><span>Término Ad. Vet:</span> ' + carta["terminoAdVet"] + '</li>'+
+            //'</ul><hr><ul>'+
+            '<li><span>Resp. Aq. Hid:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AqHid"]+'">' + carta["AqHid"] + '</a></li>'+
+            '<li><span>Início Aq. Hid:</span> ' + carta["inicioAqHid"] + '</li>'+
+            '<li><span>Término Aq. Hid:</span> ' + carta["terminoAqHid"] + '</li>'+
+            '</ul><hr><ul>'+
+            '<li><span>Resp. Aq. Plan:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_AqPlan"]+'">' + carta["AqPlan"] + '</a></li>'+
+            '<li><span>Início Aq. Plan:</span> ' + carta["inicioAqPlan"] + '</li>'+
+            '<li><span>Término Aq. Plan:</span> ' + carta["terminoAqPlan"] + '</li>'+
             '</ul><hr><ul>'+
             '<li><span>Resp. CQ 1:</span> <a class="link" href="Usuario_informacoes.php?id='+carta["id_CQ1"]+'">' + carta["CQ1"] + '</a></li>'+
             '<li><span>Início 1º CQ:</span> ' + carta["inicioCQ1"] + '</li>'+

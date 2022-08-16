@@ -137,7 +137,7 @@ $(document).ready(function(){
     function Insere_dados_variaveis_auxiliares(){
         $.getJSON($link+'php/conexao_todos_mi.php', function(listas) {
             if(listas != 0){
-                //console.log(listas);
+                console.log('listas:', listas);
                 $lista_edicao = Formatar_variaveis_auxiliares(listas[0], "mi");
                 $lista_usuarios = Formatar_variaveis_auxiliares(listas[1], "codigo");
                 $lista_fases_edicao = Formatar_variaveis_auxiliares(listas[2], "codigo");
@@ -152,9 +152,8 @@ $(document).ready(function(){
 
     //Retorna codigo fase
     function Retorna_Code_fase(status){
-        if(parseFloat(status) == 1.32 || parseFloat(status) == 1.64 || parseFloat(status) == 1.128 || parseFloat(status) == 1.256){
-            return "1_5";
-        }
+        if(parseFloat(status) == 1.32 || parseFloat(status) == 1.64 || parseFloat(status) == 1.128 || parseFloat(status) == 1.256) return "1_5";
+        else if(parseFloat(status) > 100.0 && parseFloat(status) < 101.0) return "100";
         return String(status)[0];
     }
 
