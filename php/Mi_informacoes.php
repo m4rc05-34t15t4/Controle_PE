@@ -18,11 +18,12 @@
             <div class="informacoes-mi-descricao">
                 <div class="titulo">INFORMAÇÕES</div>
                 <hr><!--
+                ID: 1766<br>
                 BLOCO: C2<br>
                 INOM: SC-24-V-C-I-1-SE<br>
                 FUSO: 23S<br> 
                 EPSG: 31983<br>
-                SRV-GOTHIC: 01<br>
+                SERVIDOR: 01<br>
                 DIFICULDADE: Fácil<br>
                 DENSIDADE: 789<br>
                 FASE: Em Edição<br>

@@ -42,12 +42,20 @@
                 $termino = "\"termino".$tipo."\"";
                 break;
             case "AqHid":
-                $status = "(CASE WHEN ((status::numeric(4,3)+0.3) = 2.12::NUMERIC(4,3)) THEN '2.16' ELSE (status::numeric(4,3)+0.3)::TEXT END)";
+                $status = "(CASE 
+                    WHEN ((status::numeric(4,3)) = 2.1::NUMERIC(4,3)) THEN '2.4' 
+                    WHEN ((status::numeric(4,3)) = 2.3::NUMERIC(4,3)) THEN '2.6' 
+                    WHEN ((status::numeric(4,3)) = 2.9::NUMERIC(4,3)) THEN '2.16' 
+                    END)";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
                 break;
             case "AqPlan":
-                $status = "(CASE WHEN ((status::numeric(4,3)+0.6) = 2.12::NUMERIC(4,3)) THEN '2.16' ELSE (status::numeric(4,3)+0.6)::TEXT END)";
+                $status = "(CASE 
+                    WHEN ((status::numeric(4,3)) = 2.2::NUMERIC(4,3)) THEN '2.8' 
+                    WHEN ((status::numeric(4,3)) = 2.3::NUMERIC(4,3)) THEN '2.9' 
+                    WHEN ((status::numeric(4,3)) = 2.6::NUMERIC(4,3)) THEN '2.16' 
+                    END)";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
                 break;
@@ -82,6 +90,9 @@
 
         //Faz a SQL na tabela cartas - finaliozar cartas edição
         $sql = "UPDATE public.cartas SET status = $status, " . $termino . " = '$data_final' WHERE mi = '$mi' AND " . $funcao . " = '$usuario';";
+        
+        //echo $sql;
+        
         $query = pg_query($conexao,$sql);
         if($query) {
             //codigo de sucesso

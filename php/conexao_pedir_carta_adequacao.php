@@ -33,13 +33,13 @@
 
         switch($_GET["tipo"]){
             case "HID":
-                $status_origem = "2::numeric(4,3) or status::numeric(4,3) = 2.2::numeric(4,3) or status::numeric(4,3) = 2.8::numeric(4,3)";
-                $status_destino = "(status::numeric(4,3)+0.1)::TEXT";
+                $status_origem = "2::numeric(6,3) or status::numeric(6,3) = 2.2::numeric(6,3) or status::numeric(6,3) = 2.8::numeric(6,3)";
+                $status_destino = "(status::numeric(6,3)+0.1)::TEXT";
                 $funcao = "AqHid";
                 break;
             case "PLAN":
-                $status_origem = "2::numeric(4,3) or status::numeric(4,3) = 2.1::numeric(4,3) or status::numeric(4,3) = 2.4::numeric(4,3)";
-                $status_destino = "(status::numeric(4,3)+0.2)::TEXT";
+                $status_origem = "2::numeric(6,3) or status::numeric(6,3) = 2.1::numeric(6,3) or status::numeric(6,3) = 2.4::numeric(6,3)";
+                $status_destino = "(status::numeric(6,3)+0.2)::TEXT";
                 $funcao = "AqPlan";
                 break;
         }
@@ -69,14 +69,14 @@
                 CASE
                     WHEN 
                         --retorna se há cartas reservadas<br>
-                        (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1) > 0
+                        (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1) > 0
                     THEN
-                        (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1)
+                        (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" = $usuario AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) ORDER BY prioridade DESC, bloco, mi LIMIT 1)
                     
                     --retorna se há cartas disponiveis<br>
-                    WHEN (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
-                    WHEN (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
-                    WHEN (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status::numeric(4,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
+                    WHEN (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$primeira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
+                    WHEN (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$segunda_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
+                    WHEN (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY bloco, mi LIMIT 1) > 0 THEN (SELECT id FROM public.cartas WHERE status::numeric(6,3) = $status_origem AND \"$funcao\" isnull AND (\"inicio$funcao\" isnull OR length(\"inicio$funcao\") < 1) AND niveis = '$terceira_dificuldade' ORDER BY prioridade DESC, bloco, mi LIMIT 1) --<br>
                     
                     ELSE 
                         --Retorna id carta inválido para nada ser atualizado e retornar vazio<br>

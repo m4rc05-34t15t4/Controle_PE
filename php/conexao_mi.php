@@ -68,9 +68,11 @@ else{
     else $row[0]["status"] = status_desc($row[0]["status"], $conexao);
 
     //recupera nome e ids dos usuarios
-    Recupera_Nome_Id("AqHid");
+    Recupera_Nome_Id("AjtHid");
     Recupera_Nome_Id("RevHid");
     Recupera_Nome_Id("AdVet");
+    Recupera_Nome_Id("AqHid");
+    Recupera_Nome_Id("AqPlan");
     Recupera_Nome_Id("CQ1");
     Recupera_Nome_Id("editor");
     Recupera_Nome_Id("revisor1");
@@ -93,10 +95,10 @@ else{
         'servidor' => $row[0]["servidor"],
         'niveis' => $row[0]["niveis"],
         'densidade' => $row[0]["densidade"],
-        'AqHid' => $row[0]["AqHid"],
-        'id_AqHid' => $row[0]["id_AqHid"],
-        'inicioAqHid' => $row[0]["inicioAqHid"],
-        'terminoAqHid' => $row[0]["terminoAqHid"],
+        'AjtHid' => $row[0]["AjtHid"],
+        'id_AqHid' => $row[0]["id_AjtHid"],
+        'inicioAjtHid' => $row[0]["inicioAjtHid"],
+        'terminoAjtHid' => $row[0]["terminoAjtHid"],
         'RevHid' => $row[0]["RevHid"],
         'id_RevHid' => $row[0]["id_RevHid"],
         'inicioRevHid' => $row[0]["inicioRevHid"],
@@ -105,6 +107,14 @@ else{
         'id_AdVet' => $row[0]["id_AdVet"],
         'inicioAdVet' => $row[0]["inicioAdVet"],
         'terminoAdVet' => $row[0]["terminoAdVet"],
+        'AqHid' => $row[0]["AqHid"],
+        'id_AqHid' => $row[0]["id_AqHid"],
+        'inicioAqHid' => $row[0]["inicioAqHid"],
+        'terminoAqHid' => $row[0]["terminoAqHid"],
+        'AqPlan' => $row[0]["AqPlan"],
+        'id_AqPlan' => $row[0]["id_AqPlan"],
+        'inicioAqPlan' => $row[0]["inicioAqPlan"],
+        'terminoAqPlan' => $row[0]["terminoAqPlan"],
         'CQ1' => $row[0]["CQ1"],
         'id_CQ1' => $row[0]["id_CQ1"],
         'inicioCQ1' => $row[0]["inicioCQ1"],

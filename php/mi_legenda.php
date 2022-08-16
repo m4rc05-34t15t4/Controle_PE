@@ -1,4 +1,4 @@
-<!--<div class="div_legenda"><div id="fase_0" class="mi-fases fase_0">0</div><div class="mi-fases-descricao">Fora do Projeto</div></div>-->
+<div class="div_legenda"><div id="fase_0" class="mi-fases fase_0">0</div><div class="mi-fases-descricao">Fora do Projeto</div></div>
 
 <div class="div_legenda"><div id="fase_1" class="mi-fases fase_1">1.0</div><div class="mi-fases-descricao">Preparo</div></div>
 <div class="div_legenda"><div id="fase_1.1" class="mi-fases fase_1">1.1</div><div class="mi-fases-descricao"><u>Coletar Raster</u></div></div>
@@ -34,3 +34,4 @@
 <div class="div_legenda"><div id="fase_4.16" class="mi-fases fase_4">4.16</div><div class="mi-fases-descricao"><u>Carta Orto Imagem</u></div></div>
 
 <div class="div_legenda"><div id="fase_5" class="mi-fases fase_5">5</div><div class="mi-fases-descricao">Carregada no BDGEx</div></div>
+<div class="div_legenda"><div id="fase_100" class="mi-fases fase_100">100</div><div class="mi-fases-descricao">Outros</div></div>
