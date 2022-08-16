@@ -494,7 +494,7 @@ ul li span {
     vertical-align: middle;
     text-align: left;
     padding-left: 10pt;
-    width: 200pt;
+    width: 150pt;
 }
 
 .titulo, .conteudo-direita-titulo {
@@ -958,7 +958,7 @@ ul li span {
 }
 
 #todos-mi-legenda-status, #legenda_mi_informacao {
-    font-size: 18pt;
+    font-size: 14pt;
     border: none;
     padding: 0pt;
     margin: 0pt;
@@ -1003,17 +1003,17 @@ ul li span {
 }
 
 #legenda_mi_informacao div div:first-child {
-    width: 30pt;
-    height: 30pt;
+    width: 25pt;
+    height: 25pt;
     justify-content: center;
     margin: 0;
-    font-size: 15pt;
+    font-size: 12pt;
 }
 
 #legenda_mi_informacao div div:last-child {
-    height: 30pt;
+    height: 25pt;
     width: 100pt;
-    font-size: 15pt;
+    font-size: 12pt;
     margin: 0;
     padding: 5pt;
 }
@@ -1196,6 +1196,9 @@ display: block;
 }
 .fase_5 {/*FINALIZADA*/
     background-color: #66CDAA;
+}
+.fase_100 {/*OUTROS*/
+    background-color: #bd46fc;
 }
 
 /* CSS Blocos Posicao - INSERIDO SEMI AUTOMATICO PELO ROTINA PHP*/ 
