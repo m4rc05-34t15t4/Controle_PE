@@ -12,6 +12,8 @@
         $usu_usuario = $_SESSION['usuario'];
         $usu_funcao = $_SESSION['funcao'];
         $usu_status = "<a href=\"sessao_destroi.php?pagina=" . $pagina . "\">Sair</a>";
+
+        echo '<div id="bt_play_pause" datatime="" data_cadastro="" usuario="" funcao="" desc="" mi="" tipo="" id_acao="">Iniciar Trabalho</div><div id="acao_time">0 00:00:00</div>';
         
         //retorna último mi se for necessário para funcao do usuário, caso contrário mostra o definido em cima;
         if($_SESSION['funcao'] > 64){
@@ -51,6 +53,7 @@
         <input id="box-confirmacao_botoes_confirmar" class="box-confirmacao_botoes_botao" type="button" value="Confirmar"/>
     </div>
 </div>
+<div id="spinner"></div>
 <div class="box-confirmacao-fundo"></div>
 
 <div class="cabecalho">Controle Produção Projeto Pernambuco</div>
@@ -64,6 +67,8 @@
 <div id="botao-todos-usuarios" class="botao-menu-lateral" link="Todos_usuarios.php" paginaatual=""><img src="../img/all_usuarios_preto.png"/></div>
 
 <div id="botao-todos-mi" class="botao-menu-lateral" link="Todos_mi.php" paginaatual=""><img src="../img/all_mi_preto.png"/></div>
+
+<div id="botao-todas-acoes" class="botao-menu-lateral" link="Todas_acoes.php?id=<?php echo $usu_codigo; ?>" paginaatual=""><img src="../img/acoes.png"/></div>
 
 <div id="formulario-login" class="formularios">
     <form method="post" action="conexao_sessao.php" id="formlogin" name="formlogin" >

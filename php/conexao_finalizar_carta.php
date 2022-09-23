@@ -46,6 +46,7 @@
                     WHEN ((status::numeric(4,3)) = 2.1::NUMERIC(4,3)) THEN '2.4' 
                     WHEN ((status::numeric(4,3)) = 2.3::NUMERIC(4,3)) THEN '2.6' 
                     WHEN ((status::numeric(4,3)) = 2.9::NUMERIC(4,3)) THEN '2.16' 
+                    ELSE CONCAT(status, '_ERRO')
                     END)";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";
@@ -55,6 +56,8 @@
                     WHEN ((status::numeric(4,3)) = 2.2::NUMERIC(4,3)) THEN '2.8' 
                     WHEN ((status::numeric(4,3)) = 2.3::NUMERIC(4,3)) THEN '2.9' 
                     WHEN ((status::numeric(4,3)) = 2.6::NUMERIC(4,3)) THEN '2.16' 
+                    WHEN ((status::numeric(4,3)) = 2.16::NUMERIC(4,3)) THEN '2.16' 
+                    ELSE CONCAT(status, '_ERRO')
                     END)";
                 $funcao = "\"".$tipo."\"";
                 $termino = "\"termino".$tipo."\"";

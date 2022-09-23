@@ -2,6 +2,29 @@
 
 date_default_timezone_set('America/Recife');
 
+//Verifica se é permitido usuário permanecer na paghina
+function Valida_usu_permissao_pagina($pagina){
+    $id = $_SESSION['codigo'];
+    if(isset($_GET["id"])) $id = $_GET["id"];
+    $permissao = intval($_SESSION['funcao']);
+    if($permissao >= 32768) $permissao -= 32768;//AQ PLAN
+    if($permissao >= 16384) $permissao -= 16384;//AQ HID
+    if($permissao >= 8192) $permissao -= 8192;//CONTROLADOR DE QUALIDADE
+    if($permissao >= 4096) $permissao -= 4096;//OUTROS
+    if($permissao >= 2048) $permissao -= 2048;//CARREGADOR BDGEX
+    if($permissao >= 1024) $permissao -= 1024;//CORRETOR
+    if($permissao >= 512) $permissao -= 512;//REVISOR
+    if($permissao >= 256) $permissao -= 256;//EDITOR
+    if($permissao >= 128) $permissao -= 128;//AD HID
+    if($permissao >= 64) $permissao -= 64;//AD TRA
+    if($permissao >= 32) $permissao -= 32;//AD LOC
+    if($permissao >= 16) $permissao -= 16;//PREPARADOR
+    if(!isset($id) OR ((strval($_SESSION['codigo']) != strval($id)) && ($permissao == 0)) ){
+        $p = explode("?", $pagina);
+        header('location:'.$p[0].'?id='.$_SESSION['codigo']);
+    }
+}
+
 //Verifica se Existwe || se nulo || se vazio
 function validar_variavel_miss($variavel){
     if(isset($variavel)){
@@ -97,6 +120,30 @@ function Consulta_sql($sql){
         }
     }
     return 0; 
+}
+
+//Verifica string SQL
+function Checar_valor(&$variavel, $valor, $valores = ['true', 'false'], $default = ""){
+    $find = ["update", "select", "insert", "delete"];
+    for($i=0; $i < count($find); $i++ ){
+        if(strpos(strtolower($valor), $find[$i])){
+            return false;
+        }
+    }
+    if($valores == ""){
+        $variavel = $valor;
+        return true;
+    }
+    else{
+        $variavel = $default;
+        for($i=0; $i < count($valores); $i++ ){
+            if($valor == $valores[$i]){
+                $variavel = $valores[$i];
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 ?>

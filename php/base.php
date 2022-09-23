@@ -8,7 +8,8 @@
     if(!isset($link)){$link = "../";}
     include_once $link."php/sessao.php";
 
-    $Versao = "?v=3.0";
+    $date = date_create();
+    $Versao = "?v=3.0.0".date_timestamp_get($date);
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
         <meta name="keywords" content="HTML5, CSS3, frontend, Controle, Projeto, EB">
         <meta name="description" content="Controle">
         <meta name="version" content="3.0">
-        <meta name="author" content="3º Sgt Topo Marcos Batista">
+        <meta name="author" content="2º Sgt Topo Marcos Batista">
         <link rel="stylesheet" type="text/css" href="<?php echo $link."css/reset.css"; ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo $link."css/style.css$Versao"; ?>"/>
         <script src="<?php echo $link."js/jquery-3.5.0.js"; ?>"></script>
